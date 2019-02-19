@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    public int fireDelay;
+    public float fireDelay;
+    public int towerDamage;
+    public int splashAmount;
     private System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
     private List<GameObject> hitList = new List<GameObject>();
     // Start is called before the first frame update
@@ -16,15 +18,24 @@ public class TowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Updating TowerScript");
-        if(timer.Elapsed.Seconds > fireDelay)
+        if(timer.Elapsed.TotalMilliseconds >= (fireDelay * 1000.0f))
         {
-            if(hitList.Count > 0)
+            //removes splashAmount number of enemies from the hitlist, ie first 3 in == first 3 killed
+            for(int i = 0; i < splashAmount; i++)
             {
-                Destroy(hitList[0]);
-                hitList.RemoveAt(0);
+                if (hitList.Count > 0)
+                {
+                    GameObject tmp = hitList[0];
+                    tmp.GetComponent<tmp_EnemyMover>().health -= towerDamage;
+                    Debug.Log("Health: " + tmp.GetComponent<tmp_EnemyMover>().health);
+                    if(tmp.GetComponent<tmp_EnemyMover>().health <= 0)
+                    {
+                        Destroy(hitList[0]);
+                        hitList.RemoveAt(0);
+                    }
+                }
             }
-                
+
             timer.Reset();
             timer.Start();
         }
