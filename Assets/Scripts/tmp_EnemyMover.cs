@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class tmp_EnemyMover : MonoBehaviour
 {
     public GameObject tmp;
+    public float health = 100;
 
     [SerializeField]
     public Transform _destination;
