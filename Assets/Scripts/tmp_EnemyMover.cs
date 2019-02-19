@@ -5,6 +5,7 @@ using UnityEngine;
 public class tmp_EnemyMover : MonoBehaviour
 {
     public GameObject tmp;
+    public float health = 100;
     // Start is called before the first frame update
     void Start()
     {
