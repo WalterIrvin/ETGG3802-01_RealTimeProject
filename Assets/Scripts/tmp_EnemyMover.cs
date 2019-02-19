@@ -8,7 +8,7 @@ public class tmp_EnemyMover : MonoBehaviour
     public GameObject tmp;
 
     [SerializeField]
-    Transform _destination;
+    public Transform _destination;
 
     NavMeshAgent _navMeshAgent;
 
