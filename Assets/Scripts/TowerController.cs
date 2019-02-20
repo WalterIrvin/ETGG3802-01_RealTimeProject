@@ -20,11 +20,11 @@ public class TowerController : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("2");
-                Instantiate(TowerPrefab, hit.point, Quaternion.identity);
-                if (hit.transform.name == "Wall")
+                //Instantiate(TowerPrefab, hit.point, Quaternion.identity);
+                if (hit.collider.gameObject.tag == "Wall")
                 {
                     Debug.Log("3");
-                    Instantiate(TowerPrefab, hit.point, Quaternion.identity);
+                    Instantiate(TowerPrefab, hit.collider.gameObject.transform.position + Vector3.up, Quaternion.identity);
                 }
             }
         }
