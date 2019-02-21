@@ -106,5 +106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireDelay: 1
+  mProjectile: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
+    type: 3}
   towerDamage: 100
-  splashAmount: 1
