@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tmp: {fileID: 4625691461517303479}
+  health: 100
   _destination: {fileID: 0}
 --- !u!195 &1296152009
 NavMeshAgent:
