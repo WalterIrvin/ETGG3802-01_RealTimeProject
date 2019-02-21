@@ -5,10 +5,12 @@ using UnityEngine;
 public class TowerScript : MonoBehaviour
 {
     public float fireDelay;
+    
+    public GameObject mProjectile;
     public int towerDamage;
-    public int splashAmount;
     private System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
     private List<GameObject> hitList = new List<GameObject>();
+    private GameObject mTarget;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,23 +20,64 @@ public class TowerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer.Elapsed.TotalMilliseconds >= (fireDelay * 1000.0f))
+        for (int i = 0; i < hitList.Count; i++)
         {
-            //removes splashAmount number of enemies from the hitlist, ie first 3 in == first 3 killed
-            for(int i = 0; i < splashAmount; i++)
+            if (hitList[i] != null)
             {
-                if (hitList.Count > 0)
+
+                GameObject tmp = hitList[i];
+                if (tmp.GetComponent<tmp_EnemyMover>().health <= 0)
                 {
-                    GameObject tmp = hitList[0];
-                    tmp.GetComponent<tmp_EnemyMover>().health -= towerDamage;
-                    Debug.Log("Health: " + tmp.GetComponent<tmp_EnemyMover>().health);
-                    if(tmp.GetComponent<tmp_EnemyMover>().health <= 0)
-                    {
-                        Destroy(hitList[0]);
-                        hitList.RemoveAt(0);
-                    }
+                    Destroy(tmp);
+                    hitList.RemoveAt(i);
                 }
             }
+            else
+            {
+                hitList.RemoveAt(i);
+            }
+        }
+
+        ///Fire control
+        if (timer.Elapsed.TotalMilliseconds >= (fireDelay * 1000.0f))
+        {
+            //removes splashAmount number of enemies from the hitlist, ie first 3 in == first 3 killed
+            
+            if (hitList.Count > 0)
+            {
+                float cur_distance;
+                float old_distance;
+                for(int i = 0; i < hitList.Count; i++)
+                {
+                    if(hitList[i] != null)
+                    {
+                        GameObject tmp_target = hitList[i];
+                        if (mTarget == null)
+                        {
+                            mTarget = tmp_target;
+                        }
+                        else
+                        {
+                            cur_distance = (tmp_target.transform.position - this.gameObject.transform.position).magnitude;
+                            old_distance = (mTarget.transform.position - this.gameObject.transform.position).magnitude;
+                            if (cur_distance < old_distance)
+                            {
+                                mTarget = tmp_target;
+                            }
+                        }
+                    } 
+                }
+                
+                GameObject tmp = mTarget;
+                if (tmp != null)
+                {
+                    Vector3 destination = tmp.GetComponent<tmp_EnemyMover>().transform.position;
+                    GameObject the_bullet = Instantiate(mProjectile, transform.position, Quaternion.identity);
+                    the_bullet.GetComponent<BulletController>().mDestination = destination;
+                }
+
+            }
+            
 
             timer.Reset();
             timer.Start();
