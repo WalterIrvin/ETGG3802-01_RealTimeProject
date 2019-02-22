@@ -4,103 +4,61 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    public float fireDelay;
-    
-    public GameObject mProjectile;
-    public int towerDamage;
-    private System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-    private List<GameObject> hitList = new List<GameObject>();
-    private GameObject mTarget;
-    // Start is called before the first frame update
+    private Transform main_target;
+    public float fireDelay = 1f;
+    public float range = 3f;
+    public int towerDamage = 50;
+    public GameObject projecticle_prefab;
+    private float startTime;
+
     void Start()
     {
-        timer.Start();
+        startTime = Time.fixedTime;
+        InvokeRepeating("SearchTarget", 0f, 0.1f);
     }
 
-    // Update is called once per frame
+    void SearchTarget()
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
+        float shortest_dist = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+
+        foreach(GameObject enemy in targets)
+        {
+            float distToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            if (distToEnemy < shortest_dist)
+            {
+                shortest_dist = distToEnemy;
+                nearestEnemy = enemy;
+            }
+        }
+
+        if (nearestEnemy != null && shortest_dist <= range)
+        {
+            main_target = nearestEnemy.transform;
+        }
+    }
+
     void Update()
     {
-        for (int i = 0; i < hitList.Count; i++)
-        {
-            if (hitList[i] != null)
-            {
+        if (main_target == null)
+            return;
 
-                GameObject tmp = hitList[i];
-                if (tmp.GetComponent<tmp_EnemyMover>().health <= 0)
-                {
-                    Destroy(tmp);
-                    hitList.RemoveAt(i);
-                }
-            }
-            else
-            {
-                hitList.RemoveAt(i);
-            }
+        if(main_target.gameObject.GetComponent<tmp_EnemyMover>().health <= 0)
+        {
+            Destroy(main_target.gameObject);
+            main_target = null;
+            return;
         }
 
-        ///Fire control
-        if (timer.Elapsed.TotalMilliseconds >= (fireDelay * 1000.0f))
+        float curTime = Time.fixedTime;
+        if (curTime - startTime >= fireDelay)
         {
-            //removes splashAmount number of enemies from the hitlist, ie first 3 in == first 3 killed
-            
-            if (hitList.Count > 0)
-            {
-                float cur_distance;
-                float old_distance;
-                for(int i = 0; i < hitList.Count; i++)
-                {
-                    if(hitList[i] != null)
-                    {
-                        GameObject tmp_target = hitList[i];
-                        if (mTarget == null)
-                        {
-                            mTarget = tmp_target;
-                        }
-                        else
-                        {
-                            cur_distance = (tmp_target.transform.position - this.gameObject.transform.position).magnitude;
-                            old_distance = (mTarget.transform.position - this.gameObject.transform.position).magnitude;
-                            if (cur_distance < old_distance)
-                            {
-                                mTarget = tmp_target;
-                            }
-                        }
-                    } 
-                }
-                
-                GameObject tmp = mTarget;
-                if (tmp != null)
-                {
-                    Vector3 destination = tmp.GetComponent<tmp_EnemyMover>().transform.position;
-                    GameObject the_bullet = Instantiate(mProjectile, transform.position, Quaternion.identity);
-                    the_bullet.GetComponent<BulletController>().mDestination = destination;
-                }
-
-            }
-            
-
-            timer.Reset();
-            timer.Start();
-        }
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        GameObject tmp = other.gameObject;
-        if(Equals(tmp.tag, "Enemy"))
-        {
-            hitList.Add(tmp);
-        }
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        GameObject tmp = other.gameObject;
-        if(Equals(tmp.tag,"Enemy"))
-        {
-            hitList.Remove(tmp);
+            GameObject bullet = Instantiate(projecticle_prefab, transform.position, Quaternion.identity);
+            BulletController bullet_script = bullet.GetComponent<BulletController>();
+            bullet_script.mDamage = towerDamage;
+            bullet_script.mDestination = main_target.position;
+            startTime = Time.fixedTime;
         }
     }
 }

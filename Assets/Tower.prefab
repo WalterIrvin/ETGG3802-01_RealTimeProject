@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7597364510150666788}
   - component: {fileID: 6371563004855875081}
   - component: {fileID: 1377676670466655340}
-  - component: {fileID: 6116677165494123986}
   - component: {fileID: 2770484832960667334}
   m_Layer: 0
   m_Name: Tower
@@ -79,20 +78,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6116677165494123986
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144208750063770548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 3
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: -1.6, z: -0.00000008940697}
 --- !u!114 &2770484832960667334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5c04d43db84b14fb1a3586db071a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireDelay: 1
-  mProjectile: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
+  fireDelay: 2
+  range: 3
+  towerDamage: 50
+  projecticle_prefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
-  towerDamage: 100

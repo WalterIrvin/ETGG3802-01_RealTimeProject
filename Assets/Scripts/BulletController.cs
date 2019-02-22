@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public Vector3 mDestination;
+    public int mDamage = 0;
     private Vector3 mDirection;
     private float mAliveTimer = 5.0f;
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += mDirection * Time.deltaTime;
+        transform.position += (mDirection * Time.deltaTime) * 6;
         mAliveTimer -= Time.deltaTime;
         if(mAliveTimer < 0)
         {
@@ -29,7 +30,8 @@ public class BulletController : MonoBehaviour
         GameObject tmp = other.gameObject;
         if (Equals(tmp.tag, "Enemy"))
         {
-            tmp.GetComponent<tmp_EnemyMover>().health -= 100;
+            Debug.Log("mDamge:" + mDamage);
+            tmp.GetComponent<tmp_EnemyMover>().health -= mDamage;
             Destroy(this.gameObject);
         }
     }
