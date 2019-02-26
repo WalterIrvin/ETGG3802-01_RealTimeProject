@@ -295,7 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  _destination: {fileID: 0}
+  _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
+    type: 3}
 --- !u!1 &8785522117138784605
 GameObject:
   m_ObjectHideFlags: 0

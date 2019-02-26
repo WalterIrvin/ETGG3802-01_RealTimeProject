@@ -28,7 +28,7 @@ public class BasicBaseScript : MonoBehaviour
         if (other.tag == "Enemy" || other.tag == "Driller")
         {
             Destroy(other.gameObject);
-            this.health -= 50;
+            this.health -= 10;
         }
 
     }

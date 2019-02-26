@@ -7,8 +7,6 @@ public class DrillerScript : MonoBehaviour
 {
     public float health = 100;
 
-
-
     void Start()
     {
 
@@ -23,12 +21,5 @@ public class DrillerScript : MonoBehaviour
         }
         transform.position += transform.forward * Time.deltaTime;
     }
-   /* private void SetDestination()
-    {
-        if (_destination != null)
-        {
-            Vector3 targetVector = _destination.transform.position;
-            _navMeshAgent.SetDestination(targetVector);
-        }
-    }*/
+
 }

@@ -5,16 +5,20 @@ using UnityEngine;
 public class EnemySpawnerScript : MonoBehaviour
 {
     public EnemyMover Enemy;
+    public DrillerScript Driller;
     public BasicBaseScript Target;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
+    private System.Diagnostics.Stopwatch drillerTimer = new System.Diagnostics.Stopwatch();
 
     public float enemySpawnTimer;
+    public float drillerSpawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
         this.enemyTimer.Start();
+        this.drillerTimer.Start();
     }
 
     // Update is called once per frame
