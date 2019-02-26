@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class tmp_EnemyMover : MonoBehaviour
 {
-    public GameObject tmp;
     public float health = 100;
     private float maxHealth = 100;
     private Image healthBar;
@@ -30,6 +29,14 @@ public class tmp_EnemyMover : MonoBehaviour
         else
         {
             SetDestination();
+        }
+    }
+
+    void Update()
+    {
+        if (this.health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 
