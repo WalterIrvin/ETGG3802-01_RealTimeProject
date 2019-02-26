@@ -36,6 +36,9 @@ public class TowerScript : MonoBehaviour
         if (nearestEnemy != null && shortest_dist <= range)
         {
             main_target = nearestEnemy.transform;
+        } else
+        {
+            main_target = null;
         }
     }
 
