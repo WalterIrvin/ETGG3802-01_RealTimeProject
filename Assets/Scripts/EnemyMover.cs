@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class tmp_EnemyMover : MonoBehaviour
+public class EnemyMover : MonoBehaviour
 {
-    public GameObject tmp;
     public float health = 100;
     private float maxHealth = 100;
     private Image healthBar;

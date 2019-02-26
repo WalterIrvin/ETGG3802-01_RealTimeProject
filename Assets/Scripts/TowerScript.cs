@@ -47,11 +47,14 @@ public class TowerScript : MonoBehaviour
         if (main_target == null)
             return;
 
-        if(main_target.gameObject.GetComponent<tmp_EnemyMover>().health <= 0)
+        if(main_target.gameObject.tag == "Enemy")
         {
-            Destroy(main_target.gameObject);
-            main_target = null;
-            return;
+            if (main_target.gameObject.GetComponent<EnemyMover>().health <= 0)
+            {
+                Destroy(main_target.gameObject);
+                main_target = null;
+                return;
+            }
         }
 
         float curTime = Time.fixedTime;

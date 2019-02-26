@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4523054379227759788}
   - component: {fileID: 6359100656314255767}
   - component: {fileID: 6359100656314255766}
-  - component: {fileID: 7484119942585599569}
+  - component: {fileID: 4076464071722379101}
   m_Layer: 0
   m_Name: Driller
   m_TagString: Enemy
@@ -132,7 +132,7 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7484119942585599569
+--- !u!114 &4076464071722379101
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761419529421513448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 996bf56cd8e545146b20049507fc9575, type: 3}
+  m_Script: {fileID: 11500000, guid: 5501911a41c76bf478d4790e2b081595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tmp: {fileID: 0}
+  health: 100
+  _destination: {fileID: 0}

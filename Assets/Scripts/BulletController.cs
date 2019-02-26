@@ -30,8 +30,7 @@ public class BulletController : MonoBehaviour
         GameObject tmp = other.gameObject;
         if (Equals(tmp.tag, "Enemy"))
         {
-            Debug.Log("mDamge:" + mDamage);
-            tmp.GetComponent<tmp_EnemyMover>().health -= mDamage;
+            tmp.GetComponent<EnemyMover>().health -= mDamage;
             Destroy(this.gameObject);
         }
     }
