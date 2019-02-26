@@ -18,7 +18,6 @@ public class BasicBaseScript : MonoBehaviour
     {
         if (this.health is 0)
         {
-            //Debug.Log("DIE");
             Destroy(gameObject);
         }
 
@@ -26,11 +25,10 @@ public class BasicBaseScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" || other.tag == "Driller")
         {
             Destroy(other.gameObject);
             this.health -= 50;
-            //Debug.Log("HIT");
         }
 
     }

@@ -32,6 +32,14 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (this.health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void SetDestination()
     {
         if (_destination != null)

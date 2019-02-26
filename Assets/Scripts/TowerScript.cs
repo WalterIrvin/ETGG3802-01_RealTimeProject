@@ -19,7 +19,14 @@ public class TowerScript : MonoBehaviour
 
     void SearchTarget()
     {
-        GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
+        List<GameObject> targets = new List<GameObject>(); 
+
+        foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Enemy"))
+            targets.Add(tmpObj);
+
+        foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Driller"))
+            targets.Add(tmpObj);
+
         float shortest_dist = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
@@ -46,16 +53,6 @@ public class TowerScript : MonoBehaviour
     {
         if (main_target == null)
             return;
-
-        if(main_target.gameObject.tag == "Enemy")
-        {
-            if (main_target.gameObject.GetComponent<EnemyMover>().health <= 0)
-            {
-                Destroy(main_target.gameObject);
-                main_target = null;
-                return;
-            }
-        }
 
         float curTime = Time.fixedTime;
         if (curTime - startTime >= fireDelay)

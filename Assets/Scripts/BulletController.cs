@@ -33,5 +33,11 @@ public class BulletController : MonoBehaviour
             tmp.GetComponent<EnemyMover>().health -= mDamage;
             Destroy(this.gameObject);
         }
+        else if (Equals(tmp.tag, "Driller"))
+        {
+            Debug.Log("mDamge:" + mDamage);
+            tmp.GetComponent<DrillerScript>().health -= mDamage;
+            Destroy(this.gameObject);
+        }
     }
 }

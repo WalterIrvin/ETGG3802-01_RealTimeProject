@@ -22,11 +22,31 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         if (Target.health <= 0)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            List<GameObject> enemies = new List<GameObject>();
+
+            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Enemy"))
+                enemies.Add(tmpObj);
+
+            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Driller"))
+                enemies.Add(tmpObj);
+
             foreach (GameObject enemy in enemies)
                 GameObject.Destroy(enemy);
 
             return;
+        }
+
+        if (drillerTimer.Elapsed.Seconds > this.drillerSpawnTimer)
+        {
+            Vector3 pos = transform.position;
+            pos.y -= 1;
+            DrillerScript drillerClone = (DrillerScript)Instantiate(Driller, pos, transform.rotation);
+
+            drillerTimer.Reset();
+            drillerTimer.Start();
+
+            enemyTimer.Reset();
+            enemyTimer.Start();
         }
 
         if (enemyTimer.Elapsed.Seconds > this.enemySpawnTimer)
