@@ -5,14 +5,20 @@ using UnityEngine;
 public class EnemySpawnerScript : MonoBehaviour
 {
     public tmp_EnemyMover Enemy;
+    public DrillerScript Driller;
     public BasicBaseScript Target;
-    private System.Diagnostics.Stopwatch timer = new System.Diagnostics.Stopwatch();
-    public float spawnTimer;
+
+    private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
+    private System.Diagnostics.Stopwatch drillerTimer = new System.Diagnostics.Stopwatch();
+
+    public float enemySpawnTimer;
+    public float drillerSpawnTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.timer.Start();
+        this.enemyTimer.Start();
+        this.drillerTimer.Start();
     }
 
     // Update is called once per frame
@@ -27,15 +33,29 @@ public class EnemySpawnerScript : MonoBehaviour
             return;
         }
 
-        if (timer.Elapsed.Seconds > this.spawnTimer)
+        if (drillerTimer.Elapsed.Seconds > this.drillerSpawnTimer)
+        {
+            Vector3 pos = transform.position;
+            pos.y -= 1;
+            DrillerScript drillerClone = (DrillerScript)Instantiate(Driller, pos, transform.rotation);
+            drillerClone._destination = Target.transform;
+
+            drillerTimer.Reset();
+            drillerTimer.Start();
+
+            enemyTimer.Reset();
+            enemyTimer.Start();
+        }
+
+        if (enemyTimer.Elapsed.Seconds > this.enemySpawnTimer)
         {
             Vector3 pos = transform.position;
             pos.y -= 1;
             tmp_EnemyMover enemyClone = (tmp_EnemyMover)Instantiate(Enemy, pos, transform.rotation);
             enemyClone._destination = Target.transform;
 
-            timer.Reset();
-            timer.Start();
+            enemyTimer.Reset();
+            enemyTimer.Start();
         }
     }
 }
