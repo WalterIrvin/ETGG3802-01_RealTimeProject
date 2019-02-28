@@ -9,6 +9,7 @@ public class EnemyMover : MonoBehaviour
     public float health = 100;
     private float maxHealth = 100;
     private Image healthBar;
+    private GameObject MoneyHandle;
 
     [SerializeField]
     public Transform _destination;
@@ -30,6 +31,8 @@ public class EnemyMover : MonoBehaviour
         {
             SetDestination();
         }
+
+        MoneyHandle = GameObject.FindWithTag("Money");
     }
 
     void Update()
@@ -37,6 +40,8 @@ public class EnemyMover : MonoBehaviour
         if (this.health <= 0)
         {
             Destroy(gameObject);
+            MoneyScript M = MoneyHandle.GetComponent<MoneyScript>();
+            M.Money += 100;
         }
     }
 

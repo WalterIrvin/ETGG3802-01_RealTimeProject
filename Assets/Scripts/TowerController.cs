@@ -6,6 +6,8 @@ public class TowerController : MonoBehaviour
 {
     public Camera MainCamera;
     public GameObject TowerPrefab;
+    public GameObject MoneyHandler;
+
 
 
     // Update is called once per frame
@@ -24,7 +26,12 @@ public class TowerController : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Wall")
                 {
                     Debug.Log("3");
-                    Instantiate(TowerPrefab, hit.collider.gameObject.transform.position + Vector3.up, Quaternion.identity);
+                    MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
+                    if (M.Money >= 100)
+                    {
+                        Instantiate(TowerPrefab, hit.collider.gameObject.transform.position + Vector3.up, Quaternion.identity);
+                        M.Money -= 100;
+                    }
                 }
             }
         }
