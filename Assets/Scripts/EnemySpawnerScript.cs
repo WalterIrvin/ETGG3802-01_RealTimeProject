@@ -52,7 +52,7 @@ public class EnemySpawnerScript : MonoBehaviour
             enemyTimer.Reset();
             enemyTimer.Start();
         }
-
+        
         if (enemyTimer.Elapsed.Seconds > this.enemySpawnTimer)
         {
             Vector3 pos = transform.position;

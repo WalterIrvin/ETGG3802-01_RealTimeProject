@@ -20,4 +20,9 @@ public class MoneyScript : MonoBehaviour
     {
         MoneyText.text = Money.ToString();
     }
+
+    void ChangeMoney(int amt)
+    {
+        Money += amt;
+    }
 }

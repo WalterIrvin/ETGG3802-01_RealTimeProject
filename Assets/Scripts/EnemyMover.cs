@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class EnemyMover : MonoBehaviour
 {
+    public int value = 100;
+    public float agentAcceleration = 1;
+    public float agentMaxSpeed = 1;
     public float health = 100;
-    private float maxHealth = 100;
+    private float maxHealth;
     private Image healthBar;
     private GameObject MoneyHandle;
 
@@ -19,6 +22,7 @@ public class EnemyMover : MonoBehaviour
     void Start()
     {
         //Enemy healthbar setup
+        maxHealth = health;
         healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
@@ -31,7 +35,8 @@ public class EnemyMover : MonoBehaviour
         {
             SetDestination();
         }
-
+        _navMeshAgent.speed = agentMaxSpeed;
+        _navMeshAgent.acceleration = agentAcceleration;
         MoneyHandle = GameObject.FindWithTag("Money");
     }
 
@@ -40,8 +45,7 @@ public class EnemyMover : MonoBehaviour
         if (this.health <= 0)
         {
             Destroy(gameObject);
-            MoneyScript M = MoneyHandle.GetComponent<MoneyScript>();
-            M.Money += 100;
+            MoneyHandle.BroadcastMessage("ChangeMoney", value);
         }
     }
 
