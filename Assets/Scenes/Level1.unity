@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.size
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -549,60 +549,12 @@ PrefabInstance:
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.data[1].timer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.data[1].amount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[2].gobj
-      value: 
-      objectReference: {fileID: 2022238343534119877, guid: ff8ff9064c7d231439d071dc52491d4c,
-        type: 3}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[2].timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[2].amount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[3].gobj
-      value: 
-      objectReference: {fileID: 5536272831765090024, guid: 6c99b18b28e8f2e48b7ed0ad2f6d4672,
-        type: 3}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[3].timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[3].amount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[4].gobj
-      value: 
-      objectReference: {fileID: 6948746676915355302, guid: 980c1fd6ee64a8b4ca2ce7f1637efae9,
-        type: 3}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[4].timer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
-        type: 3}
-      propertyPath: GenericEnemyList.Array.data[4].amount
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
