@@ -1,24 +1,44 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
-    public EnemyMover Enemy;
-    public DrillerScript Driller;
+    [System.Serializable]
+    public class mookTier
+    {
+        public GameObject gobj;
+        public float timer;
+        public int amount;
+    }
+
+    [System.Serializable]
+    public class bossTier
+    {
+        public GameObject gobj;
+        public float timer;
+        public int amount;
+    }
+
+
+    public List<mookTier> GenericEnemyList;
+    public List<bossTier> bossList;
     public BasicBaseScript Target;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
-    private System.Diagnostics.Stopwatch drillerTimer = new System.Diagnostics.Stopwatch();
+    private System.Diagnostics.Stopwatch bossTimer = new System.Diagnostics.Stopwatch();
 
-    public float enemySpawnTimer;
-    public float drillerSpawnTimer;
+    private int enemyIdx = 0;
+    private int bossIdx = 0;
+    private int enemiesSpawned = 0;
+    private int bossesSpawned = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.enemyTimer.Start();
-        this.drillerTimer.Start();
+        enemyTimer.Start();
+        bossTimer.Start();
     }
 
     // Update is called once per frame
@@ -40,28 +60,58 @@ public class EnemySpawnerScript : MonoBehaviour
             return;
         }
 
-        if (drillerTimer.Elapsed.Seconds > this.drillerSpawnTimer)
+        if (enemyIdx < GenericEnemyList.Count)
         {
-            Vector3 pos = transform.position;
-            pos.y -= 1;
-            DrillerScript drillerClone = (DrillerScript)Instantiate(Driller, pos, transform.rotation);
+            mookTier enemy = GenericEnemyList[enemyIdx];
+            if (enemyTimer.Elapsed.Seconds > enemy.timer)
+            {
+                Vector3 pos = transform.position;
+                pos.y -= 1;
+                GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
+                enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
+                enemyTimer.Reset();
+                enemyTimer.Start();
+                enemiesSpawned++;
 
-            drillerTimer.Reset();
-            drillerTimer.Start();
-
-            enemyTimer.Reset();
-            enemyTimer.Start();
+                if (enemiesSpawned >= enemy.amount)
+                {
+                    enemiesSpawned = 0;
+                    enemyIdx++;
+                }
+            }
+        }
+        else
+        {
+            enemyIdx = 0;
         }
         
-        if (enemyTimer.Elapsed.Seconds > this.enemySpawnTimer)
+        
+        if (bossIdx < bossList.Count)
         {
-            Vector3 pos = transform.position;
-            pos.y -= 1;
-            EnemyMover enemyClone = (EnemyMover)Instantiate(Enemy, pos, transform.rotation);
-            enemyClone._destination = Target.transform;
+            bossTier boss = bossList[bossIdx];
 
-            enemyTimer.Reset();
-            enemyTimer.Start();
+            if (bossTimer.Elapsed.Seconds > boss.timer)
+            {
+                Vector3 pos = transform.position;
+                pos.y -= 1;
+                GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                bossTimer.Reset();
+                bossTimer.Start();
+                enemyTimer.Reset();
+                enemyTimer.Start();
+                bossesSpawned++;
+
+                if (bossesSpawned >= boss.amount)
+                {
+                    bossesSpawned = 0;
+                    bossIdx++;
+                }
+            }
         }
+        else
+        {
+            bossIdx = 0;
+        }
+        
     }
 }
