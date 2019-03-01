@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 100
   agentAcceleration: 30
-  agentMaxSpeed: 1
+  agentMaxSpeed: 6
   health: 200
-  _destination: {fileID: 0}
+  isFragile: 1
+  _destinations: []

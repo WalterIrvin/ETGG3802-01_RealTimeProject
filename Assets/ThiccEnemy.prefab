@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 100
-  agentAcceleration: 1
-  agentMaxSpeed: 1
+  agentAcceleration: 2
+  agentMaxSpeed: 2
   health: 200
   _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
     type: 3}
