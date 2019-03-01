@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
-
 
 public class DrillerScript : MonoBehaviour
 {
@@ -13,7 +11,6 @@ public class DrillerScript : MonoBehaviour
     public float agentMaxSpeed = 1;
     public float health = 100;
     private float maxHealth;
-    private Image healthBar;
     public bool isFragile = true; // set to false if you want the driller to not die when it breaks a destructible.
     private GameObject MoneyHandle;
 
@@ -25,7 +22,6 @@ public class DrillerScript : MonoBehaviour
     void Start()
     {
         maxHealth = health;
-        healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
@@ -103,13 +99,5 @@ public class DrillerScript : MonoBehaviour
         }
 
         UpdateDestination();
-    }
-
-    public void dmgHealth(int damage)
-    {
-        //Enemies damage function, takes away what amount of health is determined by the abuser
-        health -= damage;
-        //Resizing our healthbar
-        healthBar.fillAmount = (float)health / (float)maxHealth;
     }
 }
