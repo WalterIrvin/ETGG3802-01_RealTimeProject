@@ -58,7 +58,7 @@ public class EnemyMover : MonoBehaviour
         }
     }
 
-    private void dmgHealth(int damage)
+    public void dmgHealth(int damage)
     {
         //Enemies damage function, takes away what amount of health is determined by the abuser
         health -= damage;

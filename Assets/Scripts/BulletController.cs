@@ -28,15 +28,9 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameObject tmp = other.gameObject;
-        if (Equals(tmp.tag, "Enemy"))
+        if (Equals(tmp.tag, "Enemy") || Equals(tmp.tag, "Driller"))
         {
-            tmp.GetComponent<EnemyMover>().health -= mDamage;
-            Destroy(this.gameObject);
-        }
-        else if (Equals(tmp.tag, "Driller"))
-        {
-            Debug.Log("mDamge:" + mDamage);
-            tmp.GetComponent<DrillerScript>().health -= mDamage;
+            tmp.BroadcastMessage("dmgHealth", mDamage);
             Destroy(this.gameObject);
         }
     }
