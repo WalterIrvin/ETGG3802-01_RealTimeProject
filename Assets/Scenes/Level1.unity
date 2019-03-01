@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -469,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -549,12 +549,60 @@ PrefabInstance:
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.data[1].timer
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: GenericEnemyList.Array.data[1].amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[2].gobj
+      value: 
+      objectReference: {fileID: 2022238343534119877, guid: ff8ff9064c7d231439d071dc52491d4c,
+        type: 3}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[2].timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[2].amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[3].gobj
+      value: 
+      objectReference: {fileID: 5536272831765090024, guid: 6c99b18b28e8f2e48b7ed0ad2f6d4672,
+        type: 3}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[3].timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[3].amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[4].gobj
+      value: 
+      objectReference: {fileID: 6948746676915355302, guid: 980c1fd6ee64a8b4ca2ce7f1637efae9,
+        type: 3}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[4].timer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: GenericEnemyList.Array.data[4].amount
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
@@ -3173,11 +3221,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062212523724779088, guid: eac16fc197c66c94ca7bb734caa6e438,
-        type: 3}
-      propertyPath: health
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
         type: 3}
