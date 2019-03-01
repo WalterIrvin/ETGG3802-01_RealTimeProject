@@ -144,4 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 996bf56cd8e545146b20049507fc9575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  value: 100
+  agentAcceleration: 30
+  agentMaxSpeed: 1
   health: 200
+  _destination: {fileID: 0}
