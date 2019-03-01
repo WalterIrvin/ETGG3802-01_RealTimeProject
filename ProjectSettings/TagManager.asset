@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Driller
   - Money
+  - Destructible
   layers:
   - Default
   - TransparentFX
