@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -524,7 +524,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bossList.Array.data[0].gobj
       value: 
-      objectReference: {fileID: 1761419529421513448, guid: e0068ad12ee295b44b03c6a1ee40cdaa,
+      objectReference: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d,
         type: 3}
     - target: {fileID: 2913683033980094154, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
