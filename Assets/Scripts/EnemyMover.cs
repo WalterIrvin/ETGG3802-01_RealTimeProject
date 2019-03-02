@@ -19,6 +19,8 @@ public class EnemyMover : MonoBehaviour
 
     NavMeshAgent _navMeshAgent;
 
+    public ParticleSystem DestructionEffect;
+
     void Start()
     {
         //Enemy healthbar setup
@@ -44,6 +46,8 @@ public class EnemyMover : MonoBehaviour
     {
         if (this.health <= 0)
         {
+            ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
+            explosionEffect.transform.position = transform.position;
             Destroy(gameObject);
             MoneyHandle.BroadcastMessage("ChangeMoney", value);
         }

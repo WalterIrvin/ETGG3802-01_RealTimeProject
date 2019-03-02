@@ -22,6 +22,9 @@ public class DrillerScript : MonoBehaviour
 
     NavMeshAgent _navMeshAgent;
 
+    public ParticleSystem DestructionEffect;
+
+
     void Start()
     {
         maxHealth = health;
@@ -46,6 +49,8 @@ public class DrillerScript : MonoBehaviour
     {
         if (this.health <= 0)
         {
+            ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
+            explosionEffect.transform.position = transform.position;
             Destroy(gameObject);
             MoneyHandle.BroadcastMessage("ChangeMoney", value);
         }
@@ -97,6 +102,8 @@ public class DrillerScript : MonoBehaviour
 
             if (this.isFragile)
             {
+                ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
+                explosionEffect.transform.position = transform.position;
                 Destroy(gameObject);
                 return;
             }

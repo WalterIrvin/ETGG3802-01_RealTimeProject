@@ -225,6 +225,8 @@ MonoBehaviour:
   health: 100
   isFragile: 1
   _destinations: []
+  DestructionEffect: {fileID: 3781917230237610952, guid: 402e9bf510fbc17478d818d0c9be2b32,
+    type: 3}
 --- !u!1 &7726129837837307862
 GameObject:
   m_ObjectHideFlags: 0
