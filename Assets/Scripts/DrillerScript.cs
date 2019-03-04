@@ -53,6 +53,7 @@ public class DrillerScript : MonoBehaviour
             explosionEffect.transform.position = transform.position;
             Destroy(gameObject);
             MoneyHandle.BroadcastMessage("ChangeMoney", value);
+            return;
         }
 
         UpdateDestination();
@@ -107,9 +108,9 @@ public class DrillerScript : MonoBehaviour
                 Destroy(gameObject);
                 return;
             }
+            UpdateDestination();
         }
 
-        UpdateDestination();
     }
 
     public void dmgHealth(int damage)
