@@ -92,7 +92,6 @@ public class TowerController : MonoBehaviour
             // If the raycast hits a tower
             if (hit.collider.gameObject.tag == "Tower")
             {
-                Debug.Log("HERE");
                 Destroy(hit.collider.gameObject);
                 MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
                 M.Money += 50;

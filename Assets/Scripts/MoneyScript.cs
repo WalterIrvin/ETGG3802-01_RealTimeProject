@@ -18,7 +18,7 @@ public class MoneyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoneyText.text = Money.ToString();
+        MoneyText.text = "Money: " + Money.ToString();
     }
 
     void ChangeMoney(int amt)
