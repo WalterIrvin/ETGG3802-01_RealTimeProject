@@ -30,6 +30,13 @@ public class TowerController : MonoBehaviour
             PlaceTower(hit);
         }
 
+        //Selling a tower
+        // Mouse 2 (probably want to change it later but this will work for now)
+        if (Input.GetMouseButtonDown(1) && !Input.GetButton("Camera Control Modifier"))
+        {
+            SellTower(hit);
+        }
+
         //Centered camera rotation
         // Middle Mouse Wheel
         // Alt + Mouse 1
@@ -70,6 +77,25 @@ public class TowerController : MonoBehaviour
                     Instantiate(TowerPrefab, hit.collider.gameObject.transform.position + Vector3.up, Quaternion.identity);
                     M.Money -= 100;
                 }
+            }
+        }
+    }
+
+
+
+    // Sells a tower and adjusts the player's money accordingly
+    private void SellTower(RaycastHit hit)
+    {
+        // If the raycast is valid
+        if (hit.collider != null)
+        {
+            // If the raycast hits a tower
+            if (hit.collider.gameObject.tag == "Tower")
+            {
+                Debug.Log("HERE");
+                Destroy(hit.collider.gameObject);
+                MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
+                M.Money += 50;
             }
         }
     }
