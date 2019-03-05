@@ -1,23 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicBaseScript : MonoBehaviour
 {
 
-    public int health;
+    public int health = 100;
+    public Text gameover;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.health = 100;
+        gameover.text = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (this.health is 0)
+        if (this.health <= 0)
         {
+            gameover.text = "GAME OVER";
             Destroy(gameObject);
         }
 

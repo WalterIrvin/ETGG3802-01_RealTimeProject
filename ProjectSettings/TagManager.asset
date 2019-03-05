@@ -10,6 +10,7 @@ TagManager:
   - Driller
   - Money
   - Destructible
+  - Tower
   layers:
   - Default
   - TransparentFX
