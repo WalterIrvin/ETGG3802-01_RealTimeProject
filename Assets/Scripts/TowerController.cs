@@ -74,7 +74,9 @@ public class TowerController : MonoBehaviour
                 {
                     // Add a tower and subtract the cost
                     // To be able to place tower types later, we might want to have a type that we check for here
-                    Instantiate(TowerPrefab, hit.collider.gameObject.transform.position + Vector3.up, Quaternion.identity);
+                    Vector3 pos = hit.collider.gameObject.transform.position + Vector3.up;
+                    pos.y = 0.225f;
+                    Instantiate(TowerPrefab, pos, Quaternion.identity);
                     M.Money -= 100;
                 }
             }
