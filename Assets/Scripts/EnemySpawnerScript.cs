@@ -44,6 +44,22 @@ public class EnemySpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Target.health <= 0)
+        {
+            List<GameObject> enemies = new List<GameObject>();
+
+            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Enemy"))
+                enemies.Add(tmpObj);
+
+            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Driller"))
+                enemies.Add(tmpObj);
+
+            foreach (GameObject enemy in enemies)
+                GameObject.Destroy(enemy);
+
+            return;
+        }
+
         if (enemyIdx < GenericEnemyList.Count)
         {
             mookTier enemy = GenericEnemyList[enemyIdx];
@@ -97,24 +113,5 @@ public class EnemySpawnerScript : MonoBehaviour
             bossIdx = 0;
         }
         
-    }
-
-    void LateUpdate()
-    {
-        if (Target.health <= 0)
-        {
-            List<GameObject> enemies = new List<GameObject>();
-
-            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Enemy"))
-                enemies.Add(tmpObj);
-
-            foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Driller"))
-                enemies.Add(tmpObj);
-
-            foreach (GameObject enemy in enemies)
-                GameObject.Destroy(enemy);
-
-            return;
-        }
     }
 }
