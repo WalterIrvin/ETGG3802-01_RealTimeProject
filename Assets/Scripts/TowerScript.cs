@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
+    public Transform TurretHead;
     private Transform main_target;
     public float fireDelay = 1f;
     public float range = 3f;
@@ -54,6 +55,10 @@ public class TowerScript : MonoBehaviour
     {
         if (main_target == null)
             return;
+        Vector3 direction = main_target.position - transform.position;
+        Quaternion lookRot = Quaternion.LookRotation(direction);
+        Vector3 eulerRot = lookRot.eulerAngles;
+        TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
 
         float curTime = Time.fixedTime;
         if (curTime - startTime >= fireDelay)

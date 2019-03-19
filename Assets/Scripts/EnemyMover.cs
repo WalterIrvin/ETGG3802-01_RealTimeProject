@@ -26,6 +26,7 @@ public class EnemyMover : MonoBehaviour
         //Enemy healthbar setup
         maxHealth = health;
         healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
+        healthBar.fillAmount = (float)health / (float)maxHealth;
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
@@ -42,7 +43,7 @@ public class EnemyMover : MonoBehaviour
         MoneyHandle = GameObject.FindWithTag("Money");
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (this.health <= 0)
         {

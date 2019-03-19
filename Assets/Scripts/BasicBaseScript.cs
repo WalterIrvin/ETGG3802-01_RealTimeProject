@@ -7,16 +7,21 @@ public class BasicBaseScript : MonoBehaviour
 {
 
     public int health = 100;
+    private float maxHealth;
+    private Image healthBar;
     public Text gameover;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         gameover.text = "";
+        maxHealth = health;
+        healthBar = transform.Find("BaseCanvas").Find("healthBG").Find("health").GetComponent<Image>();
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (this.health <= 0)
         {
@@ -32,6 +37,7 @@ public class BasicBaseScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             this.health -= 10;
+            healthBar.fillAmount = (float)health / (float)maxHealth;
         }
 
     }

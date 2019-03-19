@@ -1,0 +1,10 @@
+Unity team B interval 2 goals:
+-Make turrets rotate and face the enemy they are currently targeting
+-Add an enemy that will split into multiple enemies when it is killed
+-Add in a basic turret upgrade tree with attack and defense sides
+-Add actual waves of enemies and make it obvious when a wave starts/ends
+-Refine the driller so it doesn't get stuck
+-Add a health bar for the base
+-Add in a basic gui that will show upgrades/stats of the selected block or tower
+-Highlight the block that you are currently hovering over with the mouse
+-Clean up or possibly rewrite the current prefabs
