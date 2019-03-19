@@ -11,9 +11,6 @@ public class TowerScript : MonoBehaviour
     public int towerDamage = 50;
     public GameObject projecticle_prefab;
     private float startTime;
-    private string type = "base";
-    public Material MAT_RapidFire;
-    public Material MAT_Slower;
     
 
     void Start()
@@ -51,16 +48,6 @@ public class TowerScript : MonoBehaviour
         } else
         {
             main_target = null;
-        }
-    }
-
-    void Upgrade_RapidFire()
-    {
-        if (type == "Base")
-        {
-            fireDelay *= 1.5f;
-            this.GetComponent<MeshRenderer>().material = MAT_RapidFire;
-            type = "rapid";
         }
     }
 
