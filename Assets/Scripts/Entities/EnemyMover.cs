@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -25,8 +26,15 @@ public class EnemyMover : MonoBehaviour
     {
         //Enemy healthbar setup
         maxHealth = health;
-        healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
-        healthBar.fillAmount = (float)health / (float)maxHealth;
+        try
+        {
+            healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
+            healthBar.fillAmount = (float)health / (float)maxHealth;
+        }
+        catch(Exception e)
+        {
+            Debug.Log("Error loading the healthbar");
+        }
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
@@ -68,6 +76,7 @@ public class EnemyMover : MonoBehaviour
         //Enemies damage function, takes away what amount of health is determined by the abuser
         health -= damage;
         //Resizing our healthbar
-        healthBar.fillAmount = (float)health / (float)maxHealth;
+        if(healthBar != null)
+            healthBar.fillAmount = (float)health / (float)maxHealth;
     }
 }
