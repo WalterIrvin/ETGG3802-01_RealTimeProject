@@ -30,7 +30,11 @@ public class TowerController : MonoBehaviour
             PlaceTower(hit);
         }
 
-        //Upgrading a tower to a 
+        //Upgrading a tower to a rapid fire tower
+        if (Input.GetMouseButton(0) && !Input.GetButton("Upgrade_Rapidfire"))
+        {
+            UpgradeTower_RapidFire(hit);
+        }
 
         //Selling a tower
         // Mouse 2 (probably want to change it later but this will work for now)
@@ -81,6 +85,29 @@ public class TowerController : MonoBehaviour
                     Instantiate(TowerPrefab, pos, Quaternion.identity);
                     M.Money -= 100;
                 }
+            }
+        }
+    }
+
+
+    // Upgrades A tower to the rapidfire variant
+    private void UpgradeTower_RapidFire(RaycastHit hit)
+    {
+        // If the raycast is valid
+        if (hit.collider != null)
+        {
+            // If the raycast hits a tower
+            if (hit.collider.gameObject.tag == "Tower")
+            {
+                // If there's money in the bank
+                MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
+                if (M.Money >= 100)
+                {
+                    Vector3 pos = hit.collider.gameObject.transform.position + Vector3.up;
+                    hit.collider.gameObject.GetComponent("TowerScript").SendMessage("Upgrade_RapidFire");
+                    M.Money -= 100;
+                }
+
             }
         }
     }
