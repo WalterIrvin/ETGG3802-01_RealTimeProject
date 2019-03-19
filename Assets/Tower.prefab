@@ -181,6 +181,8 @@ MonoBehaviour:
   towerDamage: 50
   projecticle_prefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
+  MAT_RapidFire: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
+  MAT_Slower: {fileID: 2100000, guid: c2fad277daf709b4f9e1f2adc3719546, type: 2}
 --- !u!136 &6169496962623023820
 CapsuleCollider:
   m_ObjectHideFlags: 0

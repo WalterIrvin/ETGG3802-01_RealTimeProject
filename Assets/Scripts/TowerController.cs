@@ -30,6 +30,8 @@ public class TowerController : MonoBehaviour
             PlaceTower(hit);
         }
 
+        //Upgrading a tower to a 
+
         //Selling a tower
         // Mouse 2 (probably want to change it later but this will work for now)
         if (Input.GetMouseButtonDown(1) && !Input.GetButton("Camera Control Modifier"))
