@@ -11,6 +11,8 @@ public class TowerScript : MonoBehaviour
     public int towerDamage = 50;
     public GameObject projecticle_prefab;
     private float startTime;
+    public string type = "Base";
+    public Material MAT_RapidFire;
     
 
     void Start()
@@ -48,6 +50,22 @@ public class TowerScript : MonoBehaviour
         } else
         {
             main_target = null;
+        }
+    }
+
+    void Upgrade_RapidFire()
+    {
+        GameObject MoneyHandle = GameObject.FindWithTag("Money");
+        if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
+        {
+            MoneyHandle.BroadcastMessage("ChangeMoney", -100);
+            fireDelay *= .25f;
+            this.GetComponent<MeshRenderer>().material = MAT_RapidFire;
+            type = "Rapid";
+        }
+        else
+        {
+            Debug.Log("Something went wrong upgrading tower...");
         }
     }
 
