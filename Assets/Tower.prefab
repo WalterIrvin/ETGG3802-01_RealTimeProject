@@ -183,6 +183,7 @@ MonoBehaviour:
     type: 3}
   type: Base
   MAT_RapidFire: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
+  MAT_Slow: {fileID: 2100000, guid: 365a5342ad42e884cb3ca37ad20c9400, type: 2}
 --- !u!136 &6169496962623023820
 CapsuleCollider:
   m_ObjectHideFlags: 0

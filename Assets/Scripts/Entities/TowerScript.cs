@@ -13,12 +13,14 @@ public class TowerScript : MonoBehaviour
     private float startTime;
     public string type = "Base";
     public Material MAT_RapidFire;
-    
+    public Material MAT_Slow;
+
 
     void Start()
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
+        Upgrade_Slow();
     }
 
     void SearchTarget()
@@ -62,6 +64,21 @@ public class TowerScript : MonoBehaviour
             fireDelay *= .25f;
             this.GetComponent<MeshRenderer>().material = MAT_RapidFire;
             type = "Rapid";
+        }
+        else
+        {
+            Debug.Log("Something went wrong upgrading tower...");
+        }
+    }
+
+    void Upgrade_Slow()
+    {
+        GameObject MoneyHandle = GameObject.FindWithTag("Money");
+        if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
+        {
+            MoneyHandle.BroadcastMessage("ChangeMoney", -100);
+            this.GetComponent<MeshRenderer>().material = MAT_Slow;
+            type = "Slow";
         }
         else
         {
