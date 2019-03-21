@@ -65,6 +65,7 @@ public class EnemySpawnerScript : MonoBehaviour
                 mookTier enemy = spawnController.mookList[enemyIdx];
                 if (enemyTimer.Elapsed.Seconds > enemy.timer)
                 {
+                    spawnController.NewWave.gameObject.SetActive(false);
                     Vector3 pos = transform.position;
                     pos.y -= 1;
                     GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
@@ -117,6 +118,8 @@ public class EnemySpawnerScript : MonoBehaviour
                 bossIdx = 0;
                 allowBoss = false;
                 spawnController.newWave();
+                enemyTimer.Reset();
+                enemyTimer.Start();
             }
         }
     }

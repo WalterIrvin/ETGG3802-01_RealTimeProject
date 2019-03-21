@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawnerScript : MonoBehaviour
 {
     public List<EnemySpawnerScript.mookTier> mookList;
     public List<EnemySpawnerScript.bossTier> bossList;
+    public Text NewWave;
+    public Text YouWin;
+    public int numToWin = 3;
     public int scalingFactor;
     private int curWave = 1;
 
@@ -21,6 +25,7 @@ public class WaveSpawnerScript : MonoBehaviour
 
     public void newWave()
     {
+        NewWave.gameObject.SetActive(true);
         foreach(EnemySpawnerScript.mookTier mook in mookList)
         {
             mook.amount += scalingFactor * curWave;
@@ -33,9 +38,10 @@ public class WaveSpawnerScript : MonoBehaviour
 
     void Update()
     {
-        if(curWave >= 10)
+        if(curWave >= numToWin)
         {
             Debug.Log("You Win, Here's a cookie!");
+            YouWin.gameObject.SetActive(true);
         }
     }
 }
