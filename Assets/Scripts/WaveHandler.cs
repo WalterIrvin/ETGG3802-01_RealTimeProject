@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveHandler : MonoBehaviour
 {
-    private int currentWave = 1;
+    private int currentWave = 0;
     public int numWaves;
     private bool isActive = false;
     private System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
@@ -18,7 +18,9 @@ public class WaveHandler : MonoBehaviour
             mSpawners.Add(tmpObj);
 
         foreach (GameObject tmpObj in mSpawners)
+        {   Debug.Log("Wave Start");
             tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave);
+        }
 
         downTime.Start();
     }
@@ -26,11 +28,12 @@ public class WaveHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentWave > numWaves)
+        if (currentWave >= numWaves)
             return; // advance to next level/win the game
 
         if (!isActive && downTime.Elapsed.Seconds > waveInterval)
         {
+            Debug.Log("Next Wave Start");
             // spawn the next wave
             foreach (GameObject tmpObj in mSpawners)
                 tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave);

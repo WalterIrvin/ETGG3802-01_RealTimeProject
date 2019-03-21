@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
+
     [System.Serializable]
     public class mookTier
     {
@@ -21,9 +22,14 @@ public class EnemySpawnerScript : MonoBehaviour
         public int amount;
     }
 
+    [System.Serializable]
+    public class Wave
+    {
+        public List<mookTier> GenericEnemyList;
+        public List<bossTier> bossList;
+    }
 
-    public List<mookTier> GenericEnemyList;
-    public List<bossTier> bossList;
+    public List<Wave> WaveList;
     public BasicBaseScript Target;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
@@ -33,8 +39,10 @@ public class EnemySpawnerScript : MonoBehaviour
     private int bossIdx = 0;
     private int enemiesSpawned = 0;
     private int bossesSpawned = 0;
+    private int currentWave = 0;
 
     public bool waveOver = true;
+    private bool allowBoss = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,64 +72,86 @@ public class EnemySpawnerScript : MonoBehaviour
 
         if (!waveOver)
         {
-            if (enemyIdx < GenericEnemyList.Count)
+            if (!allowBoss)
             {
-                mookTier enemy = GenericEnemyList[enemyIdx];
-                if (enemyTimer.Elapsed.Seconds > enemy.timer)
+                if (enemyIdx < WaveList[currentWave].GenericEnemyList.Count)
                 {
-                    Vector3 pos = transform.position;
-                    pos.y -= 1;
-                    GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
-                    enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
-                    enemyTimer.Reset();
-                    enemyTimer.Start();
-                    enemiesSpawned++;
-
-                    if (enemiesSpawned >= enemy.amount)
+                    mookTier enemy = WaveList[currentWave].GenericEnemyList[enemyIdx];
+                    if (enemyTimer.Elapsed.Seconds > enemy.timer)
                     {
-                        enemiesSpawned = 0;
-                        enemyIdx++;
+                        Vector3 pos = transform.position;
+                        pos.y -= 1;
+                        GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
+                        enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
+                        enemyTimer.Reset();
+                        enemyTimer.Start();
+                        enemiesSpawned++;
+
+                        if (enemiesSpawned >= enemy.amount)
+                        {
+                            enemiesSpawned = 0;
+                            enemyIdx++;
+                        }
                     }
+                }
+                else
+                {
+                    if (WaveList[currentWave].bossList.Count > 0)
+                        allowBoss = true;
+                    else
+                        waveOver = true;
+
+                    enemyIdx = 0;
                 }
             }
             else
             {
-                enemyIdx = 0;
-            }
-
-
-            if (bossIdx < bossList.Count)
-            {
-                bossTier boss = bossList[bossIdx];
-
-                if (bossTimer.Elapsed.Seconds > boss.timer)
+                if (bossIdx < WaveList[currentWave].bossList.Count)
                 {
-                    Vector3 pos = transform.position;
-                    pos.y -= 1;
-                    GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
-                    bossTimer.Reset();
-                    bossTimer.Start();
-                    enemyTimer.Reset();
-                    enemyTimer.Start();
-                    bossesSpawned++;
+                    bossTier boss = WaveList[currentWave].bossList[bossIdx];
 
-                    if (bossesSpawned >= boss.amount)
+                    if (bossTimer.Elapsed.Seconds > boss.timer)
                     {
-                        bossesSpawned = 0;
-                        bossIdx++;
+                        Vector3 pos = transform.position;
+                        pos.y -= 1;
+                        GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                        bossTimer.Reset();
+                        bossTimer.Start();
+                        enemyTimer.Reset();
+                        enemyTimer.Start();
+                        bossesSpawned++;
+
+                        if (bossesSpawned >= boss.amount)
+                        {
+                            bossesSpawned = 0;
+                            bossIdx++;
+                        }
                     }
                 }
-            }
-            else
-            {
-                bossIdx = 0;
-                waveOver = true;
+                else
+                {
+                    waveOver = true;
+                    allowBoss = false;
+                    bossIdx = 0;
+                }
             }
         }
     }
 
     public void SpawnWave(int wavNum)
     {
-        waveOver = false;
+        if (wavNum > WaveList.Count || (WaveList[currentWave].GenericEnemyList.Count == 0 && WaveList[currentWave].bossList.Count == 0))
+        {
+            waveOver = true;
+        }
+        else
+        {
+            Debug.Log("Wave Start");
+            waveOver = false;
+            currentWave = wavNum;
+        }
+
+        if (WaveList[currentWave].GenericEnemyList.Count == 0)
+            allowBoss = true;
     }
 }
