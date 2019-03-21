@@ -68,7 +68,6 @@ public class TowerController : MonoBehaviour
             // If the raycast hits a wall
             if (hit.collider.gameObject.tag == "Wall" && hit.collider.gameObject.tag != "Tower")
             {
-                Debug.Log(hit.collider.gameObject.tag + " is the tag");
                 //If there's money in  the bank
                 MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
                 if (M.Money >= 100)

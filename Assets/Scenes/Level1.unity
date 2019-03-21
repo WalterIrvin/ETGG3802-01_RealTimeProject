@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
+  m_IndirectSpecularColor: {r: 0.0029126708, g: 0.0030261662, b: 0.0029790148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1722,32 +1722,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6433d96b616ee40b8467a24931bf98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mookList:
-  - gobj: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08, type: 3}
-    timer: 1
-    amount: 1
-  - gobj: {fileID: 3010682455192397016, guid: aa1af154bb9954944ab9646dbc209edf, type: 3}
-    timer: 1
-    amount: 1
-  - gobj: {fileID: 3345456065238720348, guid: 6cd188fa57917dd4db355c5895936e18, type: 3}
-    timer: 1
-    amount: 1
-  - gobj: {fileID: 2022238343534119877, guid: ff8ff9064c7d231439d071dc52491d4c, type: 3}
-    timer: 1
-    amount: 1
-  - gobj: {fileID: 5536272831765090024, guid: 6c99b18b28e8f2e48b7ed0ad2f6d4672, type: 3}
-    timer: 1
-    amount: 1
-  - gobj: {fileID: 6948746676915355302, guid: 980c1fd6ee64a8b4ca2ce7f1637efae9, type: 3}
-    timer: 1
-    amount: 1
-  bossList:
-  - gobj: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d, type: 3}
-    timer: 5
-    amount: 1
+  waveList:
+  - mookList:
+    - gobj: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08,
+        type: 3}
+      timer: 1
+      amount: 12
+    bossList: []
   NewWave: {fileID: 1918298566}
   YouWin: {fileID: 1189816483}
+  numToWin: 3
   scalingFactor: 2
+  curWave: 0
 --- !u!4 &803778265
 Transform:
   m_ObjectHideFlags: 0

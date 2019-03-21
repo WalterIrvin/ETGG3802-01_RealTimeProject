@@ -5,40 +5,42 @@ using UnityEngine.UI;
 
 public class WaveSpawnerScript : MonoBehaviour
 {
-    public List<EnemySpawnerScript.mookTier> mookList;
-    public List<EnemySpawnerScript.bossTier> bossList;
+    [System.Serializable]
+    public class waveClass
+    {
+        public List<EnemySpawnerScript.mookTier> mookList;
+        public List<EnemySpawnerScript.bossTier> bossList;
+    }
+
+    public List<waveClass> waveList;
     public Text NewWave;
     public Text YouWin;
     public int numToWin = 3;
     public int scalingFactor;
-    private int curWave = 1;
-
-    public void addNewMookType(EnemySpawnerScript.mookTier newMook)
-    {
-        mookList.Add(newMook);
-    }
-
-    public void addNewBossType(EnemySpawnerScript.bossTier newBoss)
-    {
-        bossList.Add(newBoss);
-    }
+    public int curWave = 0;
+    private int curLevelFactor = 1;
 
     public void newWave()
     {
         NewWave.gameObject.SetActive(true);
-        foreach(EnemySpawnerScript.mookTier mook in mookList)
+        Debug.Log(waveList.Count);
+        if(curWave < waveList.Count)
         {
-            mook.amount += scalingFactor * curWave;
-        }
-        foreach(EnemySpawnerScript.bossTier boss in bossList)
-        {
-            boss.amount += scalingFactor * curWave;
+            foreach (EnemySpawnerScript.mookTier mook in waveList[curWave].mookList)
+            {
+                mook.amount += scalingFactor * curLevelFactor;
+            }
+            foreach (EnemySpawnerScript.bossTier boss in waveList[curWave].bossList)
+            {
+                boss.amount += scalingFactor * curLevelFactor;
+            }
+            curWave++;
         }
     }
 
     void Update()
     {
-        if(curWave >= numToWin)
+        if(curWave > waveList.Count)
         {
             Debug.Log("You Win, Here's a cookie!");
             YouWin.gameObject.SetActive(true);

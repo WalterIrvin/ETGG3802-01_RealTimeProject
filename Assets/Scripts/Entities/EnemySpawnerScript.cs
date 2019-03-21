@@ -43,6 +43,7 @@ public class EnemySpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int curLev = spawnController.curWave;
         if (Target.health <= 0)
         {
             List<GameObject> enemies = new List<GameObject>();
@@ -58,69 +59,72 @@ public class EnemySpawnerScript : MonoBehaviour
 
             return;
         }
-        if(!allowBoss)
+        if (curLev < spawnController.waveList.Count)
         {
-            if (enemyIdx < spawnController.mookList.Count)
+            if (!allowBoss)
             {
-                mookTier enemy = spawnController.mookList[enemyIdx];
-                if (enemyTimer.Elapsed.Seconds > enemy.timer)
+                if (enemyIdx < spawnController.waveList[curLev].mookList.Count)
                 {
-                    spawnController.NewWave.gameObject.SetActive(false);
-                    Vector3 pos = transform.position;
-                    pos.y -= 1;
-                    GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
-                    enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
-                    enemyTimer.Reset();
-                    enemyTimer.Start();
-                    enemiesSpawned++;
-
-                    if (enemiesSpawned >= enemy.amount)
+                    mookTier enemy = spawnController.waveList[curLev].mookList[enemyIdx];
+                    if (enemyTimer.Elapsed.Seconds > enemy.timer)
                     {
-                        enemiesSpawned = 0;
-                        enemyIdx++;
+                        spawnController.NewWave.gameObject.SetActive(false);
+                        Vector3 pos = transform.position;
+                        pos.y -= 1;
+                        GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
+                        enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
+                        enemyTimer.Reset();
+                        enemyTimer.Start();
+                        enemiesSpawned++;
+
+                        if (enemiesSpawned >= enemy.amount)
+                        {
+                            enemiesSpawned = 0;
+                            enemyIdx++;
+                        }
                     }
                 }
-            }
-            else
-            {
-                enemyIdx = 0;
-                allowBoss = true;
-                bossTimer.Reset();
-                bossTimer.Start();
-            }
-        }
-        else if(allowBoss)
-        {
-            if (bossIdx < spawnController.bossList.Count)
-            {
-                bossTier boss = spawnController.bossList[bossIdx];
-
-                if (bossTimer.Elapsed.Seconds > boss.timer)
+                else
                 {
-                    Vector3 pos = transform.position;
-                    pos.y -= 1;
-                    GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                    enemyIdx = 0;
+                    allowBoss = true;
                     bossTimer.Reset();
                     bossTimer.Start();
-                    enemyTimer.Reset();
-                    enemyTimer.Start();
-                    bossesSpawned++;
-
-                    if (bossesSpawned >= boss.amount)
-                    {
-                        bossesSpawned = 0;
-                        bossIdx++;
-                    }
                 }
             }
-            else
+            else if (allowBoss)
             {
-                bossIdx = 0;
-                allowBoss = false;
-                spawnController.newWave();
-                enemyTimer.Reset();
-                enemyTimer.Start();
+                if (bossIdx < spawnController.waveList[curLev].bossList.Count)
+                {
+                    bossTier boss = spawnController.waveList[curLev].bossList[bossIdx];
+
+                    if (bossTimer.Elapsed.Seconds > boss.timer)
+                    {
+                        Vector3 pos = transform.position;
+                        pos.y -= 1;
+                        GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                        bossTimer.Reset();
+                        bossTimer.Start();
+                        enemyTimer.Reset();
+                        enemyTimer.Start();
+                        bossesSpawned++;
+
+                        if (bossesSpawned >= boss.amount)
+                        {
+                            bossesSpawned = 0;
+                            bossIdx++;
+                        }
+                    }
+                }
+                else
+                {
+                    bossIdx = 0;
+                    allowBoss = false;
+                    spawnController.newWave();
+                    enemyTimer.Reset();
+                    enemyTimer.Start();
+                }
             }
-        }
+        } 
     }
 }
