@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
+
     [System.Serializable]
     public class mookTier
     {
@@ -21,8 +22,14 @@ public class EnemySpawnerScript : MonoBehaviour
         public int amount;
     }
 
+    [System.Serializable]
+    public class Wave
+    {
+        public List<mookTier> GenericEnemyList;
+        public List<bossTier> bossList;
+    }
 
-    public WaveSpawnerScript spawnController;
+    public List<Wave> WaveList;
     public BasicBaseScript Target;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
@@ -32,18 +39,21 @@ public class EnemySpawnerScript : MonoBehaviour
     private int bossIdx = 0;
     private int enemiesSpawned = 0;
     private int bossesSpawned = 0;
+    private int currentWave = 0;
+
+    public bool waveOver = true;
     private bool allowBoss = false;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyTimer.Start();
+        bossTimer.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        int curLev = spawnController.curWave;
         if (Target.health <= 0)
         {
             List<GameObject> enemies = new List<GameObject>();
@@ -59,16 +69,16 @@ public class EnemySpawnerScript : MonoBehaviour
 
             return;
         }
-        if (curLev < spawnController.waveList.Count)
+
+        if (!waveOver)
         {
             if (!allowBoss)
             {
-                if (enemyIdx < spawnController.waveList[curLev].mookList.Count)
+                if (enemyIdx < WaveList[currentWave].GenericEnemyList.Count)
                 {
-                    mookTier enemy = spawnController.waveList[curLev].mookList[enemyIdx];
+                    mookTier enemy = WaveList[currentWave].GenericEnemyList[enemyIdx];
                     if (enemyTimer.Elapsed.Seconds > enemy.timer)
                     {
-                        spawnController.NewWave.gameObject.SetActive(false);
                         Vector3 pos = transform.position;
                         pos.y -= 1;
                         GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
@@ -86,17 +96,23 @@ public class EnemySpawnerScript : MonoBehaviour
                 }
                 else
                 {
+                    if (WaveList[currentWave].bossList.Count > 0)
+                    {
+                        allowBoss = true;
+                        bossTimer.Reset();
+                        bossTimer.Start();
+                    }
+                    else
+                        waveOver = true;
+
                     enemyIdx = 0;
-                    allowBoss = true;
-                    bossTimer.Reset();
-                    bossTimer.Start();
                 }
             }
             else if (allowBoss)
             {
-                if (bossIdx < spawnController.waveList[curLev].bossList.Count)
+                if (bossIdx < WaveList[currentWave].bossList.Count)
                 {
-                    bossTier boss = spawnController.waveList[curLev].bossList[bossIdx];
+                    bossTier boss = WaveList[currentWave].bossList[bossIdx];
 
                     if (bossTimer.Elapsed.Seconds > boss.timer)
                     {
@@ -118,13 +134,30 @@ public class EnemySpawnerScript : MonoBehaviour
                 }
                 else
                 {
-                    bossIdx = 0;
+                    waveOver = true;
                     allowBoss = false;
-                    spawnController.newWave();
+                    bossIdx = 0;
                     enemyTimer.Reset();
                     enemyTimer.Start();
                 }
             }
-        } 
+        }
+    }
+
+    public void SpawnWave(int wavNum)
+    {
+        if (wavNum >= WaveList.Count || (WaveList[currentWave].GenericEnemyList.Count == 0 && WaveList[currentWave].bossList.Count == 0))
+        {
+            waveOver = true;
+        }
+        else
+        {
+            Debug.Log("Wave Start");
+            waveOver = false;
+            currentWave = wavNum;
+        }
+
+        if (WaveList[currentWave].GenericEnemyList.Count == 0)
+            allowBoss = true;
     }
 }

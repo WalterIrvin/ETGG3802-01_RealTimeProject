@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// ARCHIVED
+
 public class WaveSpawnerScript : MonoBehaviour
 {
     [System.Serializable]
