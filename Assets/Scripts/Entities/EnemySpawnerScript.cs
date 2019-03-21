@@ -22,8 +22,7 @@ public class EnemySpawnerScript : MonoBehaviour
     }
 
 
-    public List<mookTier> GenericEnemyList;
-    public List<bossTier> bossList;
+    public WaveSpawnerScript spawnController;
     public BasicBaseScript Target;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
@@ -33,12 +32,12 @@ public class EnemySpawnerScript : MonoBehaviour
     private int bossIdx = 0;
     private int enemiesSpawned = 0;
     private int bossesSpawned = 0;
+    private bool allowBoss = false;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyTimer.Start();
-        bossTimer.Start();
     }
 
     // Update is called once per frame
@@ -59,59 +58,69 @@ public class EnemySpawnerScript : MonoBehaviour
 
             return;
         }
-
-        if (enemyIdx < GenericEnemyList.Count)
+        if(!allowBoss)
         {
-            mookTier enemy = GenericEnemyList[enemyIdx];
-            if (enemyTimer.Elapsed.Seconds > enemy.timer)
+            if (enemyIdx < spawnController.mookList.Count)
             {
-                Vector3 pos = transform.position;
-                pos.y -= 1;
-                GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
-                enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
-                enemyTimer.Reset();
-                enemyTimer.Start();
-                enemiesSpawned++;
-
-                if (enemiesSpawned >= enemy.amount)
+                mookTier enemy = spawnController.mookList[enemyIdx];
+                if (enemyTimer.Elapsed.Seconds > enemy.timer)
                 {
-                    enemiesSpawned = 0;
-                    enemyIdx++;
+                    spawnController.NewWave.gameObject.SetActive(false);
+                    Vector3 pos = transform.position;
+                    pos.y -= 1;
+                    GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
+                    enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
+                    enemyTimer.Reset();
+                    enemyTimer.Start();
+                    enemiesSpawned++;
+
+                    if (enemiesSpawned >= enemy.amount)
+                    {
+                        enemiesSpawned = 0;
+                        enemyIdx++;
+                    }
                 }
             }
-        }
-        else
-        {
-            enemyIdx = 0;
-        }
-        
-        
-        if (bossIdx < bossList.Count)
-        {
-            bossTier boss = bossList[bossIdx];
-
-            if (bossTimer.Elapsed.Seconds > boss.timer)
+            else
             {
-                Vector3 pos = transform.position;
-                pos.y -= 1;
-                GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                enemyIdx = 0;
+                allowBoss = true;
                 bossTimer.Reset();
                 bossTimer.Start();
-                enemyTimer.Reset();
-                enemyTimer.Start();
-                bossesSpawned++;
-
-                if (bossesSpawned >= boss.amount)
-                {
-                    bossesSpawned = 0;
-                    bossIdx++;
-                }
             }
         }
-        else
+        else if(allowBoss)
         {
-            bossIdx = 0;
+            if (bossIdx < spawnController.bossList.Count)
+            {
+                bossTier boss = spawnController.bossList[bossIdx];
+
+                if (bossTimer.Elapsed.Seconds > boss.timer)
+                {
+                    Vector3 pos = transform.position;
+                    pos.y -= 1;
+                    GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
+                    bossTimer.Reset();
+                    bossTimer.Start();
+                    enemyTimer.Reset();
+                    enemyTimer.Start();
+                    bossesSpawned++;
+
+                    if (bossesSpawned >= boss.amount)
+                    {
+                        bossesSpawned = 0;
+                        bossIdx++;
+                    }
+                }
+            }
+            else
+            {
+                bossIdx = 0;
+                allowBoss = false;
+                spawnController.newWave();
+                enemyTimer.Reset();
+                enemyTimer.Start();
+            }
         }
-        
     }
 }

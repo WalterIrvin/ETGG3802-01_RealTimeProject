@@ -66,16 +66,17 @@ public class TowerController : MonoBehaviour
         if (hit.collider != null)
         {
             // If the raycast hits a wall
-            if (hit.collider.gameObject.tag == "Wall")
+            if (hit.collider.gameObject.tag == "Wall" && hit.collider.gameObject.tag != "Tower")
             {
+                Debug.Log(hit.collider.gameObject.tag + " is the tag");
                 //If there's money in  the bank
                 MoneyScript M = MoneyHandler.GetComponent<MoneyScript>();
                 if (M.Money >= 100)
                 {
                     // Add a tower and subtract the cost
                     // To be able to place tower types later, we might want to have a type that we check for here
-                    Vector3 pos = hit.collider.gameObject.transform.position + Vector3.up;
-                    pos.y = 0.225f;
+                    Vector3 pos = hit.collider.gameObject.transform.position;// + Vector3.up;
+                    pos.y += 0.325f;
                     Instantiate(TowerPrefab, pos, Quaternion.identity);
                     M.Money -= 100;
                 }
