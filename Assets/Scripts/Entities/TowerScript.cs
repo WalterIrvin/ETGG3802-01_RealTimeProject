@@ -20,7 +20,6 @@ public class TowerScript : MonoBehaviour
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
-        Upgrade_Slow();
     }
 
     void SearchTarget()
