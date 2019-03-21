@@ -104,7 +104,7 @@ public class EnemySpawnerScript : MonoBehaviour
                     enemyIdx = 0;
                 }
             }
-            else
+            else if (allowBoss)
             {
                 if (bossIdx < WaveList[currentWave].bossList.Count)
                 {
@@ -140,7 +140,7 @@ public class EnemySpawnerScript : MonoBehaviour
 
     public void SpawnWave(int wavNum)
     {
-        if (wavNum > WaveList.Count || (WaveList[currentWave].GenericEnemyList.Count == 0 && WaveList[currentWave].bossList.Count == 0))
+        if (wavNum >= WaveList.Count || (WaveList[currentWave].GenericEnemyList.Count == 0 && WaveList[currentWave].bossList.Count == 0))
         {
             waveOver = true;
         }

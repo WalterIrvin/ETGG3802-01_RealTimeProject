@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveHandler : MonoBehaviour
 {
     private int currentWave = 0;
-    public int numWaves;
+    private int numWaves;
     private bool isActive = false;
     private System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
     public float waveInterval;
@@ -17,10 +17,19 @@ public class WaveHandler : MonoBehaviour
         foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Spawner"))
             mSpawners.Add(tmpObj);
 
+        int tmp = 0;
+        int max = 0;
         foreach (GameObject tmpObj in mSpawners)
-        {   Debug.Log("Wave Start");
+        {
+            tmp = tmpObj.GetComponent<EnemySpawnerScript>().WaveList.Count;
+
+            if (tmp > max)
+                max = tmp;
+
             tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave);
         }
+
+        numWaves = max;
 
         downTime.Start();
     }
