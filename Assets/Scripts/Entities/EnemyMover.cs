@@ -79,4 +79,14 @@ public class EnemyMover : MonoBehaviour
         if(healthBar != null)
             healthBar.fillAmount = (float)health / (float)maxHealth;
     }
+
+    private void dmgSlow(int damage)
+    {
+        _navMeshAgent.speed = agentMaxSpeed / 2;
+           //Enemies damage function, takes away what amount of health is determined by the abuser
+           health -= damage;
+        //Resizing our healthbar
+        if (healthBar != null)
+            healthBar.fillAmount = (float)health / (float)maxHealth;
+    }
 }

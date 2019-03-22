@@ -181,6 +181,8 @@ MonoBehaviour:
   towerDamage: 50
   projecticle_prefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
+  projecticle_slower_prefab: {fileID: 5343105490023573500, guid: 2ebbadaf4349a8248b88478610d00676,
+    type: 3}
   type: Base
   MAT_RapidFire: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
   MAT_Slow: {fileID: 2100000, guid: 365a5342ad42e884cb3ca37ad20c9400, type: 2}

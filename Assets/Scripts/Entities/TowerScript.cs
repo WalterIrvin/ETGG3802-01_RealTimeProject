@@ -10,6 +10,7 @@ public class TowerScript : MonoBehaviour
     public float range = 3f;
     public int towerDamage = 50;
     public GameObject projecticle_prefab;
+    public GameObject projecticle_slower_prefab;
     private float startTime;
     public string type = "Base";
     public Material MAT_RapidFire;
@@ -20,6 +21,7 @@ public class TowerScript : MonoBehaviour
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
+        Upgrade_RapidFire();
     }
 
     void SearchTarget()
@@ -61,6 +63,7 @@ public class TowerScript : MonoBehaviour
         {
             MoneyHandle.BroadcastMessage("ChangeMoney", -100);
             fireDelay *= .25f;
+            TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = MAT_RapidFire;
             this.GetComponent<MeshRenderer>().material = MAT_RapidFire;
             type = "Rapid";
         }
@@ -76,7 +79,9 @@ public class TowerScript : MonoBehaviour
         if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
         {
             MoneyHandle.BroadcastMessage("ChangeMoney", -100);
+            TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = MAT_Slow;
             this.GetComponent<MeshRenderer>().material = MAT_Slow;
+            towerDamage /= 2;
             type = "Slow";
         }
         else
@@ -97,11 +102,22 @@ public class TowerScript : MonoBehaviour
         float curTime = Time.fixedTime;
         if (curTime - startTime >= fireDelay)
         {
-            GameObject bullet = Instantiate(projecticle_prefab, transform.position, Quaternion.identity);
-            BulletController bullet_script = bullet.GetComponent<BulletController>();
-            bullet_script.mDamage = towerDamage;
-            bullet_script.mDestination = main_target.position;
-            startTime = Time.fixedTime;
+            if (type != "Slow")
+            {
+                GameObject bullet = Instantiate(projecticle_prefab, transform.position, Quaternion.identity);
+                BulletController bullet_script = bullet.GetComponent<BulletController>();
+                bullet_script.mDamage = towerDamage;
+                bullet_script.mDestination = main_target.position;
+                startTime = Time.fixedTime;
+            }
+            else
+            {
+                GameObject bullet = Instantiate(projecticle_slower_prefab, transform.position, Quaternion.identity);
+                SlowController bullet_script = bullet.GetComponent<SlowController>();
+                bullet_script.mDamage = towerDamage;
+                bullet_script.mDestination = main_target.position;
+                startTime = Time.fixedTime;
+            }
         }
     }
 }
