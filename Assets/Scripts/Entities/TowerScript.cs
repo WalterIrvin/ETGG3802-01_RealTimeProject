@@ -21,7 +21,6 @@ public class TowerScript : MonoBehaviour
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
-        Upgrade_RapidFire();
     }
 
     void SearchTarget()
