@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BasicBaseScript : MonoBehaviour
@@ -25,8 +26,9 @@ public class BasicBaseScript : MonoBehaviour
     {
         if (this.health <= 0)
         {
-            gameover.text = "GAME OVER";
+            //loading the gameover scene
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
 
     }
