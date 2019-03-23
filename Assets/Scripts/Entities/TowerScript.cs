@@ -55,7 +55,7 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    void Upgrade_RapidFire()
+    public void Upgrade_RapidFire()
     {
         GameObject MoneyHandle = GameObject.FindWithTag("Money");
         if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
+  m_IndirectSpecularColor: {r: 0.0029126708, g: 0.0030261662, b: 0.0029790148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -341,8 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &11294644
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &71364058
 GameObject:
@@ -500,84 +503,6 @@ Transform:
   m_Father: {fileID: 2014798828181478273}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &90230691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 90230692}
-  - component: {fileID: 90230694}
-  - component: {fileID: 90230693}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &90230692
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90230691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 687493986}
-  - {fileID: 824791860}
-  - {fileID: 1918298565}
-  - {fileID: 1189816482}
-  m_Father: {fileID: 953980510}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90230693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90230691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &90230694
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90230691}
-  m_CullTransparentMesh: 0
 --- !u!1 &91894133
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,8 +624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &161665327
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,10 +719,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1294204657}
+  - {fileID: 1822779569}
   - {fileID: 272665978}
+  - {fileID: 1908066761}
+  - {fileID: 1038888498}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -922,8 +852,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &272665977
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,6 +889,7 @@ RectTransform:
   m_Children:
   - {fileID: 1112059652}
   - {fileID: 924586744}
+  - {fileID: 966015212}
   m_Father: {fileID: 161665331}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1136,8 +1070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &347551955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1259,8 +1196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &366903386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,8 +1430,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
+--- !u!1 &532989632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532989633}
+  - component: {fileID: 532989635}
+  - component: {fileID: 532989634}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &532989633
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532989632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1908066761}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &532989634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532989632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Buy Tower
+--- !u!222 &532989635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532989632}
+  m_CullTransparentMesh: 0
 --- !u!1 &552243731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,7 +1594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 53.452003, y: 0, z: 0}
 --- !u!1 &577667292
 GameObject:
@@ -1682,85 +1704,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577667292}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &687493983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 687493986}
-  - component: {fileID: 687493985}
-  - component: {fileID: 687493984}
-  m_Layer: 5
-  m_Name: MoneyAmt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &687493984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687493983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Money: '
---- !u!222 &687493985
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687493983}
-  m_CullTransparentMesh: 0
---- !u!224 &687493986
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687493983}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90230692}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 192.34998}
-  m_Pivot: {x: 0, y: 1}
 --- !u!1 &724789323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,8 +1825,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &803778263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,7 +1876,7 @@ Transform:
   m_Father: {fileID: 2014798828181478273}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &824791859
+--- !u!1 &826367109
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1938,77 +1884,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 824791860}
-  - component: {fileID: 824791862}
-  - component: {fileID: 824791861}
-  m_Layer: 5
-  m_Name: GameOver
+  - component: {fileID: 826367111}
+  - component: {fileID: 826367110}
+  m_Layer: 0
+  m_Name: SelectedBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &824791860
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824791859}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90230692}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &824791861
+--- !u!114 &826367110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824791859}
+  m_GameObject: {fileID: 826367109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 555afac9106baeb46a261039aae0d1d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 1
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 
---- !u!222 &824791862
-CanvasRenderer:
+  currentlySelectedBlock: {fileID: 6287155673668978252}
+  selectedMat: {fileID: 2100000, guid: 96ebfc94d045978458fb2a7a175b2037, type: 2}
+--- !u!4 &826367111
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824791859}
-  m_CullTransparentMesh: 0
+  m_GameObject: {fileID: 826367109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 751, y: 519.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &901742454
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,8 +2042,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &924586743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,14 +2074,14 @@ RectTransform:
   m_GameObject: {fileID: 924586743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.505, y: 1.505, z: 1.505}
   m_Children: []
   m_Father: {fileID: 272665978}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35, y: 396.20007}
+  m_AnchoredPosition: {x: -68.09999, y: 636.25}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924586745
@@ -2332,9 +2247,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
---- !u!1 &953980509
+  hasTower: 0
+  isTowerUpgraded: 0
+--- !u!1 &966015211
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2342,97 +2260,77 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 953980510}
-  - component: {fileID: 953980513}
-  - component: {fileID: 953980512}
-  - component: {fileID: 953980511}
+  - component: {fileID: 966015212}
+  - component: {fileID: 966015214}
+  - component: {fileID: 966015213}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &953980510
+--- !u!224 &966015212
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953980509}
+  m_GameObject: {fileID: 966015211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 90230692}
-  m_Father: {fileID: 1330284229}
-  m_RootOrder: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 272665978}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &953980511
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &966015213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953980509}
+  m_GameObject: {fileID: 966015211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &953980512
-MonoBehaviour:
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: game ober
+--- !u!222 &966015214
+CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953980509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &953980513
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953980509}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_GameObject: {fileID: 966015211}
+  m_CullTransparentMesh: 0
 --- !u!114 &1030188266 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8370629885810912965, guid: b817458b5e8522b458eefae9247d427a,
@@ -2445,6 +2343,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3ac4d34b0b61914d8dcb6232cb09246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1038888497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038888498}
+  - component: {fileID: 1038888501}
+  - component: {fileID: 1038888500}
+  - component: {fileID: 1038888499}
+  - component: {fileID: 1038888502}
+  m_Layer: 5
+  m_Name: UpgradeTowerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1038888498
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038888497}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.1144938, y: 3.1144938, z: 3.1144938}
+  m_Children:
+  - {fileID: 1890662037}
+  m_Father: {fileID: 161665331}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -854.55, y: -89.633}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1038888499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038888497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1038888500}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1038888502}
+        m_MethodName: UpgradeTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1038888500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038888497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1038888501
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038888497}
+  m_CullTransparentMesh: 0
+--- !u!114 &1038888502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038888497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154a6b904936a2c4587e7831911c5a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentlySelectedBlck: {fileID: 826367109}
+  TowerPrefab: {fileID: 0}
+  MoneyHandler: {fileID: 0}
 --- !u!1 &1068768221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,8 +2609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1112059651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,14 +2641,14 @@ RectTransform:
   m_GameObject: {fileID: 1112059651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.505, y: 1.505, z: 1.505}
   m_Children: []
   m_Father: {fileID: 272665978}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116, y: 396}
+  m_AnchoredPosition: {x: -190, y: 635.95}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112059653
@@ -2714,7 +2760,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1163002895
 GameObject:
@@ -2837,87 +2883,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
---- !u!1 &1189816481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1189816482}
-  - component: {fileID: 1189816484}
-  - component: {fileID: 1189816483}
-  m_Layer: 5
-  m_Name: YouWin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1189816482
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189816481}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.56392, y: 0.56392, z: 0.56392}
-  m_Children: []
-  m_Father: {fileID: 90230692}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -244.24}
-  m_SizeDelta: {x: 700, y: 192.34998}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1189816483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189816481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: "You Win,\nhere's a cookie!\n       (#)"
---- !u!222 &1189816484
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189816481}
-  m_CullTransparentMesh: 0
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1195482436
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,8 +3009,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1215714666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,8 +3135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1242001657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3285,97 +3261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
---- !u!1 &1294204656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1294204657}
-  - component: {fileID: 1294204660}
-  - component: {fileID: 1294204659}
-  - component: {fileID: 1294204658}
-  m_Layer: 5
-  m_Name: MoneyPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1294204657
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294204656}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 161665331}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.8992976}
-  m_AnchorMax: {x: 0.698318, y: 0.9475243}
-  m_AnchoredPosition: {x: -188.5, y: 46.9}
-  m_SizeDelta: {x: -275.78256, y: -6.016205}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1294204658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294204656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5582412c1f05fcc4886c524c0e0d89ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoneyText: {fileID: 924586745}
-  Money: 1000
---- !u!114 &1294204659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294204656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1294204660
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294204656}
-  m_CullTransparentMesh: 0
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1322602235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3497,54 +3387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
---- !u!1 &1330284228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1330284229}
-  - component: {fileID: 1330284230}
-  m_Layer: 0
-  m_Name: Moneyhandler
-  m_TagString: Money
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1330284229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330284228}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45721492, y: -1.2718096, z: -1.3387642}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 953980510}
-  m_Father: {fileID: 2014798828181478273}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1330284230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1330284228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5582412c1f05fcc4886c524c0e0d89ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MoneyText: {fileID: 687493984}
-  Money: 1000
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1407459646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,8 +3621,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1428296640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3897,8 +3747,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1684707017
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,6 +3951,159 @@ Transform:
   m_Father: {fileID: 2014798828181478273}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1822779568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822779569}
+  - component: {fileID: 1822779571}
+  - component: {fileID: 1822779570}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1822779569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822779568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.07540506, y: 3.7109308, z: 1.2741}
+  m_Children: []
+  m_Father: {fileID: 161665331}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -839.26, y: 61.99}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1822779570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822779568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1822779571
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822779568}
+  m_CullTransparentMesh: 0
+--- !u!1 &1890662036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1890662037}
+  - component: {fileID: 1890662039}
+  - component: {fileID: 1890662038}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1890662037
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890662036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1038888498}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.4199982, y: 0}
+  m_SizeDelta: {x: 4.84, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1890662038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890662036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_FontSize: 29
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Upgrade Tower
+--- !u!222 &1890662039
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890662036}
+  m_CullTransparentMesh: 0
 --- !u!1 &1902462974
 GameObject:
   m_ObjectHideFlags: 0
@@ -4219,8 +4225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1905446987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4312,7 +4321,7 @@ Transform:
   m_Father: {fileID: 2014798828181478273}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1918298564
+--- !u!1 &1908066760
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4320,45 +4329,101 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1918298565}
-  - component: {fileID: 1918298567}
-  - component: {fileID: 1918298566}
+  - component: {fileID: 1908066761}
+  - component: {fileID: 1908066764}
+  - component: {fileID: 1908066763}
+  - component: {fileID: 1908066762}
+  - component: {fileID: 1908066765}
   m_Layer: 5
-  m_Name: NewWave
+  m_Name: BuyTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1918298565
+  m_IsActive: 1
+--- !u!224 &1908066761
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918298564}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1908066760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 90230692}
+  m_LocalScale: {x: 2.9507005, y: 2.9507005, z: 2.9507005}
+  m_Children:
+  - {fileID: 532989633}
+  m_Father: {fileID: 161665331}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 23.7, y: -202.3}
-  m_SizeDelta: {x: 700, y: 192.34998}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1918298566
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -852, y: 216.16}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1908066762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918298564}
+  m_GameObject: {fileID: 1908066760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1908066763}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1908066765}
+        m_MethodName: BuyTower
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1908066763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908066760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -4369,28 +4434,39 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Wave
---- !u!222 &1918298567
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1908066764
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918298564}
+  m_GameObject: {fileID: 1908066760}
   m_CullTransparentMesh: 0
+--- !u!114 &1908066765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908066760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154a6b904936a2c4587e7831911c5a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentlySelectedBlck: {fileID: 826367109}
+  TowerPrefab: {fileID: 4144208750063770548, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
+  MoneyHandler: {fileID: 272665977}
 --- !u!1 &1938034794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,8 +4679,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1953933458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,8 +4805,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &1990032976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4957,8 +5039,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1001 &2072228397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4970,7 +5055,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameover
       value: 
-      objectReference: {fileID: 824791861}
+      objectReference: {fileID: 966015213}
     - target: {fileID: 4732217737182037774, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
       propertyPath: m_Name
@@ -5034,11 +5119,11 @@ PrefabInstance:
     - target: {fileID: 509077902, guid: b817458b5e8522b458eefae9247d427a, type: 3}
       propertyPath: gameover
       value: 
-      objectReference: {fileID: 824791861}
+      objectReference: {fileID: 0}
     - target: {fileID: 7293997762333401317, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b817458b5e8522b458eefae9247d427a, type: 3}
@@ -5163,8 +5248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &2089988582
 GameObject:
   m_ObjectHideFlags: 0
@@ -5286,8 +5374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &2141008302
 GameObject:
   m_ObjectHideFlags: 0
@@ -5409,8 +5500,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &629355868372817857
 GameObject:
   m_ObjectHideFlags: 0
@@ -7920,7 +8014,7 @@ Transform:
   - {fileID: 388037995}
   - {fileID: 1195482437}
   m_Father: {fileID: 2014798828181478273}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014798828047119417
 GameObject:
@@ -8083,10 +8177,9 @@ Transform:
   - {fileID: 1075957118774197107}
   - {fileID: 803778265}
   - {fileID: 3267437375334312139}
-  - {fileID: 1330284229}
   - {fileID: 2014798828047119416}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2014798828181478286
 GameObject:
@@ -8170,7 +8263,7 @@ MonoBehaviour:
   MainCamera: {fileID: 552243733}
   TowerPrefab: {fileID: 4144208750063770548, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
     type: 3}
-  MoneyHandler: {fileID: 1330284228}
+  MoneyHandler: {fileID: 272665977}
   Floor: {fileID: 2014798828018647985}
 --- !u!4 &3542004424903012408
 Transform:
@@ -8235,8 +8328,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &4457444287295138604
 GameObject:
   m_ObjectHideFlags: 0
@@ -8565,7 +8661,7 @@ PrefabInstance:
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
@@ -14612,8 +14708,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672589391287
 GameObject:
   m_ObjectHideFlags: 0
@@ -14663,8 +14762,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672628262559
 GameObject:
   m_ObjectHideFlags: 0
@@ -14714,8 +14816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672631286756
 GameObject:
   m_ObjectHideFlags: 0
@@ -14765,8 +14870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672642158662
 GameObject:
   m_ObjectHideFlags: 0
@@ -14816,8 +14924,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672642345645
 GameObject:
   m_ObjectHideFlags: 0
@@ -14867,8 +14978,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672685584606
 GameObject:
   m_ObjectHideFlags: 0
@@ -14918,8 +15032,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672687352586
 GameObject:
   m_ObjectHideFlags: 0
@@ -14969,8 +15086,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672692062479
 GameObject:
   m_ObjectHideFlags: 0
@@ -15020,8 +15140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672693981579
 GameObject:
   m_ObjectHideFlags: 0
@@ -15071,8 +15194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672709651967
 GameObject:
   m_ObjectHideFlags: 0
@@ -15122,8 +15248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672716529681
 GameObject:
   m_ObjectHideFlags: 0
@@ -15173,8 +15302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672718976981
 GameObject:
   m_ObjectHideFlags: 0
@@ -15224,8 +15356,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672733839976
 GameObject:
   m_ObjectHideFlags: 0
@@ -15275,8 +15410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672735837190
 GameObject:
   m_ObjectHideFlags: 0
@@ -15326,8 +15464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672759091422
 GameObject:
   m_ObjectHideFlags: 0
@@ -15377,8 +15518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672790555285
 GameObject:
   m_ObjectHideFlags: 0
@@ -15428,8 +15572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672808590117
 GameObject:
   m_ObjectHideFlags: 0
@@ -15479,8 +15626,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672822466641
 GameObject:
   m_ObjectHideFlags: 0
@@ -15530,8 +15680,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672825726767
 GameObject:
   m_ObjectHideFlags: 0
@@ -15581,8 +15734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672829493726
 GameObject:
   m_ObjectHideFlags: 0
@@ -15632,8 +15788,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672830894467
 GameObject:
   m_ObjectHideFlags: 0
@@ -15683,8 +15842,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672834972140
 GameObject:
   m_ObjectHideFlags: 0
@@ -15734,8 +15896,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672839037383
 GameObject:
   m_ObjectHideFlags: 0
@@ -15785,8 +15950,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672863074942
 GameObject:
   m_ObjectHideFlags: 0
@@ -15836,8 +16004,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672897945780
 GameObject:
   m_ObjectHideFlags: 0
@@ -15887,8 +16058,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672901907065
 GameObject:
   m_ObjectHideFlags: 0
@@ -15938,8 +16112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672916501267
 GameObject:
   m_ObjectHideFlags: 0
@@ -15989,8 +16166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672945609387
 GameObject:
   m_ObjectHideFlags: 0
@@ -16040,8 +16220,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672948003367
 GameObject:
   m_ObjectHideFlags: 0
@@ -16091,8 +16274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672948064079
 GameObject:
   m_ObjectHideFlags: 0
@@ -16142,8 +16328,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155672995857241
 GameObject:
   m_ObjectHideFlags: 0
@@ -16193,8 +16382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673024794156
 GameObject:
   m_ObjectHideFlags: 0
@@ -16244,8 +16436,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673044997332
 GameObject:
   m_ObjectHideFlags: 0
@@ -16295,8 +16490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673047502155
 GameObject:
   m_ObjectHideFlags: 0
@@ -16346,8 +16544,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673058263907
 GameObject:
   m_ObjectHideFlags: 0
@@ -16397,8 +16598,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673082073499
 GameObject:
   m_ObjectHideFlags: 0
@@ -16448,8 +16652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673094967679
 GameObject:
   m_ObjectHideFlags: 0
@@ -16499,8 +16706,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673095869340
 GameObject:
   m_ObjectHideFlags: 0
@@ -16550,8 +16760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673101048498
 GameObject:
   m_ObjectHideFlags: 0
@@ -16601,8 +16814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673116904416
 GameObject:
   m_ObjectHideFlags: 0
@@ -16652,8 +16868,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673120062716
 GameObject:
   m_ObjectHideFlags: 0
@@ -16703,8 +16922,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673124343722
 GameObject:
   m_ObjectHideFlags: 0
@@ -16754,8 +16976,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673124823720
 GameObject:
   m_ObjectHideFlags: 0
@@ -16805,8 +17030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673136100984
 GameObject:
   m_ObjectHideFlags: 0
@@ -16856,8 +17084,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673154594553
 GameObject:
   m_ObjectHideFlags: 0
@@ -16907,8 +17138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673171837651
 GameObject:
   m_ObjectHideFlags: 0
@@ -16958,8 +17192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673200759575
 GameObject:
   m_ObjectHideFlags: 0
@@ -17009,8 +17246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673233416534
 GameObject:
   m_ObjectHideFlags: 0
@@ -17060,8 +17300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673238934131
 GameObject:
   m_ObjectHideFlags: 0
@@ -17111,8 +17354,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673262645054
 GameObject:
   m_ObjectHideFlags: 0
@@ -17162,8 +17408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673284339436
 GameObject:
   m_ObjectHideFlags: 0
@@ -17213,8 +17462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673314353358
 GameObject:
   m_ObjectHideFlags: 0
@@ -17264,8 +17516,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673332738129
 GameObject:
   m_ObjectHideFlags: 0
@@ -17315,8 +17570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673335140679
 GameObject:
   m_ObjectHideFlags: 0
@@ -17366,8 +17624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673339503488
 GameObject:
   m_ObjectHideFlags: 0
@@ -17417,8 +17678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673352120284
 GameObject:
   m_ObjectHideFlags: 0
@@ -17468,8 +17732,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673358429181
 GameObject:
   m_ObjectHideFlags: 0
@@ -17519,8 +17786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673361424594
 GameObject:
   m_ObjectHideFlags: 0
@@ -17570,8 +17840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673383053186
 GameObject:
   m_ObjectHideFlags: 0
@@ -17621,8 +17894,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673392217745
 GameObject:
   m_ObjectHideFlags: 0
@@ -17672,8 +17948,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673405671703
 GameObject:
   m_ObjectHideFlags: 0
@@ -17723,8 +18002,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673406231739
 GameObject:
   m_ObjectHideFlags: 0
@@ -17774,8 +18056,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673420083079
 GameObject:
   m_ObjectHideFlags: 0
@@ -17825,8 +18110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673437472669
 GameObject:
   m_ObjectHideFlags: 0
@@ -17876,8 +18164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673445593349
 GameObject:
   m_ObjectHideFlags: 0
@@ -17927,8 +18218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673454076257
 GameObject:
   m_ObjectHideFlags: 0
@@ -17978,8 +18272,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673479487851
 GameObject:
   m_ObjectHideFlags: 0
@@ -18029,8 +18326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673482189625
 GameObject:
   m_ObjectHideFlags: 0
@@ -18080,8 +18380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673483361122
 GameObject:
   m_ObjectHideFlags: 0
@@ -18131,8 +18434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673516360235
 GameObject:
   m_ObjectHideFlags: 0
@@ -18182,8 +18488,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673517295915
 GameObject:
   m_ObjectHideFlags: 0
@@ -18233,8 +18542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673530244182
 GameObject:
   m_ObjectHideFlags: 0
@@ -18284,8 +18596,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673536751310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18335,8 +18650,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673562718344
 GameObject:
   m_ObjectHideFlags: 0
@@ -18386,8 +18704,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673604599803
 GameObject:
   m_ObjectHideFlags: 0
@@ -18437,8 +18758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673608010001
 GameObject:
   m_ObjectHideFlags: 0
@@ -18488,8 +18812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673626604940
 GameObject:
   m_ObjectHideFlags: 0
@@ -18539,8 +18866,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673629868251
 GameObject:
   m_ObjectHideFlags: 0
@@ -18590,8 +18920,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673639074948
 GameObject:
   m_ObjectHideFlags: 0
@@ -18641,8 +18974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673643586537
 GameObject:
   m_ObjectHideFlags: 0
@@ -18692,8 +19028,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673648617160
 GameObject:
   m_ObjectHideFlags: 0
@@ -18743,8 +19082,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673655021219
 GameObject:
   m_ObjectHideFlags: 0
@@ -18794,8 +19136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673655567526
 GameObject:
   m_ObjectHideFlags: 0
@@ -18845,8 +19190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673666875388
 GameObject:
   m_ObjectHideFlags: 0
@@ -18896,8 +19244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673668978252
 GameObject:
   m_ObjectHideFlags: 0
@@ -18947,8 +19298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673675096890
 GameObject:
   m_ObjectHideFlags: 0
@@ -18998,8 +19352,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673706263247
 GameObject:
   m_ObjectHideFlags: 0
@@ -19049,8 +19406,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673707164320
 GameObject:
   m_ObjectHideFlags: 0
@@ -19100,8 +19460,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673711947499
 GameObject:
   m_ObjectHideFlags: 0
@@ -19151,8 +19514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673714607268
 GameObject:
   m_ObjectHideFlags: 0
@@ -19202,8 +19568,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673720398953
 GameObject:
   m_ObjectHideFlags: 0
@@ -19253,8 +19622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673729697842
 GameObject:
   m_ObjectHideFlags: 0
@@ -19304,8 +19676,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673750540837
 GameObject:
   m_ObjectHideFlags: 0
@@ -19355,8 +19730,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673760093920
 GameObject:
   m_ObjectHideFlags: 0
@@ -19406,8 +19784,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673781596579
 GameObject:
   m_ObjectHideFlags: 0
@@ -19457,8 +19838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673804742070
 GameObject:
   m_ObjectHideFlags: 0
@@ -19508,8 +19892,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673811852736
 GameObject:
   m_ObjectHideFlags: 0
@@ -19559,8 +19946,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673815438915
 GameObject:
   m_ObjectHideFlags: 0
@@ -19610,8 +20000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673842658345
 GameObject:
   m_ObjectHideFlags: 0
@@ -19661,8 +20054,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673845980405
 GameObject:
   m_ObjectHideFlags: 0
@@ -19712,8 +20108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673866884409
 GameObject:
   m_ObjectHideFlags: 0
@@ -19763,8 +20162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673880961347
 GameObject:
   m_ObjectHideFlags: 0
@@ -19814,8 +20216,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673887191540
 GameObject:
   m_ObjectHideFlags: 0
@@ -19865,8 +20270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673887517764
 GameObject:
   m_ObjectHideFlags: 0
@@ -19916,8 +20324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673887599194
 GameObject:
   m_ObjectHideFlags: 0
@@ -19967,8 +20378,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673916584915
 GameObject:
   m_ObjectHideFlags: 0
@@ -20018,8 +20432,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673919094449
 GameObject:
   m_ObjectHideFlags: 0
@@ -20069,8 +20486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673970239783
 GameObject:
   m_ObjectHideFlags: 0
@@ -20120,8 +20540,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673984890305
 GameObject:
   m_ObjectHideFlags: 0
@@ -20171,8 +20594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673986634524
 GameObject:
   m_ObjectHideFlags: 0
@@ -20222,8 +20648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155673993818116
 GameObject:
   m_ObjectHideFlags: 0
@@ -20273,8 +20702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674000910764
 GameObject:
   m_ObjectHideFlags: 0
@@ -20324,8 +20756,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674025795645
 GameObject:
   m_ObjectHideFlags: 0
@@ -20375,8 +20810,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674025870396
 GameObject:
   m_ObjectHideFlags: 0
@@ -20426,8 +20864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674029571611
 GameObject:
   m_ObjectHideFlags: 0
@@ -20477,8 +20918,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674032597193
 GameObject:
   m_ObjectHideFlags: 0
@@ -20528,8 +20972,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674082262685
 GameObject:
   m_ObjectHideFlags: 0
@@ -20579,8 +21026,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674148246151
 GameObject:
   m_ObjectHideFlags: 0
@@ -20630,8 +21080,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674160736940
 GameObject:
   m_ObjectHideFlags: 0
@@ -20681,8 +21134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674181259352
 GameObject:
   m_ObjectHideFlags: 0
@@ -20732,8 +21188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674182589140
 GameObject:
   m_ObjectHideFlags: 0
@@ -20783,8 +21242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674191945131
 GameObject:
   m_ObjectHideFlags: 0
@@ -20834,8 +21296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674227432862
 GameObject:
   m_ObjectHideFlags: 0
@@ -20885,8 +21350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674239253818
 GameObject:
   m_ObjectHideFlags: 0
@@ -20936,8 +21404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674267003013
 GameObject:
   m_ObjectHideFlags: 0
@@ -20987,8 +21458,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674289076867
 GameObject:
   m_ObjectHideFlags: 0
@@ -21038,8 +21512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674293063234
 GameObject:
   m_ObjectHideFlags: 0
@@ -21089,8 +21566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674306195563
 GameObject:
   m_ObjectHideFlags: 0
@@ -21140,8 +21620,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674317633078
 GameObject:
   m_ObjectHideFlags: 0
@@ -21191,8 +21674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674323477877
 GameObject:
   m_ObjectHideFlags: 0
@@ -21242,8 +21728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674336717837
 GameObject:
   m_ObjectHideFlags: 0
@@ -21293,8 +21782,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674343773587
 GameObject:
   m_ObjectHideFlags: 0
@@ -21344,8 +21836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674345432532
 GameObject:
   m_ObjectHideFlags: 0
@@ -21395,8 +21890,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674357029447
 GameObject:
   m_ObjectHideFlags: 0
@@ -21446,8 +21944,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674385010738
 GameObject:
   m_ObjectHideFlags: 0
@@ -21497,8 +21998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674413252553
 GameObject:
   m_ObjectHideFlags: 0
@@ -21548,8 +22052,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674436116086
 GameObject:
   m_ObjectHideFlags: 0
@@ -21599,8 +22106,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674440805967
 GameObject:
   m_ObjectHideFlags: 0
@@ -21650,8 +22160,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674451705367
 GameObject:
   m_ObjectHideFlags: 0
@@ -21701,8 +22214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674451877263
 GameObject:
   m_ObjectHideFlags: 0
@@ -21752,8 +22268,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674457264559
 GameObject:
   m_ObjectHideFlags: 0
@@ -21803,8 +22322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674487499986
 GameObject:
   m_ObjectHideFlags: 0
@@ -21854,8 +22376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674487731330
 GameObject:
   m_ObjectHideFlags: 0
@@ -21905,8 +22430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674488604607
 GameObject:
   m_ObjectHideFlags: 0
@@ -21956,8 +22484,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674490008854
 GameObject:
   m_ObjectHideFlags: 0
@@ -22007,8 +22538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674496082424
 GameObject:
   m_ObjectHideFlags: 0
@@ -22058,8 +22592,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674509494830
 GameObject:
   m_ObjectHideFlags: 0
@@ -22109,8 +22646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674519892054
 GameObject:
   m_ObjectHideFlags: 0
@@ -22160,8 +22700,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674527123389
 GameObject:
   m_ObjectHideFlags: 0
@@ -22211,8 +22754,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674539165619
 GameObject:
   m_ObjectHideFlags: 0
@@ -22262,8 +22808,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674569482553
 GameObject:
   m_ObjectHideFlags: 0
@@ -22313,8 +22862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674576429841
 GameObject:
   m_ObjectHideFlags: 0
@@ -22364,8 +22916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674586344729
 GameObject:
   m_ObjectHideFlags: 0
@@ -22415,8 +22970,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674586515340
 GameObject:
   m_ObjectHideFlags: 0
@@ -22466,8 +23024,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674607130314
 GameObject:
   m_ObjectHideFlags: 0
@@ -22517,8 +23078,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674644058803
 GameObject:
   m_ObjectHideFlags: 0
@@ -22568,8 +23132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674646849038
 GameObject:
   m_ObjectHideFlags: 0
@@ -22619,8 +23186,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674676932876
 GameObject:
   m_ObjectHideFlags: 0
@@ -22670,8 +23240,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674679907498
 GameObject:
   m_ObjectHideFlags: 0
@@ -22721,8 +23294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674683291473
 GameObject:
   m_ObjectHideFlags: 0
@@ -22772,8 +23348,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6287155674699375745
 GameObject:
   m_ObjectHideFlags: 0
@@ -22823,8 +23402,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &6680179835787451062
 Transform:
   m_ObjectHideFlags: 0
@@ -26338,8 +26920,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 826367109}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!114 &9122312699166620186
 MonoBehaviour:
   m_ObjectHideFlags: 0

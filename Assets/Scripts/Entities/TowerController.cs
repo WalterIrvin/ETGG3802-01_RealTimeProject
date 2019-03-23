@@ -76,8 +76,8 @@ public class TowerController : MonoBehaviour
                     // To be able to place tower types later, we might want to have a type that we check for here
                     Vector3 pos = hit.collider.gameObject.transform.position;// + Vector3.up;
                     pos.y += 0.325f;
-                    Instantiate(TowerPrefab, pos, Quaternion.identity);
-                    M.Money -= 100;
+                    //Instantiate(TowerPrefab, pos, Quaternion.identity);
+                    //M.Money -= 100;
                 }
             }
         }
