@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class WaveHandler : MonoBehaviour
 {
-    public int currentMaxLengthWave = 0;
-    public int currentWave = 0;
+    //public int currentMaxLengthWave = 0;
+    private int currentWave = 0;
     private int numWaves;
-    private bool isActive = false;
+    private bool isActive = true;
     private System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
     public float waveInterval;
     private List<GameObject> mSpawners = new List<GameObject>();
@@ -18,6 +18,7 @@ public class WaveHandler : MonoBehaviour
         mSpawners = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawner"));
         int tmp = 0;
         int max = 0;
+
         foreach (GameObject tmpObj in mSpawners)
         {
             tmp = tmpObj.GetComponent<EnemySpawnerScript>().WaveList.Count;
@@ -25,9 +26,10 @@ public class WaveHandler : MonoBehaviour
                 max = tmp;
             tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave);
         }
+
         numWaves = max;
-        downTime.Start();
-        currentMaxLengthWave = checkBiggestWave();
+        Debug.Log(numWaves);
+        //currentMaxLengthWave = checkBiggestWave();
     }
 
     public int getWaveNumber()
@@ -46,41 +48,50 @@ public class WaveHandler : MonoBehaviour
         if (!isActive && downTime.Elapsed.Seconds > waveInterval)
         {
             Debug.Log("Next Wave Start");
+            downTime.Reset();
             // spawn the next wave
             foreach (GameObject tmpObj in mSpawners)
             {
-                tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave); 
+                tmpObj.GetComponent<EnemySpawnerScript>().SpawnWave(currentWave);
             }
             isActive = true;
         }
 
-        bool endWave = false;
-        foreach (GameObject tmpObj in mSpawners)
+        else if (isActive)
         {
-            var tmpEnemyScript = tmpObj.GetComponent<EnemySpawnerScript>();
-            var tmpWaveList = tmpEnemyScript.WaveList;
-            //grabs only wavelists with more then 0 waves in them
-            if (tmpWaveList.Count > 0)
+            bool endWave = true;
+            /*foreach (GameObject tmpObj in mSpawners)
             {
-                if ((ThisWaveLen(tmpEnemyScript) >= currentMaxLengthWave) && tmpEnemyScript.waveOver)
+                var tmpEnemyScript = tmpObj.GetComponent<EnemySpawnerScript>();
+                var tmpWaveList = tmpEnemyScript.WaveList;
+                //grabs only wavelists with more then 0 waves in them
+                if (tmpWaveList.Count > 0)
                 {
-                    endWave = true;
+                    if ((ThisWaveLen(tmpEnemyScript) >= currentMaxLengthWave) && tmpEnemyScript.waveOver)
+                    {
+                        endWave = true;
+                    }
                 }
-            }
-        }
+            }*/
 
-        if (endWave)
-        {
-            Debug.Log("Wave Over");
-            isActive = false;
-            ++currentWave;
-            currentMaxLengthWave = checkBiggestWave();
-            downTime.Reset();
-            downTime.Start();
+            foreach (GameObject tmpObj in mSpawners)
+            {
+                if (!tmpObj.GetComponent<EnemySpawnerScript>().waveOver)
+                    endWave = false;
+            }
+
+            if (endWave)
+            {
+                Debug.Log("Wave Over handler");
+                isActive = false;
+                ++currentWave;
+                //currentMaxLengthWave = checkBiggestWave();
+                downTime.Start();
+            }
         }
     }
 
-    int ThisWaveLen(EnemySpawnerScript obj)
+    /*int ThisWaveLen(EnemySpawnerScript obj)
     {
         int x = 0;
         if(currentWave < obj.WaveList.Count)
@@ -88,9 +99,9 @@ public class WaveHandler : MonoBehaviour
             x = (obj.WaveList[currentWave].GenericEnemyList.Count + obj.WaveList[currentWave].bossList.Count);
         }
         return x; 
-    }
+    }*/
 
-    public int checkBiggestWave()
+    /*public int checkBiggestWave()
     {
         int maxLengthWave = 0;
         for (int i = 0; i < mSpawners.Count - 1; ++i)
@@ -114,5 +125,5 @@ public class WaveHandler : MonoBehaviour
             }
         }
         return maxLengthWave;
-    }
+    }*/
 }
