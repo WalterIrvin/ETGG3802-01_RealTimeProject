@@ -36,7 +36,7 @@ public class ObstacleHighlighterScript : MonoBehaviour
         pos.y += 0.325f;
         Debug.Log(pos);
         theTowerOnThisBlock = Instantiate(TowerPrefab, pos, Quaternion.identity) as GameObject;
-        Instantiate(TowerPrefab, pos, Quaternion.identity);
+        //Instantiate(TowerPrefab, pos, Quaternion.identity);
     }
 
     public void upgradeTowerOnThisBlock()

@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 6371563004855875081}
   - component: {fileID: 1377676670466655340}
   - component: {fileID: 2770484832960667334}
-  - component: {fileID: 6169496962623023820}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Tower
@@ -186,20 +185,6 @@ MonoBehaviour:
   type: Base
   MAT_RapidFire: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
   MAT_Slow: {fileID: 2100000, guid: 365a5342ad42e884cb3ca37ad20c9400, type: 2}
---- !u!136 &6169496962623023820
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4144208750063770548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2
-  m_Height: 7
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5984406882631253135
 GameObject:
   m_ObjectHideFlags: 0
