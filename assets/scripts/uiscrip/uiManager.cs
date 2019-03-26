@@ -27,20 +27,21 @@ public class uiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        showPaused();
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            //showPaused();
-            if(Time.timeScale == 1)
-            {
-                Time.timeScale = 0;
-                showPaused();
-            } else if(Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-                hidePaused();
-            }
-        }
+
+        //showPaused();
+        //if(Input.GetKeyDown(KeyCode.P))
+        //{
+        //showPaused();
+        //if(Time.timeScale == 1)
+        //{
+        //Time.timeScale = 0;
+        //showPaused();
+        //} else if(Time.timeScale == 0)
+        //{
+        //Time.timeScale = 1;
+        //hidePaused();
+        //}
+        //}    
     }
 
     public void pauseControl()

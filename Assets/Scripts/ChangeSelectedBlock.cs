@@ -16,6 +16,5 @@ public class ChangeSelectedBlock : MonoBehaviour
     void Update()
     {
         currentlySelectedBlock.GetComponent<Renderer>().material.color = selectedMat.color;
-
     }
 }
