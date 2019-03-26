@@ -297,7 +297,7 @@ MonoBehaviour:
   value: 500
   agentAcceleration: 0.8
   agentMaxSpeed: 0.8
-  health: 400
+  health: 800
   _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
     type: 3}
   DestructionEffect: {fileID: 3781917230237610952, guid: 402e9bf510fbc17478d818d0c9be2b32,
