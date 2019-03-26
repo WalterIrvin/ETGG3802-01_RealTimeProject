@@ -136,6 +136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
       propertyPath: Target
       value: 
       objectReference: {fileID: 2116886890}
@@ -149,6 +154,22 @@ PrefabInstance:
       propertyPath: waveController
       value: 
       objectReference: {fileID: 817349557}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].amount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].timer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -489,7 +510,7 @@ PrefabInstance:
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].amount
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -505,7 +526,7 @@ PrefabInstance:
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[1].amount
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -697,8 +718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f80cbcdc5d1ea449802910629206ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMaxLengthWave: 0
-  currentWave: 0
   waveInterval: 1
 --- !u!4 &817349558
 Transform:
@@ -857,8 +876,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921334985154
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,8 +916,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921334985181
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -959,8 +988,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921451662904
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1010,8 +1044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921456639220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,8 +1084,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921456639223
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1112,8 +1156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921492409833
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1163,8 +1212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921501664620
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1214,8 +1268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921506919024
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1265,8 +1324,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921525654590
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1316,8 +1380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921531096336
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1367,8 +1436,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921531211533
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1418,8 +1492,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921554816468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,8 +1532,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921554816471
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1520,8 +1604,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921581705816
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1571,8 +1660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921592987808
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1622,8 +1716,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921639561560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,8 +1756,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921639561563
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1708,8 +1812,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921641213599
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1775,8 +1884,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921655365377
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1826,8 +1940,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921662526854
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1877,8 +1996,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921663778386
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1928,8 +2052,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921666221954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,8 +2092,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921666221981
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2030,8 +2164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921715838666
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2081,8 +2220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921715921952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,8 +2260,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921715921955
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2167,8 +2316,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921721894957
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2234,8 +2388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921751258536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,8 +2428,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921751258539
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2320,8 +2484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921768776731
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2387,8 +2556,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921787166473
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2438,8 +2612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921788813138
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2489,8 +2668,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921791207264
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2540,8 +2724,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921795577564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,8 +2764,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921795577567
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2626,8 +2820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921800968637
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2693,8 +2892,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921825246436
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2744,8 +2948,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921867341394
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2795,8 +3004,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921873429998
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2846,8 +3060,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921882711476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,8 +3100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921882711479
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2948,8 +3172,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921944301829
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2999,8 +3228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921958668849
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3050,8 +3284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921959221141
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3101,8 +3340,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540921964572700
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,8 +3380,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921964572703
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3187,8 +3436,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921986695051
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3238,8 +3492,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540921994266899
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3289,8 +3548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922025342879
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3356,8 +3620,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922044623402
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3407,8 +3676,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922045153321
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3458,8 +3732,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922048208228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,8 +3772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922048208231
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3560,8 +3844,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922061648392
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3611,8 +3900,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922064943872
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3662,8 +3956,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922070306385
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3713,8 +4012,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922088204354
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3764,8 +4068,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922102829786
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3815,8 +4124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922137210372
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3866,8 +4180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922189688794
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3917,8 +4236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922193075449
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -3968,8 +4292,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922210576500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4003,8 +4332,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922210576503
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4070,8 +4404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922231958564
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4121,8 +4460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922260163673
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4172,8 +4516,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922289283013
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4223,8 +4572,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922292217564
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,8 +4612,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922292217567
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4325,8 +4684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922309011726
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4376,8 +4740,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922333635952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4411,8 +4780,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922333635955
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4478,8 +4852,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922370953650
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4529,8 +4908,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922385837634
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4580,8 +4964,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922412592816
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,8 +5004,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922412592819
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4682,8 +5076,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922438002464
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4733,8 +5132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922467807377
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4784,8 +5188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922472900164
 GameObject:
   m_ObjectHideFlags: 0
@@ -4819,8 +5228,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922472900167
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4886,8 +5300,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922511687304
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -4937,8 +5356,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922520615756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4972,8 +5396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922520615759
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5039,8 +5468,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922546611232
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5090,8 +5524,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922549918725
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5141,8 +5580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922581979937
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5192,8 +5636,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922583209048
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5243,8 +5692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922584800980
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5294,8 +5748,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922624307216
 GameObject:
   m_ObjectHideFlags: 0
@@ -5329,8 +5788,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922624307219
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5396,8 +5860,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922724171561
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5447,8 +5916,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922737268844
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5498,8 +5972,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922761529536
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5549,8 +6028,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922763554230
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5600,8 +6084,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922777234148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,8 +6124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922777234151
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5702,8 +6196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922791397928
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5753,8 +6252,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922798603308
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5804,8 +6308,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922799766594
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,8 +6348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922799766621
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5906,8 +6420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922811179720
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -5957,8 +6476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922811360470
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6008,8 +6532,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922825600969
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6059,8 +6588,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922839931828
 GameObject:
   m_ObjectHideFlags: 0
@@ -6094,8 +6628,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922839931831
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6145,8 +6684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922846982207
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6212,8 +6756,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922886574924
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6263,8 +6812,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922891114697
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6314,8 +6868,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922894209850
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6365,8 +6924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922931012260
 GameObject:
   m_ObjectHideFlags: 0
@@ -6400,8 +6964,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922931012263
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6467,8 +7036,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922993157012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6502,8 +7076,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922993157015
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6569,8 +7148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540922994683292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6604,8 +7188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540922994683295
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6655,8 +7244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923009757111
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6722,8 +7316,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923024368222
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6773,8 +7372,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923052362032
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,8 +7412,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923052362035
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6875,8 +7484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923061077154
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -6926,8 +7540,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923089156572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6961,8 +7580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923089156575
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7028,8 +7652,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923100387878
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7079,8 +7708,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923139648012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7114,8 +7748,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923139648015
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7181,8 +7820,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923195481145
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7232,8 +7876,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923200563330
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7283,8 +7932,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923214935049
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7334,8 +7988,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923218788558
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7385,8 +8044,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923245389320
 GameObject:
   m_ObjectHideFlags: 0
@@ -7420,8 +8084,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923245389323
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7471,8 +8140,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923247111163
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7538,8 +8212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923284427538
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7589,8 +8268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923331867574
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7640,8 +8324,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923367321924
 GameObject:
   m_ObjectHideFlags: 0
@@ -7675,8 +8364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923367321927
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7726,8 +8420,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923382013757
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7777,8 +8476,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923395527453
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7844,8 +8548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923398217922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7879,8 +8588,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923398217949
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7946,8 +8660,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923434871640
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -7997,8 +8716,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923437308697
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8048,8 +8772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &191540923443847808
 GameObject:
   m_ObjectHideFlags: 0
@@ -8083,8 +8812,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &191540923443847811
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -8150,8 +8884,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &443024496330773628
 GameObject:
   m_ObjectHideFlags: 0
@@ -8185,8 +8924,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &443024496330773631
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -13644,8 +14388,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &3062811397694320514
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19339,8 +20088,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210546992053720
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19462,8 +20216,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210546996425696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19585,8 +20344,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547015080996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19708,8 +20472,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547028721685
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19831,8 +20600,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547049255488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19954,8 +20728,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547083964388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20077,8 +20856,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547092246929
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20200,8 +20984,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547182274373
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20323,8 +21112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210547234111476
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20416,8 +21210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547234111482
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -20645,8 +21444,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547241392692
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20768,8 +21572,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547241782596
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20891,8 +21700,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547254371152
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21105,8 +21919,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547282083428
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21228,8 +22047,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547306219668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21351,8 +22175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!114 &6190210547306567992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21452,8 +22281,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547316772802
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21663,8 +22497,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210547372295152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21756,8 +22595,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547372295158
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -21909,8 +22753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210547399062640
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22002,8 +22851,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547399062646
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -22081,8 +22935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547473527260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22278,8 +23137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &6190210547526735616
 Transform:
   m_ObjectHideFlags: 0
@@ -22356,8 +23220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547526735644
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22524,8 +23393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210547550676754
 GameObject:
   m_ObjectHideFlags: 0
@@ -22559,8 +23433,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547550676777
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -22770,8 +23649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!114 &6190210547566288312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22972,8 +23856,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210547594844264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23065,8 +23954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547594844270
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23218,8 +24112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210547618262594
 GameObject:
   m_ObjectHideFlags: 0
@@ -23253,8 +24152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547618262617
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23376,8 +24280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547641195154
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23499,8 +24408,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210547658380626
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -23710,8 +24624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210547714447568
 GameObject:
   m_ObjectHideFlags: 0
@@ -23932,8 +24851,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &6190210547746637138
 Transform:
   m_ObjectHideFlags: 0
@@ -23981,8 +24905,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210547746637164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24133,8 +25062,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547919050284
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24293,8 +25227,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210547957315437
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24495,8 +25434,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548002105053
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24626,8 +25570,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548036787528
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24749,8 +25698,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548053070276
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24872,8 +25826,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548191131320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24995,8 +25954,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548227655232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25118,8 +26082,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548245852433
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25241,8 +26210,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548256931072
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25364,8 +26338,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210548310461058
 GameObject:
   m_ObjectHideFlags: 0
@@ -25399,8 +26378,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548310461081
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25610,8 +26594,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548344837060
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25733,8 +26722,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548372226085
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25856,8 +26850,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548415580248
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25979,8 +26978,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548422199552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26072,8 +27076,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548422199558
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -26271,8 +27280,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &6190210548533619826
 Transform:
   m_ObjectHideFlags: 0
@@ -26320,8 +27334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548533620108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26487,8 +27506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548545296638
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -26610,8 +27634,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548559167094
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -26763,8 +27792,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548589528612
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26856,8 +27890,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548589528618
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -27009,8 +28048,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548628277556
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -27132,8 +28176,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548633378496
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27346,8 +28395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548656666400
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27439,8 +28493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548656666406
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -27683,8 +28742,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548717289316
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27806,8 +28870,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!65 &6190210548721820664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27929,8 +28998,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548756288344
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28022,8 +29096,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548756288350
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -28087,8 +29166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548792296761
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28298,8 +29382,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!23 &6190210548809895216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28391,8 +29480,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548809895222
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -28544,8 +29638,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548860152969
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -28667,8 +29766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210548881723600
 GameObject:
   m_ObjectHideFlags: 0
@@ -28702,8 +29806,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548881723602
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -28883,8 +29992,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210548895394462
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -29036,8 +30150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210548988612882
 GameObject:
   m_ObjectHideFlags: 0
@@ -29071,8 +30190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!33 &6190210548988612905
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29282,8 +30406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!1 &6190210549044741152
 GameObject:
   m_ObjectHideFlags: 0
@@ -29317,8 +30446,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!208 &6190210549044741154
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -29619,8 +30753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &6559100325568935422
 Transform:
   m_ObjectHideFlags: 0
@@ -29701,8 +30840,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBlock: {fileID: 0}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
+  TowerPrefab: {fileID: 0}
+  theTowerOnThisBlock: {fileID: 0}
+  hasTower: 0
+  isTowerUpgraded: 0
 --- !u!4 &7264220368432103093
 Transform:
   m_ObjectHideFlags: 0
