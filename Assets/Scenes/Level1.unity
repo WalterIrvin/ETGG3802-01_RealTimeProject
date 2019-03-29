@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0029126708, g: 0.0030261662, b: 0.0029790148, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1453,6 +1453,55 @@ MonoBehaviour:
   theTowerOnThisBlock: {fileID: 0}
   hasTower: 0
   isTowerUpgraded: 0
+--- !u!1 &532552303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 532552305}
+  - component: {fileID: 532552304}
+  m_Layer: 0
+  m_Name: TowerDictionary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &532552304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532552303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7a2a1662a613741aa5a74f66154a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerData:
+  - {fileID: 1262248648635162136, guid: 830a6220a570243409aef5602127bee5, type: 3}
+  - {fileID: 3382526545054819534, guid: 83c16ceb4e6f35745916df1e5b2e399c, type: 3}
+  - {fileID: 5921622267165623698, guid: 7bc850d699e6c7a4bbeb463d16e9555c, type: 3}
+  - {fileID: 445474987109212000, guid: a8c774f1fe2876249a73fbf883c6d0b7, type: 3}
+  - {fileID: 1994374987744982516, guid: 7408d32c73e56b740892ecaeed7cc0bc, type: 3}
+--- !u!4 &532552305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532552303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532989632
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,6 @@ public class uiManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //showPaused();
         //if(Input.GetKeyDown(KeyCode.P))
         //{
