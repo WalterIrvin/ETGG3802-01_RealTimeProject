@@ -13,14 +13,30 @@ public class ObstacleHighlighterScript : MonoBehaviour
     public bool isTowerUpgraded = false;
     private Vector3 pos;
 
-
+    private bool mouseIsOverBlock = false;
+    private ChangeSelectedBlock blockSelectorScript;
+    
+    void Start()
+    {
+        blockSelectorScript = selectedBlock.GetComponent<ChangeSelectedBlock>();
+        InvokeRepeating("CheckHighlight", 0f, 0.1f);
+    }
+    void CheckHighlight()
+    {
+        if (blockSelectorScript.currentlySelectedBlock != this.gameObject && !mouseIsOverBlock)
+        {
+            GetComponent<Renderer>().material.color = oldMaterial.color;
+        }
+    }
     private void OnMouseOver()
     {
+        mouseIsOverBlock = true;
         GetComponent<Renderer>().material.color = highlightMaterial.color;
     }
 
     private void OnMouseExit()
     {
+        mouseIsOverBlock = false;
         GetComponent<Renderer>().material.color = oldMaterial.color;
     }
 
