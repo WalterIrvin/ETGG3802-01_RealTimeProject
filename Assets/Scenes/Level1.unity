@@ -2306,6 +2306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveInterval: 1
+  PAUSED: 0
 --- !u!4 &803778265
 Transform:
   m_ObjectHideFlags: 0
@@ -2923,6 +2924,7 @@ GameObject:
   - component: {fileID: 971175282}
   - component: {fileID: 971175281}
   - component: {fileID: 971175280}
+  - component: {fileID: 971175283}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -2988,7 +2990,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 971175281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 971175283}
+        m_MethodName: PauseButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &971175281
@@ -3028,6 +3041,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971175278}
   m_CullTransparentMesh: 0
+--- !u!114 &971175283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971175278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16c153c0bf0ce7342adfebaf550d2754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveHandlerObject: {fileID: 803778263}
 --- !u!1 &987329902
 GameObject:
   m_ObjectHideFlags: 0

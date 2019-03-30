@@ -9,12 +9,14 @@ public class WaveHandler : MonoBehaviour
     private int currentWave = 0;
     private int numWaves;
     private bool isActive = true;
-    private System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
+    public System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
     public float waveInterval;
     private List<GameObject> mSpawners = new List<GameObject>();
+    public bool PAUSED;
 
     void Start()
     {
+        PAUSED = false;
         mSpawners = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawner"));
         int tmp = 0;
         int max = 0;
@@ -39,6 +41,11 @@ public class WaveHandler : MonoBehaviour
 
     void Update()
     {
+        if(PAUSED)
+        {
+            return;
+        }
+
         if (currentWave >= numWaves)
         {
             //Loading the nextlevel scene
