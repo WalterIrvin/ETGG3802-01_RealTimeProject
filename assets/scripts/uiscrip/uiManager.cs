@@ -79,6 +79,16 @@ public class uiManager : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
+    public void BuyTower(TOWER_TYPE whichType)
+    {
+
+    }
+
+    public void UpgradeTower(TOWER_TYPE whichType)
+    {
+
+    }
+
     public void BuyTower()
     {
         print("Buy Tower Button Pressed");

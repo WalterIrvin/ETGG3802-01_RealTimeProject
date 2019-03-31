@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
+    private TowerData towerData;
+
+
+
+
     public Transform TurretHead;
     private Transform main_target;
     public float fireDelay = 1f;
@@ -55,6 +60,22 @@ public class TowerScript : MonoBehaviour
         }
     }
 
+    public TOWER_TYPE GetTowerType()
+    {
+        return towerData.towerType;
+    }
+
+    public void SetTowerType(TOWER_TYPE whichType)
+    {
+        //TowerData newData = TowerDictionary.GetTowerData()
+
+
+
+
+
+
+    }
+
     public void Upgrade_RapidFire()
     {
         GameObject MoneyHandle = GameObject.FindWithTag("Money");
@@ -91,6 +112,19 @@ public class TowerScript : MonoBehaviour
 
     void Update()
     {
+        switch(towerData.whatDoesThisShoot)
+        {
+            case PROJECTILE_TYPE.PROJ_BULLET:
+                break;
+
+            case PROJECTILE_TYPE.PROJ_LASER:
+                break;
+
+            default:
+                break;
+        }
+
+        /*
         if (main_target == null)
             return;
         Vector3 direction = main_target.position - transform.position;
@@ -118,5 +152,6 @@ public class TowerScript : MonoBehaviour
                 startTime = Time.fixedTime;
             }
         }
+        */
     }
 }

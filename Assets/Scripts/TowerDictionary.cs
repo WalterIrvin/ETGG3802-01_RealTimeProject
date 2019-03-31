@@ -21,7 +21,7 @@ public class TowerDictionary : MonoBehaviour
         towerDataGlobal = towerData;
     }
 
-    public TowerData GetTowerData(TOWER_TYPE whichType)
+    public static TowerData GetTowerData(TOWER_TYPE whichType)
     {
         foreach(TowerData TD in towerDataGlobal)
         {
@@ -32,7 +32,7 @@ public class TowerDictionary : MonoBehaviour
         return null;
     }
 
-    public TowerData GetTowerDataWithName(string towerName)
+    public static TowerData GetTowerDataWithName(string towerName)
     {
         foreach(TowerData TD in towerDataGlobal)
         {
