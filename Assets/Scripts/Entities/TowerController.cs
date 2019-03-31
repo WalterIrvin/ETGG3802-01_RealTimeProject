@@ -125,7 +125,7 @@ public class TowerController : MonoBehaviour
     {
         Vector3 cam_to_center = MainCamera.transform.position - new Vector3(0, 1, 0);
         // If distance from center point is not less than three units
-        if((cam_to_center - cam_to_center.normalized).magnitude >= 3 || (dir * -1) > 0)
+        if((cam_to_center - cam_to_center.normalized).magnitude >= 20 || (dir * -1) > 0)
         {
             MainCamera.transform.Translate(cam_to_center.normalized * dir * -1, Space.World);
         }
