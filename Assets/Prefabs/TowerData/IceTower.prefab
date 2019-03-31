@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc4a6236cd26240a07f7936156f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: Ice Tower
+  towerDesc: A tower that freezes enemies.
   towerType: 4
   towerMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
   whatDoesThisShoot: 0

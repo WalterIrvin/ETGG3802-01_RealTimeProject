@@ -23,6 +23,23 @@ public class TowerDictionary : MonoBehaviour
 
     public TowerData GetTowerData(TOWER_TYPE whichType)
     {
+        foreach(TowerData TD in towerDataGlobal)
+        {
+            if(TD.towerType == whichType)
+                return TD;
+        }
+
+        return null;
+    }
+
+    public TowerData GetTowerDataWithName(string towerName)
+    {
+        foreach(TowerData TD in towerDataGlobal)
+        {
+            if(TD.towerName == towerName)
+                return TD;
+        }
+
         return null;
     }
 }

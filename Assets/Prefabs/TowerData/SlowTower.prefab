@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc4a6236cd26240a07f7936156f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: Slowing Tower
+  towerDesc: A tower that slows enemies, but does less damage.
   towerType: 3
   towerMaterial: {fileID: 2100000, guid: 365a5342ad42e884cb3ca37ad20c9400, type: 2}
   whatDoesThisShoot: 0

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc4a6236cd26240a07f7936156f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: Rapid-Fire Tower
+  towerDesc: A tower that has a shorter delay between shots.
   towerType: 1
   towerMaterial: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
   whatDoesThisShoot: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerData : MonoBehaviour
 {
+    public string towerName;
+    public string towerDesc;
     public TOWER_TYPE towerType;
     public Material towerMaterial;
     public PROJECTILE_TYPE whatDoesThisShoot;

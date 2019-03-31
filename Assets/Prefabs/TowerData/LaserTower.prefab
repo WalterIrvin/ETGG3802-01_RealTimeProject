@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dc4a6236cd26240a07f7936156f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: Laser Tower
+  towerDesc: A tower that damages enemies very quickly.
   towerType: 2
   towerMaterial: {fileID: 2100000, guid: 24b3ba22b07c89b4eadbe834a0327cb7, type: 2}
   whatDoesThisShoot: 1
