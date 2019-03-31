@@ -93,8 +93,35 @@ public class WaveHandler : MonoBehaviour
                 isActive = false;
                 ++currentWave;
                 //currentMaxLengthWave = checkBiggestWave();
+                downTime.Reset();
                 downTime.Start();
             }
+        }
+    }
+
+    public void pause()
+    {
+        PAUSED = true;
+
+        if(!isActive)
+            downTime.Stop();
+
+        foreach (GameObject tmpObj in mSpawners)
+        {
+            tmpObj.GetComponent<EnemySpawnerScript>().pause();
+        }
+    }
+
+    public void unpause()
+    {
+        PAUSED = false;
+
+        if (!isActive)
+            downTime.Start();
+
+        foreach (GameObject tmpObj in mSpawners)
+        {
+            tmpObj.GetComponent<EnemySpawnerScript>().unpause();
         }
     }
 

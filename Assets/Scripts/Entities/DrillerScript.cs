@@ -16,6 +16,7 @@ public class DrillerScript : MonoBehaviour
     private Image healthBar;
     public bool isFragile = true; // set to false if you want the driller to not die when it breaks a destructible.
     private GameObject MoneyHandle;
+    //private AudioSource source;
 
     [SerializeField]
     List<Transform> _destinations = new List<Transform>();
@@ -27,6 +28,8 @@ public class DrillerScript : MonoBehaviour
 
     void Start()
     {
+        //source = GetComponent<AudioSource>();
+
         maxHealth = health;
         healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
 
@@ -47,16 +50,19 @@ public class DrillerScript : MonoBehaviour
 
     void Update()
     {
+        UpdateDestination();
+    }
+
+    void LateUpdate()
+    {
         if (this.health <= 0)
         {
+            //source.Play(0);
             ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
             explosionEffect.transform.position = transform.position;
             Destroy(gameObject);
-            MoneyHandle.BroadcastMessage("ChangeMoney", value);
-            return;
+            MoneyHandle.BroadcastMessage("ChangeMoney", value); // causes null reference exception
         }
-
-        UpdateDestination();
     }
 
     private void InitializeDestination()

@@ -10,14 +10,16 @@ public class BasicBaseScript : MonoBehaviour
     public int health = 100;
     private float maxHealth;
     private Image healthBar;
-    public Text gameover;
+    //public Text gameover;
+    private AudioSource source;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        gameover.text = "";
+        //gameover.text = "";
         maxHealth = health;
+        source = GetComponent<AudioSource>();
         healthBar = transform.Find("BaseCanvas").Find("healthBG").Find("health").GetComponent<Image>();
     }
 
@@ -37,6 +39,7 @@ public class BasicBaseScript : MonoBehaviour
     {
         if (other.tag == "Enemy" || other.tag == "Driller")
         {
+            source.Play(0);
             Destroy(other.gameObject);
             this.health -= 10;
             healthBar.fillAmount = (float)health / (float)maxHealth;

@@ -14,6 +14,7 @@ public class EnemyMover : MonoBehaviour
     private float maxHealth;
     private Image healthBar;
     private GameObject MoneyHandle;
+    //private AudioSource source;
 
     [SerializeField]
     public Transform _destination;
@@ -24,17 +25,12 @@ public class EnemyMover : MonoBehaviour
 
     void Start()
     {
+        //source = GetComponent<AudioSource>();
+
         //Enemy healthbar setup
         maxHealth = health;
-        try
-        {
-            healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
-            healthBar.fillAmount = (float)health / (float)maxHealth;
-        }
-        catch(Exception e)
-        {
-            Debug.Log("Error loading the healthbar");
-        }
+        healthBar = transform.Find("EnemyCanvas").Find("healthBG").Find("health").GetComponent<Image>();
+        healthBar.fillAmount = (float)health / (float)maxHealth;
 
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
@@ -55,10 +51,11 @@ public class EnemyMover : MonoBehaviour
     {
         if (this.health <= 0)
         {
+            //source.Play(0);
             ParticleSystem explosionEffect = Instantiate(DestructionEffect) as ParticleSystem;
             explosionEffect.transform.position = transform.position;
             Destroy(gameObject);
-            MoneyHandle.BroadcastMessage("ChangeMoney", value);
+            MoneyHandle.BroadcastMessage("ChangeMoney", value); // causes null reference exception
         }
     }
 

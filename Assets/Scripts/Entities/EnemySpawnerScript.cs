@@ -187,13 +187,31 @@ public class EnemySpawnerScript : MonoBehaviour
         foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Driller"))
             enemies.Add(tmpObj);
 
-        if (enemies.Count == 0) { 
-        Debug.Log("Wave Over");
-        waveOver = true; }
+        if (enemies.Count == 0) {
+            Debug.Log("Wave Over");
+            waveOver = true; }
 
         else
             waveOver = false;
 
         return waveOver;
+    }
+
+    public void pause()
+    {
+        if (!waveOver)
+        {
+            enemyTimer.Stop();
+            bossTimer.Stop();
+        }
+    }
+
+    public void unpause()
+    {
+        if (!waveOver)
+        {
+            enemyTimer.Start();
+            bossTimer.Start();
+        }
     }
 }
