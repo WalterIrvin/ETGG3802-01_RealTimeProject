@@ -7,10 +7,14 @@ public class ObstacleHighlighterScript : MonoBehaviour
     public GameObject selectedBlock;
     public Material oldMaterial;
     public Material highlightMaterial;
-    public GameObject TowerPrefab;
-    public GameObject theTowerOnThisBlock;
+    //***public GameObject TowerPrefab;
+    //***public GameObject theTowerOnThisBlock;
+
+    public TowerScript towerPrefab;
+    public TowerScript towerOnThisBlock;
     public bool hasTower = false;
-    public bool isTowerUpgraded = false;
+    
+    //public bool isTowerUpgraded = false;
     private Vector3 pos;
 
     private bool mouseIsOverBlock = false;
@@ -45,18 +49,25 @@ public class ObstacleHighlighterScript : MonoBehaviour
         selectedBlock.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock = gameObject;
     }
 
-    public void spawnTowerOnThisBlock()
+    public void spawnTowerOnThisBlock(string towerType)
     {
+        /*
         Debug.Log("In the SpawnTowerOnThisBlock func");
         pos = transform.position;
         pos.y += 0.325f;
         Debug.Log(pos);
-        theTowerOnThisBlock = Instantiate(TowerPrefab, pos, Quaternion.identity) as GameObject;
+        */
+
+        //***theTowerOnThisBlock = Instantiate(TowerPrefab, pos, Quaternion.identity) as GameObject;
+        //towerOnThisBlock = Instantiate(towerPrefab, pos, Quaternion.identity);
+        //towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(towerType)); // The uiManager has a check to make sure this won't be null.
+        //hasTower = true;
+
         //Instantiate(TowerPrefab, pos, Quaternion.identity);
     }
 
     public void upgradeTowerOnThisBlock()
     {
-        theTowerOnThisBlock.GetComponent<TowerScript>().Upgrade_RapidFire();
+        //***theTowerOnThisBlock.GetComponent<TowerScript>().Upgrade_RapidFire();
     }
 }

@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Ice Tower
   towerDesc: A tower that freezes enemies.
-  towerType: 4
+  towerType: SLOW_2
+  prevTowerType: SLOW
+  buildCost: 300
+  refundAmount: 150
   towerMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
   whatDoesThisShoot: 0
   bulletPrefab: {fileID: 5343105490023573500, guid: 2ebbadaf4349a8248b88478610d00676,
@@ -53,9 +56,6 @@ MonoBehaviour:
   fireDelay: 1
   detectRange: 3
   bulletDamage: 25
-  prevTowerLevel: 3
-  buildCost: 300
-  refundAmount: 150
   bulletEffects:
   - {fileID: 3883723272996540762, guid: a640d99cc5debe04d8d7756d869ba238, type: 3}
   - {fileID: 5789983241494855286, guid: d23823844c054624eaba89dae3c4393d, type: 3}

@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
-    private TowerData towerData;
-
-
-
+    private TowerData towerData = null;
+    private float startTime;
 
     public Transform TurretHead;
     private Transform main_target;
-    public float fireDelay = 1f;
-    public float range = 3f;
-    public int towerDamage = 50;
-    public GameObject projecticle_prefab;
-    public GameObject projecticle_slower_prefab;
-    private float startTime;
-    public string type = "Base";
-    public Material MAT_RapidFire;
-    public Material MAT_Slow;
+    
+    //public float fireDelay = 1f;
+    //public float range = 3f;
+    //public int towerDamage = 50;
+    //public GameObject projecticle_prefab;
+    //public GameObject projecticle_slower_prefab;
+    
+    //public string type = "Base";
+    //public Material MAT_RapidFire;
+    //public Material MAT_Slow;
 
 
     void Start()
@@ -30,6 +29,9 @@ public class TowerScript : MonoBehaviour
 
     void SearchTarget()
     {
+        if(towerData == null)
+            return;
+
         List<GameObject> targets = new List<GameObject>(); 
 
         foreach (GameObject tmpObj in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -51,7 +53,7 @@ public class TowerScript : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortest_dist <= range)
+        if (nearestEnemy != null && shortest_dist <= towerData.detectRange)
         {
             main_target = nearestEnemy.transform;
         } else
@@ -60,24 +62,23 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    public TOWER_TYPE GetTowerType()
+    public string GetTowerType()
     {
         return towerData.towerType;
     }
 
-    public void SetTowerType(TOWER_TYPE whichType)
+    public void SetTowerData(TowerData newData)
     {
-        //TowerData newData = TowerDictionary.GetTowerData()
+        if(newData == null)
+            return;
 
-
-
-
-
-
+        towerData = newData;
+        TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = towerData.towerMaterial;
     }
 
     public void Upgrade_RapidFire()
     {
+        /*
         GameObject MoneyHandle = GameObject.FindWithTag("Money");
         if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
         {
@@ -90,13 +91,14 @@ public class TowerScript : MonoBehaviour
         else
         {
             Debug.Log("Something went wrong upgrading tower...");
-        }
+        */
     }
 
     void Upgrade_Slow()
     {
+        /*
         GameObject MoneyHandle = GameObject.FindWithTag("Money");
-        if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
+        if(type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
         {
             MoneyHandle.BroadcastMessage("ChangeMoney", -100);
             TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = MAT_Slow;
@@ -108,21 +110,40 @@ public class TowerScript : MonoBehaviour
         {
             Debug.Log("Something went wrong upgrading tower...");
         }
+        */
     }
 
     void Update()
     {
-        switch(towerData.whatDoesThisShoot)
+        if(towerData == null || main_target == null)
+            return;
+
+        Vector3 direction = main_target.position - transform.position;
+        Quaternion lookRot = Quaternion.LookRotation(direction);
+        Vector3 eulerRot = lookRot.eulerAngles;
+        TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
+
+        float curTime = Time.fixedTime;
+        if (curTime - startTime >= towerData.fireDelay)
         {
-            case PROJECTILE_TYPE.PROJ_BULLET:
-                break;
+            switch (towerData.whatDoesThisShoot)
+            {
+                case PROJECTILE_TYPE.PROJ_BULLET:
+                    GameObject bullet = Instantiate(towerData.bulletPrefab, transform.position, Quaternion.identity);
+                    BulletController bullet_script = bullet.GetComponent<BulletController>();
+                    bullet_script.mDamage = towerData.bulletDamage;
+                    bullet_script.mDestination = main_target.position;
+                    startTime = Time.fixedTime;
+                    break;
 
-            case PROJECTILE_TYPE.PROJ_LASER:
-                break;
+                case PROJECTILE_TYPE.PROJ_LASER:
+                    break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
         }
+        
 
         /*
         if (main_target == null)

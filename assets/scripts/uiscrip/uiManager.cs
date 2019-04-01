@@ -9,7 +9,7 @@ public class uiManager : MonoBehaviour
 
     protected Vector3 pos;
     public GameObject CurrentlySelectedBlck;
-    public GameObject TowerPrefab;
+    public TowerScript TowerPrefab;
     public GameObject MoneyHandler;
     GameObject[] pausedItems;
     protected MoneyScript M;
@@ -79,18 +79,77 @@ public class uiManager : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void BuyTower(TOWER_TYPE whichType)
+    public void BuyTower(string whichType)
     {
+        print("Buy Tower Button Pressed");
+        if(TowerDictionary.ContainsTowerType(whichType))
+        {
+            ObstacleHighlighterScript ohs = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>();
+            if(!ohs.hasTower)
+            {
+                int buyCost, valueThatHasNoUseHere;
+                TowerDictionary.GetValueTotals(whichType, out buyCost, out valueThatHasNoUseHere);
 
+                if (M.Money >= buyCost)
+                {
+                    //CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().spawnTowerOnThisBlock(whichType);
+
+                    // This code should go in ObstacleHighlighterScript.spawnTowerOnThisBlock(), but it doesn't work there... //
+                    ohs.towerOnThisBlock = Instantiate(TowerPrefab, new Vector3(ohs.transform.position.x, ohs.transform.position.y + 0.325f, ohs.transform.position.z), Quaternion.identity);
+                    ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                    ohs.hasTower = true;
+                    // ====================================================================================================== //
+
+                    M.Money -= buyCost;
+                }
+                else
+                    print("Not enough money!");
+            }
+        }
+        else
+        {
+            print("Tried to buy a tower of a type that doesn't exist!");
+        }
     }
 
-    public void UpgradeTower(TOWER_TYPE whichType)
+    public void UpgradeTower(string whichType)
     {
+        print("Upgrade Tower Button Pressed");
 
+        ObstacleHighlighterScript ohs = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>();
+        if (ohs.hasTower)
+        {
+            if (TowerDictionary.ContainsTowerType(whichType))
+            {
+                string currentType = ohs.towerOnThisBlock.GetTowerType();
+                if(TowerDictionary.IsValidUpgrade(currentType, whichType))
+                {
+                    int currentCost, upgradeCost, uselessValue1, uselessValue2;
+                    TowerDictionary.GetValueTotals(currentType, out currentCost, out uselessValue1);
+                    TowerDictionary.GetValueTotals(whichType, out upgradeCost, out uselessValue2);
+
+                    if(M.Money >= upgradeCost - currentCost)
+                    {
+                        ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                        M.Money -= upgradeCost - currentCost;
+                    }
+                    else
+                        print("Not enough money!");
+
+                }
+                else
+                    print(whichType + " is not a valid upgrade for " + currentType + "!");
+            }
+            else
+                print("Tried to upgrade a tower to a tower type that doesn't exist!");
+        }
+        else
+            print("No tower to upgrade...");
     }
 
     public void BuyTower()
     {
+        /*
         print("Buy Tower Button Pressed");
         bool ifHasATower = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower;
         if (!ifHasATower)
@@ -102,10 +161,12 @@ public class uiManager : MonoBehaviour
             CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().spawnTowerOnThisBlock();
             CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower = true;
         }
+        */
     }
 
     public void UpgradeTower()
     {
+        /*
         Debug.Log("Upgrade Tower Button Pressed");
         if (CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower == true)
         {
@@ -126,5 +187,6 @@ public class uiManager : MonoBehaviour
                 Debug.Log("I'm already upgraded");
             }
         }
+        */
     }
 }

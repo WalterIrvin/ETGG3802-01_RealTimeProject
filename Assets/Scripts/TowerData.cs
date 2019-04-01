@@ -6,15 +6,15 @@ public class TowerData : MonoBehaviour
 {
     public string towerName;
     public string towerDesc;
-    public TOWER_TYPE towerType;
+    public string towerType;
+    public string prevTowerType;
+    public int buildCost;
+    public int refundAmount;
     public Material towerMaterial;
     public PROJECTILE_TYPE whatDoesThisShoot;
     public GameObject bulletPrefab;
     public float fireDelay;
     public float detectRange;
     public int bulletDamage;
-    public TOWER_TYPE prevTowerLevel;
-    public int buildCost;
-    public int refundAmount;
     public List<EntityModifier> bulletEffects;
 }

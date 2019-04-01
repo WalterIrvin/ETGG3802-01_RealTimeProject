@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Laser Tower
   towerDesc: A tower that damages enemies very quickly.
-  towerType: 2
+  towerType: RAPID_2
+  prevTowerType: RAPID
+  buildCost: 300
+  refundAmount: 150
   towerMaterial: {fileID: 2100000, guid: 24b3ba22b07c89b4eadbe834a0327cb7, type: 2}
   whatDoesThisShoot: 1
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
@@ -53,7 +56,4 @@ MonoBehaviour:
   fireDelay: 0.05
   detectRange: 3
   bulletDamage: 50
-  prevTowerLevel: 1
-  buildCost: 300
-  refundAmount: 150
   bulletEffects: []
