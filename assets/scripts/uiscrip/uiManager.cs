@@ -14,10 +14,14 @@ public class uiManager : MonoBehaviour
     GameObject[] pausedItems;
     protected MoneyScript M;
 
+    private string currentTowerType;
+    public string baseTowerType;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentTowerType = "NONE";
+
         Time.timeScale = 1;
         M = MoneyHandler.GetComponent<MoneyScript>();
         //pausedItems = GameObject.FindGameObjectsWithTag("ShowOnPause");
@@ -79,16 +83,26 @@ public class uiManager : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void BuyTower(string whichType)
+    public void SetCurrentTowerType(string newType)
+    {
+        currentTowerType = newType;
+    }
+
+    //public void BuyTower(string whichType)
+    public void BuyTower()
     {
         print("Buy Tower Button Pressed");
-        if(TowerDictionary.ContainsTowerType(whichType))
+
+        if (currentTowerType == "NONE")
+            currentTowerType = baseTowerType;
+
+        if (TowerDictionary.ContainsTowerType(currentTowerType))
         {
             ObstacleHighlighterScript ohs = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>();
-            if(!ohs.hasTower)
+            if (!ohs.hasTower)
             {
                 int buyCost, valueThatHasNoUseHere;
-                TowerDictionary.GetValueTotals(whichType, out buyCost, out valueThatHasNoUseHere);
+                TowerDictionary.GetValueTotals(currentTowerType, out buyCost, out valueThatHasNoUseHere);
 
                 if (M.Money >= buyCost)
                 {
@@ -96,7 +110,7 @@ public class uiManager : MonoBehaviour
 
                     // This code should go in ObstacleHighlighterScript.spawnTowerOnThisBlock(), but it doesn't work there... //
                     ohs.towerOnThisBlock = Instantiate(TowerPrefab, new Vector3(ohs.transform.position.x, ohs.transform.position.y + 0.325f, ohs.transform.position.z), Quaternion.identity);
-                    ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                    ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(currentTowerType));
                     ohs.hasTower = true;
                     // ====================================================================================================== //
 
@@ -105,32 +119,37 @@ public class uiManager : MonoBehaviour
                 else
                     print("Not enough money!");
             }
+            else
+                UpgradeTower();
         }
         else
         {
             print("Tried to buy a tower of a type that doesn't exist!");
         }
+
+        currentTowerType = "NONE";
     }
 
-    public void UpgradeTower(string whichType)
+    //public void UpgradeTower(string whichType)
+    public void UpgradeTower()
     {
         print("Upgrade Tower Button Pressed");
 
         ObstacleHighlighterScript ohs = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>();
         if (ohs.hasTower)
         {
-            if (TowerDictionary.ContainsTowerType(whichType))
+            if (TowerDictionary.ContainsTowerType(currentTowerType))
             {
                 string currentType = ohs.towerOnThisBlock.GetTowerType();
-                if(TowerDictionary.IsValidUpgrade(currentType, whichType))
+                if(TowerDictionary.IsValidUpgrade(currentType, currentTowerType))
                 {
                     int currentCost, upgradeCost, uselessValue1, uselessValue2;
                     TowerDictionary.GetValueTotals(currentType, out currentCost, out uselessValue1);
-                    TowerDictionary.GetValueTotals(whichType, out upgradeCost, out uselessValue2);
+                    TowerDictionary.GetValueTotals(currentTowerType, out upgradeCost, out uselessValue2);
 
                     if(M.Money >= upgradeCost - currentCost)
                     {
-                        ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                        ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(currentTowerType));
                         M.Money -= upgradeCost - currentCost;
                     }
                     else
@@ -138,18 +157,20 @@ public class uiManager : MonoBehaviour
 
                 }
                 else
-                    print(whichType + " is not a valid upgrade for " + currentType + "!");
+                    print(currentTowerType + " is not a valid upgrade for " + currentType + "!");
             }
             else
                 print("Tried to upgrade a tower to a tower type that doesn't exist!");
         }
         else
             print("No tower to upgrade...");
+
+        currentTowerType = "NONE";
     }
 
+    /*
     public void BuyTower()
     {
-        /*
         print("Buy Tower Button Pressed");
         bool ifHasATower = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower;
         if (!ifHasATower)
@@ -161,12 +182,10 @@ public class uiManager : MonoBehaviour
             CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().spawnTowerOnThisBlock();
             CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower = true;
         }
-        */
     }
 
     public void UpgradeTower()
     {
-        /*
         Debug.Log("Upgrade Tower Button Pressed");
         if (CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower == true)
         {
@@ -187,6 +206,6 @@ public class uiManager : MonoBehaviour
                 Debug.Log("I'm already upgraded");
             }
         }
-        */
     }
+    */
 }
