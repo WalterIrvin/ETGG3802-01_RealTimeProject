@@ -92,8 +92,10 @@ public class TowerScript : MonoBehaviour
 
         if(newData.whatDoesThisShoot == PROJECTILE_TYPE.PROJ_LASER)
         {
-            laserBeam.materials[0] = towerData.bulletPrefab.GetComponent<MeshRenderer>().material;
-            laserBeam.startColor = laserBeam.endColor = towerData.bulletPrefab.GetComponent<MeshRenderer>().material.color;
+            laserBeam.material = towerData.laserMaterial;
+
+            //laserBeam.materials[0] = towerData.bulletPrefab.GetComponent<MeshRenderer>().material;
+            //laserBeam.startColor = laserBeam.endColor = towerData.bulletPrefab.GetComponent<MeshRenderer>().material.color;
         }
     }
 
@@ -163,8 +165,8 @@ public class TowerScript : MonoBehaviour
 
                 case PROJECTILE_TYPE.PROJ_LASER:
                     laserBeam.SetPositions(new Vector3[] { TurretHead.position, laserTarget.transform.position });
-                    laserBeam.startWidth = 0.2f;
-                    laserBeam.endWidth = 0.2f;
+                    laserBeam.startWidth = 0.125f;
+                    laserBeam.endWidth = 0.125f;
 
                     if(Equals(laserTarget.tag, "Enemy") || Equals(laserTarget.tag, "Driller"))
                     {

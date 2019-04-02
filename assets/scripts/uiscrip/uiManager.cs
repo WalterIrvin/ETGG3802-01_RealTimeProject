@@ -93,8 +93,8 @@ public class uiManager : MonoBehaviour
     {
         print("Buy Tower Button Pressed");
 
-        if (currentTowerType == "NONE")
-            currentTowerType = baseTowerType;
+        //if (currentTowerType == "NONE")
+        currentTowerType = baseTowerType;
 
         if (TowerDictionary.ContainsTowerType(currentTowerType))
         {
@@ -119,8 +119,8 @@ public class uiManager : MonoBehaviour
                 else
                     print("Not enough money!");
             }
-            else
-                UpgradeTower();
+            //else
+            //    UpgradeTower();
         }
         else
         {

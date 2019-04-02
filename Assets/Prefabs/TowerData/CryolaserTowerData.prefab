@@ -53,6 +53,7 @@ MonoBehaviour:
   whatDoesThisShoot: 1
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
+  laserMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
   fireDelay: 0.05
   detectRange: 3
   bulletDamage: 2

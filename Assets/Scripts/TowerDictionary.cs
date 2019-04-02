@@ -55,6 +55,11 @@ public class TowerDictionary : MonoBehaviour
         if(!ContainsTowerType(currentType) || !ContainsTowerType(upgradeType))
             return false;
 
+
+        //return (towerDictionary[upgradeType].prevTowerType == currentType);
+
+        // This 'works' but doesn't take away money for some reason. //
+
         TowerData upgradeData = GetTowerData(upgradeType);
         while (upgradeData != null)
         {
@@ -64,8 +69,9 @@ public class TowerDictionary : MonoBehaviour
 
             upgradeData = GetTowerData(upgradeData.prevTowerType);
         }
-
+        
         return false;
+        
     }
 
     public static bool GetValueTotals(string towerType, out int totalBuyValue, out int totalSellValue)
