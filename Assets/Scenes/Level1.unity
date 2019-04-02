@@ -6975,7 +6975,7 @@ MonoBehaviour:
   CurrentlySelectedBlck: {fileID: 826367109}
   TowerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
     type: 3}
-  MoneyHandler: {fileID: 1870962859}
+  MoneyHandler: {fileID: 3787820657134294909}
   baseTowerType: BASE
 --- !u!1 &1362622603
 GameObject:
