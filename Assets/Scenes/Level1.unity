@@ -2934,7 +2934,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552243731}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &552243733
 Camera:
   m_ObjectHideFlags: 0
@@ -6788,7 +6788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9833d55771a21594c965a2a21a9fdc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBase: {fileID: 0}
+  playerBase: {fileID: 1719374032}
   attachedCounter: {fileID: 1316467627}
 --- !u!1 &1322602235
 GameObject:
@@ -8472,6 +8472,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684707017}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1719374032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2072228397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ac4d34b0b61914d8dcb6232cb09246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1794600190
 GameObject:
   m_ObjectHideFlags: 0
@@ -14399,7 +14411,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1719374032}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: spawnController
