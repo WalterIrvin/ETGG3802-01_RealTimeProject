@@ -9,6 +9,7 @@ public class WaveHandler : MonoBehaviour
     private int currentWave = 0;
     private int numWaves;
     private bool isActive = true;
+    private bool skipDowntime = false;
     public System.Diagnostics.Stopwatch downTime = new System.Diagnostics.Stopwatch();
     public float waveInterval;
     private List<GameObject> mSpawners = new List<GameObject>();
@@ -34,6 +35,12 @@ public class WaveHandler : MonoBehaviour
         //currentMaxLengthWave = checkBiggestWave();
     }
 
+    public void SkipWave()
+    {
+        if(!isActive)
+            skipDowntime = true;
+    }
+
     public int getWaveNumber()
     {
         return currentWave;
@@ -52,9 +59,10 @@ public class WaveHandler : MonoBehaviour
             SceneManager.LoadScene(1);
         }
 
-        if (!isActive && downTime.Elapsed.Seconds > waveInterval)
+        if (!isActive && (downTime.Elapsed.Seconds > waveInterval || skipDowntime == true))
         {
             Debug.Log("Next Wave Start");
+            skipDowntime = false;
             downTime.Reset();
             // spawn the next wave
             foreach (GameObject tmpObj in mSpawners)

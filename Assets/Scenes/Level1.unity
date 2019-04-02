@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3585,7 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f80cbcdc5d1ea449802910629206ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveInterval: 1
+  waveInterval: 30
   PAUSED: 0
 --- !u!4 &803778265
 Transform:
@@ -6228,6 +6228,7 @@ GameObject:
   - component: {fileID: 1277382060}
   - component: {fileID: 1277382059}
   - component: {fileID: 1277382058}
+  - component: {fileID: 1277382061}
   m_Layer: 5
   m_Name: NextWave
   m_TagString: Untagged
@@ -6293,7 +6294,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1277382059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1277382061}
+        m_MethodName: BroadcastMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: NextWave
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1277382059
@@ -6333,6 +6345,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1277382056}
   m_CullTransparentMesh: 0
+--- !u!114 &1277382061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277382056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0189e2aeab8dbfa4b8eb1c546408e80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 803778263}
 --- !u!1 &1280956898
 GameObject:
   m_ObjectHideFlags: 0
