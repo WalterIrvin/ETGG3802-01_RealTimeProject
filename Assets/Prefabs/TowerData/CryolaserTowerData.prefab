@@ -55,5 +55,6 @@ MonoBehaviour:
     type: 3}
   fireDelay: 0.05
   detectRange: 3
-  bulletDamage: 25
-  bulletEffects: []
+  bulletDamage: 2
+  bulletEffect: 2
+  effectTimer: 0.3

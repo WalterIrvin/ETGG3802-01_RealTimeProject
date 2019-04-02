@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e50cf631425cd4583ce781774fe3cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modName: FREEZE
   modType: 1
   modEffect: 1
   modValue: 0

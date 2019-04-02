@@ -16,5 +16,7 @@ public class TowerData : MonoBehaviour
     public float fireDelay;
     public float detectRange;
     public int bulletDamage;
-    public List<EntityModifier> bulletEffects;
+    public MODIFIER_EFFECT bulletEffect;
+    public float effectTimer;
+    //public List<EntityModifier> bulletEffects;
 }

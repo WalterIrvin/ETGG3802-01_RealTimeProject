@@ -56,6 +56,5 @@ MonoBehaviour:
   fireDelay: 1
   detectRange: 3
   bulletDamage: 25
-  bulletEffects:
-  - {fileID: 3883723272996540762, guid: a640d99cc5debe04d8d7756d869ba238, type: 3}
-  - {fileID: 5789983241494855286, guid: d23823844c054624eaba89dae3c4393d, type: 3}
+  bulletEffect: 2
+  effectTimer: 1

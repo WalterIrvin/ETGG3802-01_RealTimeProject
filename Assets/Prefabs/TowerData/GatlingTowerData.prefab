@@ -53,7 +53,8 @@ MonoBehaviour:
   whatDoesThisShoot: 0
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
-  fireDelay: 0.1
+  fireDelay: 0.25
   detectRange: 3
-  bulletDamage: 50
-  bulletEffects: []
+  bulletDamage: 40
+  bulletEffect: 0
+  effectTimer: 0

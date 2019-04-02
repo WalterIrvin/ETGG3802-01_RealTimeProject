@@ -9,7 +9,10 @@ public class TowerScript : MonoBehaviour
 
     public Transform TurretHead;
     private Transform main_target;
-    
+
+    private GameObject laserTarget;
+    private LineRenderer laserBeam;
+
     //public float fireDelay = 1f;
     //public float range = 3f;
     //public int towerDamage = 50;
@@ -25,6 +28,11 @@ public class TowerScript : MonoBehaviour
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
+
+        laserBeam = GetComponent<LineRenderer>();
+        laserBeam.transform.position = transform.position;
+        laserBeam.startWidth = 0;
+        laserBeam.endWidth = 0;
     }
 
     void SearchTarget()
@@ -56,9 +64,14 @@ public class TowerScript : MonoBehaviour
         if (nearestEnemy != null && shortest_dist <= towerData.detectRange)
         {
             main_target = nearestEnemy.transform;
+            laserTarget = nearestEnemy;
         } else
         {
             main_target = null;
+            laserTarget = null;
+
+            laserBeam.startWidth = 0;
+            laserBeam.endWidth = 0;
         }
     }
 
@@ -74,6 +87,12 @@ public class TowerScript : MonoBehaviour
 
         towerData = newData;
         TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = towerData.towerMaterial;
+
+        if(newData.whatDoesThisShoot == PROJECTILE_TYPE.PROJ_LASER)
+        {
+            laserBeam.materials[0] = towerData.bulletPrefab.GetComponent<MeshRenderer>().material;
+            laserBeam.startColor = laserBeam.endColor = towerData.bulletPrefab.GetComponent<MeshRenderer>().material.color;
+        }
     }
 
     public void Upgrade_RapidFire()
@@ -133,10 +152,31 @@ public class TowerScript : MonoBehaviour
                     BulletController bullet_script = bullet.GetComponent<BulletController>();
                     bullet_script.mDamage = towerData.bulletDamage;
                     bullet_script.mDestination = main_target.position;
+
+                    bullet_script.bulletEffect = towerData.bulletEffect;
+                    bullet_script.effectTimer = towerData.effectTimer;
+
                     startTime = Time.fixedTime;
                     break;
 
                 case PROJECTILE_TYPE.PROJ_LASER:
+                    laserBeam.SetPositions(new Vector3[] { TurretHead.position, laserTarget.transform.position });
+                    laserBeam.startWidth = 0.2f;
+                    laserBeam.endWidth = 0.2f;
+
+                    if(Equals(laserTarget.tag, "Enemy") || Equals(laserTarget.tag, "Driller"))
+                    {
+                        if(towerData.bulletEffect != MODIFIER_EFFECT.MOD_NONE)
+                        {
+                            laserTarget.BroadcastMessage("SetStatus", towerData.bulletEffect);
+                            laserTarget.BroadcastMessage("SetStatusTimer", towerData.effectTimer);
+                        }
+
+                        laserTarget.BroadcastMessage("dmgHealth", towerData.bulletDamage);
+                    }
+
+                    //if (Equals(tmp.tag, "Enemy") || Equals(tmp.tag, "Driller"))
+
                     break;
 
                 default:
