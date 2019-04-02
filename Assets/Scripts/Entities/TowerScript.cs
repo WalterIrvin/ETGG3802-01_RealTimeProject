@@ -30,8 +30,6 @@ public class TowerScript : MonoBehaviour
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
         source = GetComponent<AudioSource>();
-        source.volume = 0.1f;
-
 
         laserBeam = GetComponent<LineRenderer>();
         laserBeam.transform.position = transform.position;
