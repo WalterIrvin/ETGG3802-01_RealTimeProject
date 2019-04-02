@@ -10,8 +10,11 @@ public class PauseButtonScript : MonoBehaviour
     public Sprite pausedSprite;
     public Sprite playSprite;
     private Image curImg;
+    private AudioSource source;
+
     void Start()
     {
+        source = gameObject.GetComponentInParent(typeof(AudioSource)) as AudioSource;
         curImg = this.gameObject.GetComponent<Image>();
         isPaused = false;
     }
@@ -20,7 +23,7 @@ public class PauseButtonScript : MonoBehaviour
     {
         curImg.sprite = playSprite;
         isPaused = true;
-        waveHandlerObject.GetComponent<WaveHandler>().PAUSED = true;
+        waveHandlerObject.GetComponent<WaveHandler>().pause();
         Time.timeScale = 0;
         Debug.Log("Pausing Game");
     }
@@ -29,7 +32,7 @@ public class PauseButtonScript : MonoBehaviour
     {
         curImg.sprite = pausedSprite;
         isPaused = false;
-        waveHandlerObject.GetComponent<WaveHandler>().PAUSED = false;
+        waveHandlerObject.GetComponent<WaveHandler>().unpause();
         Time.timeScale = 1;
         Debug.Log("UnPausing Game");
     }
@@ -44,5 +47,6 @@ public class PauseButtonScript : MonoBehaviour
         {
             PauseGame();
         }
+        source.Play(0);
     }
 }

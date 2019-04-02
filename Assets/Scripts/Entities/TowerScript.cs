@@ -21,11 +21,14 @@ public class TowerScript : MonoBehaviour
     public Material MAT_RapidFire;
     public Material MAT_Slow;
 
+    private AudioSource source;
 
     void Start()
     {
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
+        source = GetComponent<AudioSource>();
+        source.volume = 0.1f;
     }
 
     void SearchTarget()
@@ -151,6 +154,7 @@ public class TowerScript : MonoBehaviour
                 bullet_script.mDestination = main_target.position;
                 startTime = Time.fixedTime;
             }
+            source.Play(0);
         }
         */
     }
