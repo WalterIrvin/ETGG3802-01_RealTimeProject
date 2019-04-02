@@ -8,6 +8,10 @@ public class BulletController : MonoBehaviour
     public int mDamage = 0;
     private Vector3 mDirection;
     private float mAliveTimer = 5.0f;
+
+    public MODIFIER_EFFECT bulletEffect;
+    public float effectTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,12 @@ public class BulletController : MonoBehaviour
         GameObject tmp = other.gameObject;
         if (Equals(tmp.tag, "Enemy") || Equals(tmp.tag, "Driller"))
         {
+            if(bulletEffect != MODIFIER_EFFECT.MOD_NONE)
+            {
+                tmp.BroadcastMessage("SetStatus", bulletEffect);
+                tmp.BroadcastMessage("SetStatusTimer", effectTimer);
+            }
+
             tmp.BroadcastMessage("dmgHealth", mDamage);
             Destroy(this.gameObject);
         }

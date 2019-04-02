@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &445474987109212031
+--- !u!1 &2640537402839436740
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 445474987109212001}
-  - component: {fileID: 445474987109212000}
+  - component: {fileID: 2640537402839436742}
+  - component: {fileID: 2640537402839436743}
   m_Layer: 0
-  m_Name: SlowTower
+  m_Name: CryolaserTowerData
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &445474987109212001
+--- !u!4 &2640537402839436742
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445474987109212031}
+  m_GameObject: {fileID: 2640537402839436740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,30 +31,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &445474987109212000
+--- !u!114 &2640537402839436743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445474987109212031}
+  m_GameObject: {fileID: 2640537402839436740}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8dc4a6236cd26240a07f7936156f2c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: Slowing Tower
-  towerDesc: A tower that slows enemies, but does less damage.
-  towerType: 3
-  towerMaterial: {fileID: 2100000, guid: 365a5342ad42e884cb3ca37ad20c9400, type: 2}
-  whatDoesThisShoot: 0
-  bulletPrefab: {fileID: 5343105490023573500, guid: 2ebbadaf4349a8248b88478610d00676,
+  towerName: Cryo-Laser Tower
+  towerDesc: A Tower that shoots a slowing beam.
+  towerType: SLOW_3
+  prevTowerType: SLOW_2
+  buildCost: 450
+  refundAmount: 225
+  towerMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
+  whatDoesThisShoot: 1
+  bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
-  fireDelay: 1
+  fireDelay: 0.05
   detectRange: 3
-  bulletDamage: 25
-  prevTowerLevel: 0
-  buildCost: 150
-  refundAmount: 75
-  bulletEffects:
-  - {fileID: 5789983241494855286, guid: d23823844c054624eaba89dae3c4393d, type: 3}
+  bulletDamage: 2
+  bulletEffect: 2
+  effectTimer: 0.3

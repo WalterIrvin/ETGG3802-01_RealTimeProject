@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Rapid-Fire Tower
   towerDesc: A tower that has a shorter delay between shots.
-  towerType: 1
+  towerType: RAPID
+  prevTowerType: BASE
+  buildCost: 150
+  refundAmount: 75
   towerMaterial: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
   whatDoesThisShoot: 0
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
@@ -53,7 +56,4 @@ MonoBehaviour:
   fireDelay: 0.25
   detectRange: 3
   bulletDamage: 50
-  prevTowerLevel: 0
-  buildCost: 150
-  refundAmount: 75
   bulletEffects: []

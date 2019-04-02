@@ -2,44 +2,89 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//                          Base      Rapid Fire        Laser          Slow           Ice       //
-public enum TOWER_TYPE { TOWER_BASE, TOWER_RAPID_1, TOWER_RAPID_2, TOWER_SLOW_1, TOWER_SLOW_2 };
 public enum PROJECTILE_TYPE { PROJ_BULLET, PROJ_LASER };
 
-// Not actually a dictionary (Can't add elements to a dictionary through the inspector like lists, so this is an alternative). //
 public class TowerDictionary : MonoBehaviour
 {
-    // Can't add elements through the inspector if the list is static, but having a static list  //
-    //    removes the need to add TowerDictionary variables to objects that need the tower data. //
-    //    Maybe convert this to a singleton... (Probably not).                                   //
-
-    public List<TowerData> towerData; 
-    public static List<TowerData> towerDataGlobal;
+    public List<TowerData> towerData;
+    private static Dictionary<string, TowerData> towerDictionary;
 
     void Start()
     {
-        towerDataGlobal = towerData;
+        // Can't add elements to a dictionary or static list through the inspector. //
+
+        towerDictionary = new Dictionary<string, TowerData>();
+        foreach(TowerData TD in towerData)
+        {
+            towerDictionary.Add(TD.towerType, TD);
+        }
     }
 
-    public static TowerData GetTowerData(TOWER_TYPE whichType)
+    public static bool ContainsTowerType(string whichType)
     {
-        foreach(TowerData TD in towerDataGlobal)
-        {
-            if(TD.towerType == whichType)
-                return TD;
-        }
-
-        return null;
+        return towerDictionary.ContainsKey(whichType);
     }
 
-    public static TowerData GetTowerDataWithName(string towerName)
+    public static void AddTowerType(TowerData newType)
     {
-        foreach(TowerData TD in towerDataGlobal)
+        if(towerDictionary.ContainsKey(newType.towerType))
+            print("TowerDictionary already contains a tower of type " + newType.towerType);
+        else
+            towerDictionary.Add(newType.towerType, newType);
+    }
+
+    public static TowerData GetTowerData(string whichType)
+    {
+        TowerData result;
+
+        if(towerDictionary.TryGetValue(whichType, out result))
         {
-            if(TD.towerName == towerName)
-                return TD;
+            //print(result.towerType);
+            return result;
         }
 
-        return null;
+        //print("Tried to get TowerData for a tower type that doesn't exist!");
+        return result;
+    }
+
+    public static bool IsValidUpgrade(string currentType, string upgradeType)
+    {
+        if(currentType == upgradeType)
+            return false;
+
+        if(!ContainsTowerType(currentType) || !ContainsTowerType(upgradeType))
+            return false;
+
+        TowerData upgradeData = GetTowerData(upgradeType);
+        while (upgradeData != null)
+        {
+            upgradeType = upgradeData.prevTowerType;
+            if(upgradeType == currentType)
+                return true;
+
+            upgradeData = GetTowerData(upgradeData.prevTowerType);
+        }
+
+        return false;
+    }
+
+    public static bool GetValueTotals(string towerType, out int totalBuyValue, out int totalSellValue)
+    {
+        totalBuyValue = 0;
+        totalSellValue = 0;
+
+        if(!ContainsTowerType(towerType))
+            return false;
+
+        TowerData tempData = GetTowerData(towerType);
+        while (tempData != null)
+        {
+            totalBuyValue  += tempData.buildCost;
+            totalSellValue += tempData.refundAmount;
+
+            tempData = GetTowerData(tempData.prevTowerType);
+        }
+       
+        return true;
     }
 }
