@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MoneyScript : MonoBehaviour
 {
-    public Text MoneyText;
+    //public Text MoneyText;
     public int Money = 1000;
 
 
@@ -18,7 +18,7 @@ public class MoneyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoneyText.text = "Money: " + Money.ToString();
+        //MoneyText.text = "Money: " + Money.ToString();
     }
 
     void ChangeMoney(int amt)
