@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5501911a41c76bf478d4790e2b081595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 100
-  agentAcceleration: 30
-  agentMaxSpeed: 2
+  value: 15
+  agentAcceleration: 1
+  agentMaxSpeed: 1
   health: 200
   _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
     type: 3}
