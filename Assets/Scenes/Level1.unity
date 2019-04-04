@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -791,13 +791,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 105225510}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RAPID_2
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -851,6 +851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: RAPID_2
   commandTarget: {fileID: 1345093128}
 --- !u!1 &121026211
 GameObject:
@@ -1231,6 +1232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 245697047}
+  - component: {fileID: 245697048}
   m_Layer: 0
   m_Name: TowerData
   m_TagString: Untagged
@@ -1257,6 +1259,18 @@ Transform:
   m_Father: {fileID: 410584769}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245697048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245697046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa8c080668bef54894a5de5a07bb6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &265841233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,13 +2590,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 483679260}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SLOW_2
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2636,6 +2650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: SLOW_2
   commandTarget: {fileID: 1345093128}
 --- !u!1 &532552303
 GameObject:
@@ -2848,13 +2863,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 544440201}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SLOW_3
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2908,6 +2923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: SLOW_3
   commandTarget: {fileID: 1345093128}
 --- !u!1 &552243731
 GameObject:
@@ -3893,13 +3909,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 834134142}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RAPID
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3953,6 +3969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: RAPID
   commandTarget: {fileID: 1345093128}
 --- !u!1 &858145768
 GameObject:
@@ -4690,13 +4707,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 987329907}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: BASE
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4750,6 +4767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: BASE
   commandTarget: {fileID: 1345093128}
 --- !u!1 &992312761
 GameObject:
@@ -4929,6 +4947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 1345093128}
 --- !u!1 &1045466357
 GameObject:
@@ -8656,13 +8675,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1861063087}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: RAPID_3
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -8716,6 +8735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: RAPID_3
   commandTarget: {fileID: 1345093128}
 --- !u!1 &1870962859
 GameObject:
@@ -9325,6 +9345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: BASE
   commandTarget: {fileID: 1345093128}
 --- !u!1 &1938034794
 GameObject:
@@ -10960,13 +10981,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2133725914}
         m_MethodName: SetCurrentTowerType
-        m_Mode: 5
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SLOW
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -11020,6 +11041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: SLOW
   commandTarget: {fileID: 1345093128}
 --- !u!1 &2139598954
 GameObject:

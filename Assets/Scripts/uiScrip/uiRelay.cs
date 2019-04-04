@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class uiRelay : MonoBehaviour
 {
+    public string towerType;
     public uiManager commandTarget;
 
-    public void SetCurrentTowerType(string newType)
+    public void SetCurrentTowerType()
     {
-        commandTarget.SetCurrentTowerType(newType);
+        commandTarget.SetCurrentTowerType(towerType);
     }
 
     public void BuyTower()
