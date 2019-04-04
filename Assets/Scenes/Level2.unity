@@ -347,6 +347,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 542695891854912994, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 542695891854912994, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 542695891854912994, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
 --- !u!1001 &1048724891
@@ -642,6 +657,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 542695891854912994, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 542695891854912994, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
 --- !u!114 &1756826645 stripped
@@ -736,7 +761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 43.775, y: 0, z: 0}
 --- !u!65 &15707797782101715
 BoxCollider:
@@ -23284,7 +23309,7 @@ Transform:
   - {fileID: 3813553422475774610}
   - {fileID: 3813553421967658084}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7143689997281342492
 AudioSource:
@@ -29671,6 +29696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002823247166794
 CanvasRenderer:
@@ -31331,6 +31357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002823472883295
 CanvasRenderer:
@@ -31519,6 +31546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002823486471741
 CanvasRenderer:
@@ -32011,6 +32039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002823851691489
 CanvasRenderer:
@@ -33581,6 +33610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002824163324598
 CanvasRenderer:
@@ -34431,6 +34461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002824341995942
 CanvasRenderer:
@@ -34481,6 +34512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002824355945185
 CanvasRenderer:
@@ -35433,6 +35465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002824545898478
 CanvasRenderer:
@@ -35995,6 +36028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cbdf501d8de74aaa1c32a9e2ec4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerType: 
   commandTarget: {fileID: 8707002822928503195}
 --- !u!222 &8707002824801980443
 CanvasRenderer:

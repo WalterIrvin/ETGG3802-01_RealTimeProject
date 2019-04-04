@@ -30,7 +30,7 @@ public class EnemySpawnerScript : MonoBehaviour
     }
 
     public List<Wave> WaveList;
-    public BasicBaseScript Target;
+    private BasicBaseScript Target;
     //public WaveHandler waveController;
 
     private System.Diagnostics.Stopwatch enemyTimer = new System.Diagnostics.Stopwatch();
@@ -50,6 +50,10 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         enemyTimer.Start();
         bossTimer.Start();
+
+        List<GameObject> tmp = new List<GameObject>(GameObject.FindGameObjectsWithTag("Base"));
+
+        Target = tmp[0].GetComponent<BasicBaseScript>();
     }
 
     // Update is called once per frame
@@ -83,7 +87,6 @@ public class EnemySpawnerScript : MonoBehaviour
                     if (enemyTimer.Elapsed.Seconds > enemy.timer)
                     {
                         Vector3 pos = transform.position;
-                        pos.y -= 1;
                         GameObject enemyClone = Instantiate(enemy.gobj, pos, transform.rotation);
                         enemyClone.GetComponent<EnemyMover>()._destination = Target.transform;
                         enemyTimer.Reset();
@@ -121,7 +124,6 @@ public class EnemySpawnerScript : MonoBehaviour
                     if (bossTimer.Elapsed.Seconds > boss.timer)
                     {
                         Vector3 pos = transform.position;
-                        pos.y -= 1;
                         GameObject bossClone = Instantiate(boss.gobj, pos, transform.rotation);
                         bossTimer.Reset();
                         bossTimer.Start();
