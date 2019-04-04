@@ -124,6 +124,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 1996551081}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].timer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].timer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].amount
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,10 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &989339375
@@ -387,7 +440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1982698359}
   - component: {fileID: 1982698358}
-  - component: {fileID: 1982698357}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -395,14 +447,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1982698357
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982698356}
-  m_Enabled: 1
 --- !u!20 &1982698358
 Camera:
   m_ObjectHideFlags: 0
@@ -459,6 +503,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 27.364002, y: 0, z: 0}
+--- !u!114 &1996551081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+    type: 3}
+  m_PrefabInstance: {fileID: 605163575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ac4d34b0b61914d8dcb6232cb09246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2025745192
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,10 +617,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &51970639782179102
@@ -579,10 +636,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &68242717315372647
@@ -2980,10 +3038,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &343446904670214328
@@ -2998,10 +3057,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &355232010925909476
@@ -3111,10 +3171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &402787914118154717
@@ -3237,10 +3298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &492431730634438042
@@ -3329,10 +3391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &555977530473212262
@@ -3363,10 +3426,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &583389365500202879
@@ -3403,10 +3467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &636795338305603580
@@ -3442,10 +3507,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &760005540010627898
@@ -3510,10 +3576,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &806348875684167613
@@ -3681,10 +3748,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &949863876087377460
@@ -3868,10 +3936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &1105478379715089980
@@ -3926,10 +3995,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &1170054122790139011
@@ -4074,10 +4144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &1391017751257707458
@@ -4129,10 +4200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &1398430663466148737
@@ -5723,10 +5795,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &1709846446668126449
@@ -6014,10 +6087,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &2151728648932521285
@@ -6115,10 +6189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &2262382412803231318
@@ -12257,10 +12332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &2378118340837211993
@@ -12320,10 +12396,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &2428165033893162293
@@ -12397,10 +12474,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &2494593089570829636
@@ -12439,10 +12517,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &2527607626179251684
@@ -12791,10 +12870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &2647470017018836843
@@ -12830,10 +12910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &2658881752916144672
@@ -13032,10 +13113,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &2895903598386466639
@@ -13091,10 +13173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &2919345925125596587
@@ -13117,10 +13200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &2934288689559820455
@@ -13437,10 +13521,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &3219151084474473758
@@ -13506,10 +13591,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &3282226720728924126
@@ -13524,10 +13610,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &3290123851343701315
@@ -13571,10 +13658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &3414245889503014455
@@ -13610,10 +13698,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &3451074366612239790
@@ -13738,10 +13827,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &3597675798499248305
@@ -14051,10 +14141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &3778694849527329817
@@ -14136,10 +14227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &3864676280664045395
@@ -14319,10 +14411,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &3964551035621359530
@@ -14473,10 +14566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869120904205
@@ -14528,10 +14622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869121771277
@@ -14599,10 +14694,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869166572618
@@ -14638,10 +14734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869166572621
@@ -14693,10 +14790,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869168602651
@@ -14748,10 +14846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869175034559
@@ -14803,10 +14902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869192508483
@@ -14858,10 +14958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869200933927
@@ -14913,10 +15014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869211001245
@@ -14968,10 +15070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869211491385
@@ -15023,10 +15126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869212437427
@@ -15078,10 +15182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869225917097
@@ -15149,10 +15254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869245890732
@@ -15204,10 +15310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869251007994
@@ -15243,10 +15350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869251007997
@@ -15314,10 +15422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869259414402
@@ -15353,10 +15462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869259414405
@@ -15408,10 +15518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869262530251
@@ -15479,10 +15590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869276347098
@@ -15518,10 +15630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869276347101
@@ -15573,10 +15686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869277662259
@@ -15644,10 +15758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869340455918
@@ -15699,10 +15814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869350644086
@@ -15754,10 +15870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869374895222
@@ -15809,10 +15926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869378234194
@@ -15848,10 +15966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869378234197
@@ -15903,10 +16022,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869408085561
@@ -15958,10 +16078,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869445322741
@@ -16029,10 +16150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869483973258
@@ -16084,10 +16206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869484013448
@@ -16139,10 +16262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869496120280
@@ -16178,10 +16302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869496120283
@@ -16233,10 +16358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869514587871
@@ -16304,10 +16430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869523514018
@@ -16359,10 +16486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869540277616
@@ -16398,10 +16526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869540277619
@@ -16453,10 +16582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869541549161
@@ -16524,10 +16654,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869558641404
@@ -16579,10 +16710,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869604337134
@@ -16634,10 +16766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869623028254
@@ -16689,10 +16822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869625963468
@@ -16744,10 +16878,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869692002186
@@ -16783,10 +16918,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869692002189
@@ -16838,10 +16974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869694339697
@@ -16893,10 +17030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869694396169
@@ -16964,10 +17102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869715261272
@@ -17003,10 +17142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869715261275
@@ -17058,10 +17198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869730018869
@@ -17129,10 +17270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869780365202
@@ -17184,10 +17326,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869789734588
@@ -17239,10 +17382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869790110814
@@ -17278,10 +17422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869790110881
@@ -17349,10 +17494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869799098844
@@ -17404,10 +17550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869818418754
@@ -17443,10 +17590,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869818418757
@@ -17498,10 +17646,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869828236477
@@ -17569,10 +17718,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869859068010
@@ -17608,10 +17758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869859068013
@@ -17679,10 +17830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238869876631160
@@ -17718,10 +17870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869876631163
@@ -17773,10 +17926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869910135981
@@ -17844,10 +17998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &4065238869918533057
@@ -17862,10 +18017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869918533118
@@ -17938,10 +18094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869925108785
@@ -17993,10 +18150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869929538867
@@ -18048,10 +18206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869931737847
@@ -18103,10 +18262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869940615969
@@ -18137,10 +18297,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238869976388481
@@ -18229,10 +18390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870008030566
@@ -18284,10 +18446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870008446860
@@ -18323,10 +18486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870008446863
@@ -18378,10 +18542,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870023647385
@@ -18412,10 +18577,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870043583742
@@ -18488,10 +18654,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870045852837
@@ -18559,10 +18726,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870054219120
@@ -18598,10 +18766,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870054219123
@@ -18653,10 +18822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870055674385
@@ -18708,10 +18878,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870071723241
@@ -18763,10 +18934,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870090334135
@@ -18818,10 +18990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870106435079
@@ -18852,10 +19025,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870125979134
@@ -18944,10 +19118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870170208550
@@ -18999,10 +19174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870179890736
@@ -19038,10 +19214,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870179890739
@@ -19093,10 +19270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870190507035
@@ -19164,10 +19342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870207727672
@@ -19203,10 +19382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870207727675
@@ -19258,10 +19438,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870225478293
@@ -19329,10 +19510,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870266880668
@@ -19368,10 +19550,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870266880671
@@ -19439,10 +19622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870295679030
@@ -19494,10 +19678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870301656280
@@ -19549,10 +19734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870309135006
@@ -19588,10 +19774,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870309135073
@@ -19659,10 +19846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870310474146
@@ -19714,10 +19902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870320660896
@@ -19753,10 +19942,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870320660899
@@ -19824,10 +20014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870352720266
@@ -19879,10 +20070,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870370767472
@@ -19918,10 +20110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870370767475
@@ -19973,10 +20166,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870380705685
@@ -20044,10 +20238,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870412850154
@@ -20099,10 +20294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870445348170
@@ -20138,10 +20334,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870445348173
@@ -20193,10 +20390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870465871959
@@ -20264,10 +20462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870493449636
@@ -20303,10 +20502,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870493449639
@@ -20358,10 +20558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870496616357
@@ -20429,10 +20630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870512883738
@@ -20484,10 +20686,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &4065238870570252417
@@ -20502,10 +20705,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870570252478
@@ -20578,10 +20782,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870583364465
@@ -20649,10 +20854,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870596269198
@@ -20688,10 +20894,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870596269201
@@ -20743,10 +20950,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870610049201
@@ -20798,10 +21006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870610746169
@@ -20853,10 +21062,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870619380459
@@ -20924,10 +21134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870685184178
@@ -20963,10 +21174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870685184181
@@ -21034,10 +21246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870695905580
@@ -21073,10 +21286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870695905583
@@ -21128,10 +21342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870700769129
@@ -21183,10 +21398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870722501437
@@ -21238,10 +21454,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870727331307
@@ -21309,10 +21526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870771942684
@@ -21348,10 +21566,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870771942687
@@ -21419,10 +21638,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870781365254
@@ -21458,10 +21678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870781365257
@@ -21529,10 +21750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870803928356
@@ -21584,10 +21806,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870812791008
@@ -21623,10 +21846,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870812791011
@@ -21678,10 +21902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870870046861
@@ -21749,10 +21974,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870877058424
@@ -21804,10 +22030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870905966476
@@ -21859,10 +22086,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238870909482918
@@ -21898,10 +22126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870909482921
@@ -21953,10 +22182,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238870979664831
@@ -22024,10 +22254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871012414594
@@ -22063,10 +22294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871012414597
@@ -22134,10 +22366,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871047206660
@@ -22173,10 +22406,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871047206663
@@ -22228,10 +22462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871054260209
@@ -22299,10 +22534,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871069475144
@@ -22338,10 +22574,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871069475147
@@ -22393,10 +22630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871077931981
@@ -22464,10 +22702,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871083082604
@@ -22519,10 +22758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871089546778
@@ -22574,10 +22814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871097838300
@@ -22629,10 +22870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871134968720
@@ -22668,10 +22910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871134968723
@@ -22723,10 +22966,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871149532917
@@ -22778,10 +23022,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871165743131
@@ -22849,10 +23094,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871170715514
@@ -22904,10 +23150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871170795876
@@ -22959,10 +23206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871181018210
@@ -22998,10 +23246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871181018213
@@ -23053,10 +23302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871189899531
@@ -23108,10 +23358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871211817431
@@ -23179,10 +23430,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871245879520
@@ -23234,10 +23486,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &4065238871246549858
@@ -23273,10 +23526,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4065238871246549861
@@ -23400,10 +23654,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &4233413569365242298
@@ -23439,10 +23694,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4318503944841933806
@@ -23515,10 +23771,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4388524929414676435
@@ -23581,10 +23838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &4469651971072783945
@@ -23628,10 +23886,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &4551782714602897473
@@ -23724,10 +23983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &4692814786987011684
@@ -23742,10 +24002,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &4713806052709103068
@@ -23939,10 +24200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &4825872470665858580
@@ -23957,10 +24219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &4827544539743699054
@@ -23991,10 +24254,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &4878981585208155273
@@ -24009,10 +24273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &4904702300251386331
@@ -24134,10 +24399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &5028373318394135119
@@ -24378,10 +24644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &5301069224691705178
@@ -24396,10 +24663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &5303481484830274350
@@ -24524,10 +24792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &5394530545408123860
@@ -24726,10 +24995,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &5667455652883325407
@@ -24838,10 +25108,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &5739913031298403569
@@ -24905,10 +25176,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &5821054575997629778
@@ -24923,10 +25195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &5832086154127378323
@@ -25043,10 +25316,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &6014398780647646889
@@ -25205,10 +25479,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &6284516355313061591
@@ -25930,10 +26205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &6849701926776532313
@@ -25977,10 +26253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &6889353237875075525
@@ -26146,10 +26423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &7053621675197217593
@@ -26251,10 +26529,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &7135565283285965439
@@ -26797,10 +27076,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &7590980031604747587
@@ -26831,10 +27111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &7629118557124113666
@@ -26849,10 +27130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &7633100881072781508
@@ -26910,10 +27192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &7685799255474417521
@@ -27220,10 +27503,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &7973031213942833622
@@ -27360,10 +27644,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452315197110230
@@ -27596,10 +27881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!224 &8010452315258996302
@@ -28187,10 +28473,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452315325562563
@@ -29350,10 +29637,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452315669007729
@@ -29721,10 +30009,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!114 &8010452315742791360
@@ -29914,10 +30203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452315744787961
@@ -30049,10 +30339,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &8010452315819342314
@@ -30176,10 +30467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!224 &8010452315865588704
@@ -31063,10 +31355,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452316041860187
@@ -31198,10 +31491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &8010452316115070774
@@ -31955,10 +32249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452316290067851
@@ -32090,10 +32385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452316331018240
@@ -32734,10 +33030,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &8010452316396606606
@@ -32861,10 +33158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!224 &8010452316398081354
@@ -33249,10 +33547,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452316454630056
@@ -33672,10 +33971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452316472878744
@@ -33791,10 +34091,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452316472878751
@@ -34491,10 +34792,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452316829869708
@@ -34807,10 +35109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &8010452316894731046
@@ -35742,10 +36045,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!1 &8010452317114032430
@@ -35861,10 +36165,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452317114032437
@@ -36209,10 +36514,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452317189843489
@@ -36431,7 +36737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9833d55771a21594c965a2a21a9fdc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBase: {fileID: 0}
+  playerBase: {fileID: 1996551081}
   attachedCounter: {fileID: 8010452317200242314}
 --- !u!224 &8010452317230344328
 RectTransform:
@@ -36968,10 +37274,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8010452317262058975
@@ -37302,10 +37609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!208 &8055161013358244999
@@ -37527,10 +37835,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!33 &8352272444594145929
@@ -37553,10 +37862,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!23 &8381914083114931397
@@ -40786,10 +41096,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!65 &8976313005130517276
@@ -40845,10 +41156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedBlock: {fileID: 0}
+  selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
-  towerPrefab: {fileID: 0}
+  towerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
+    type: 3}
   towerOnThisBlock: {fileID: 0}
   hasTower: 0
 --- !u!4 &9136227386836895010
