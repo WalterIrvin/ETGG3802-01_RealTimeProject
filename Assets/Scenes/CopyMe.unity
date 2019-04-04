@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}

@@ -11,7 +11,7 @@ public class EnemyMover : MonoBehaviour
     public float agentAcceleration = 1;
     public float agentMaxSpeed = 1;
     public float health = 100;
-    private float maxHealth;
+    public float maxHealth;
     private Image healthBar;
     private GameObject MoneyHandle;
     //private AudioSource source;
