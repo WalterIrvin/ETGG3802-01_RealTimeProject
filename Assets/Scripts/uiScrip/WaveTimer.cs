@@ -9,6 +9,18 @@ public class WaveTimer : MonoBehaviour
 
     void Update()
     {
-        attachedCounter.setCounted(waveSpawner.getWaveNumber());
+        if (waveSpawner.GetComponent<WaveHandler>().getIsActive())
+        {
+            attachedCounter.setCounted(0);
+            return;
+        }
+
+        float tmp1 = waveSpawner.GetComponent<WaveHandler>().waveInterval;
+
+        float tmp2 = waveSpawner.GetComponent<WaveHandler>().downTime.Elapsed.Seconds;
+
+        float tmp3 = tmp1 - tmp2;
+
+        attachedCounter.setCounted(tmp3);
     }
 }

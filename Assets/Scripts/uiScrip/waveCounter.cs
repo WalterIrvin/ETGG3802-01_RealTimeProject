@@ -9,6 +9,6 @@ public class waveCounter : MonoBehaviour
 
     void Update()
     {
-        attachedCounter.setCounted(waveSpawner.waveInterval);
+        attachedCounter.setCounted(waveSpawner.getWaveNumber());
     }
 }

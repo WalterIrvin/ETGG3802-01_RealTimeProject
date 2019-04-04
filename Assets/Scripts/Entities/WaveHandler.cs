@@ -35,17 +35,6 @@ public class WaveHandler : MonoBehaviour
         //currentMaxLengthWave = checkBiggestWave();
     }
 
-    public void SkipWave()
-    {
-        if(!isActive)
-            skipDowntime = true;
-    }
-
-    public int getWaveNumber()
-    {
-        return currentWave;
-    }
-
     void Update()
     {
         if(PAUSED)
@@ -75,19 +64,6 @@ public class WaveHandler : MonoBehaviour
         else if (isActive)
         {
             bool endWave = true;
-            /*foreach (GameObject tmpObj in mSpawners)
-            {
-                var tmpEnemyScript = tmpObj.GetComponent<EnemySpawnerScript>();
-                var tmpWaveList = tmpEnemyScript.WaveList;
-                //grabs only wavelists with more then 0 waves in them
-                if (tmpWaveList.Count > 0)
-                {
-                    if ((ThisWaveLen(tmpEnemyScript) >= currentMaxLengthWave) && tmpEnemyScript.waveOver)
-                    {
-                        endWave = true;
-                    }
-                }
-            }*/
 
             foreach (GameObject tmpObj in mSpawners)
             {
@@ -100,7 +76,6 @@ public class WaveHandler : MonoBehaviour
                 Debug.Log("Wave Over handler");
                 isActive = false;
                 ++currentWave;
-                //currentMaxLengthWave = checkBiggestWave();
                 downTime.Reset();
                 downTime.Start();
             }
@@ -133,39 +108,19 @@ public class WaveHandler : MonoBehaviour
         }
     }
 
-    /*int ThisWaveLen(EnemySpawnerScript obj)
+    public void SkipWave()
     {
-        int x = 0;
-        if(currentWave < obj.WaveList.Count)
-        {
-            x = (obj.WaveList[currentWave].GenericEnemyList.Count + obj.WaveList[currentWave].bossList.Count);
-        }
-        return x; 
-    }*/
+        if (!isActive)
+            skipDowntime = true;
+    }
 
-    /*public int checkBiggestWave()
+    public int getWaveNumber()
     {
-        int maxLengthWave = 0;
-        for (int i = 0; i < mSpawners.Count - 1; ++i)
-        {
-            int aLen = 0;
-            int bLen = 0;
-            var A = mSpawners[i].GetComponent<EnemySpawnerScript>();
-            var B = mSpawners[i+1].GetComponent<EnemySpawnerScript>();
-            if (currentWave < A.WaveList.Count)
-            {
-                aLen = A.WaveList[currentWave].GenericEnemyList.Count + A.WaveList[currentWave].bossList.Count;
-            }
-            if (currentWave < B.WaveList.Count)
-            {
-                bLen = B.WaveList[currentWave].GenericEnemyList.Count + B.WaveList[currentWave].bossList.Count;
-            }
+        return currentWave + 1;
+    }
 
-            if (aLen > maxLengthWave || bLen > maxLengthWave)
-            {
-                maxLengthWave = (aLen > bLen) ? aLen : bLen;
-            }
-        }
-        return maxLengthWave;
-    }*/
+    public bool getIsActive()
+    {
+        return isActive;
+    }
 }
