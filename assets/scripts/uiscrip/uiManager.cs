@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -14,13 +15,14 @@ public class uiManager : MonoBehaviour
     GameObject[] pausedItems;
     protected MoneyScript M;
 
+    public Text towerCostText;
     private string currentTowerType;
     public string baseTowerType;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTowerType = "NONE";
+        SetCurrentTowerType("BASE");
 
         Time.timeScale = 1;
         M = MoneyHandler.GetComponent<MoneyScript>();
@@ -86,6 +88,13 @@ public class uiManager : MonoBehaviour
     public void SetCurrentTowerType(string newType)
     {
         currentTowerType = newType;
+
+        TowerData towerData = TowerDictionary.GetTowerData(newType);
+        if (towerData != null)
+            towerCostText.text = "Cost: " + towerData.buildCost.ToString();
+        else
+            towerCostText.text = "";
+
     }
 
     //public void BuyTower(string whichType)
@@ -115,6 +124,7 @@ public class uiManager : MonoBehaviour
                     // ====================================================================================================== //
 
                     M.Money -= buyCost;
+                    ohs.UpdateUIText();
                 }
                 else
                     print("Not enough money!");
@@ -127,7 +137,7 @@ public class uiManager : MonoBehaviour
             print("Tried to buy a tower of a type that doesn't exist!");
         }
 
-        currentTowerType = "NONE";
+        SetCurrentTowerType("BASE");
     }
 
     //public void UpgradeTower(string whichType)
@@ -151,6 +161,7 @@ public class uiManager : MonoBehaviour
                     {
                         ohs.towerOnThisBlock.SetTowerData(TowerDictionary.GetTowerData(currentTowerType));
                         M.Money -= upgradeCost - currentCost;
+                        ohs.UpdateUIText();
                     }
                     else
                         print("Not enough money!");
@@ -165,7 +176,7 @@ public class uiManager : MonoBehaviour
         else
             print("No tower to upgrade...");
 
-        currentTowerType = "NONE";
+        SetCurrentTowerType("BASE");
     }
 
     /*

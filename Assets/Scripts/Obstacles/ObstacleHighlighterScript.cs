@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleHighlighterScript : MonoBehaviour
 {
+    public uiTowerInfo towerInfo;
     public GameObject selectedBlock;
     public Material oldMaterial;
     public Material highlightMaterial;
@@ -47,6 +48,15 @@ public class ObstacleHighlighterScript : MonoBehaviour
     private void OnMouseDown()
     {
         selectedBlock.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock = gameObject;
+        UpdateUIText();
+    }
+
+    public void UpdateUIText()
+    {
+        if (hasTower)
+            towerInfo.UpdateUIText(towerOnThisBlock.GetTowerType());
+        else
+            towerInfo.UpdateUIText("NONE");
     }
 
     public void spawnTowerOnThisBlock(string towerType)
