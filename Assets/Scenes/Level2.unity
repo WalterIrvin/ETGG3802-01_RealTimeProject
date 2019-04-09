@@ -10674,6 +10674,7 @@ GameObject:
   - component: {fileID: 1610289641832631894}
   - component: {fileID: 1610289641832631891}
   - component: {fileID: 1610289641832631890}
+  - component: {fileID: 1610289641832631893}
   m_Layer: 5
   m_Name: UpgradeTowerButton
   m_TagString: Untagged
@@ -10681,6 +10682,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1610289641832631893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610289641832631892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe04c53c1c8d624fa3410cd8b6b62ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioFactor: 1
 --- !u!114 &1610289641832631894
 MonoBehaviour:
   m_ObjectHideFlags: 0
