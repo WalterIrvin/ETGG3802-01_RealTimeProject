@@ -91,7 +91,10 @@ public class uiManager : MonoBehaviour
 
         TowerData towerData = TowerDictionary.GetTowerData(newType);
         if (towerData != null)
+        {
             towerCostText.text = "Cost: " + towerData.buildCost.ToString();
+            CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().towerInfo.UpdateUIText(newType);
+        }
         else
             towerCostText.text = "";
 

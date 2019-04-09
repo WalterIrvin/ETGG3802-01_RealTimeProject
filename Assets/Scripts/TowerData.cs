@@ -13,7 +13,7 @@ public class TowerData : MonoBehaviour
     public Material towerMaterial;
     public PROJECTILE_TYPE whatDoesThisShoot;
     public GameObject bulletPrefab;
-    public Material laserMaterial;
+    public Material projectileMaterial;
     public float fireDelay;
     public float detectRange;
     public int bulletDamage;
