@@ -152,6 +152,7 @@ public class TowerScript : MonoBehaviour
             switch (towerData.whatDoesThisShoot)
             {
                 case PROJECTILE_TYPE.PROJ_BULLET:
+                    source.Play(0);
                     GameObject bullet = Instantiate(towerData.bulletPrefab, transform.position, Quaternion.identity);
                     BulletController bullet_script = bullet.GetComponent<BulletController>();
                     bullet_script.mDamage = towerData.bulletDamage;
