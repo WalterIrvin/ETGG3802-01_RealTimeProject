@@ -12,7 +12,7 @@ public class BasicBaseScript : MonoBehaviour
     private Image healthBar;
     //public Text gameover;
     private AudioSource source;
-    
+    public float AudioFactor = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -45,5 +45,10 @@ public class BasicBaseScript : MonoBehaviour
             healthBar.fillAmount = (float)health / (float)maxHealth;
         }
 
+    }
+
+    public void UpdateVolume(float n_vol)
+    {
+        source.volume = n_vol * AudioFactor;
     }
 }

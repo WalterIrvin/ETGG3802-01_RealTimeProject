@@ -12,6 +12,7 @@ TagManager:
   - Destructible
   - Tower
   - Spawner
+  - Volume
   layers:
   - Default
   - TransparentFX
