@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum TILE_TYPE { TILE_PATH, TILE_TILE, TILE_BREAKABLE, TILE_START, TILE_END }
+public enum TILE_TYPE { TILE_PATH, TILE_TILE, TILE_BREAKABLE, TILE_SPAWNER, TILE_BASE }
 
 public struct TileObject
 {
@@ -13,6 +13,10 @@ public class GameMaster : MonoBehaviour
 {
     public TextAsset mapFile;
     public TextAsset saveData;
+
+    public BasicBaseScript playerBase;
+    public EnemySpawnerScript enemySpawner;
+
     public GameObject mapTilePrefab;
     public GameObject mapTileParent;
 
@@ -48,7 +52,18 @@ public class GameMaster : MonoBehaviour
                         newTileObject.Tile.transform.SetParent(mapTileParent.transform);
                         break;
 
+                    case 'B':
+                        newTileObject.Type = TILE_TYPE.TILE_BASE;
+                        playerBase.transform.position = new Vector3(x - 8, playerBase.transform.localScale.y / 2, z - 8);
+                        break;
+
+                    case 'S':
+                        newTileObject.Type = TILE_TYPE.TILE_SPAWNER;
+                        enemySpawner.transform.position = new Vector3(x - 8, enemySpawner.transform.localScale.y / 2, z - 8);
+                        break;
+
                     default:
+                        print("Unknown tile type!");
                         break;
                 }
 
