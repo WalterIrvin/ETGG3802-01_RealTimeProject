@@ -18,6 +18,7 @@ public class GameMaster : MonoBehaviour
     public EnemySpawnerScript enemySpawner;
 
     public GameObject mapTilePrefab;
+    public GameObject breakableTilePrefab;
     public GameObject mapTileParent;
 
     private TileObject[,] tileObjects;
@@ -48,18 +49,26 @@ public class GameMaster : MonoBehaviour
                         newTileObject.Type = TILE_TYPE.TILE_TILE;
 
                         newTileObject.Tile = Instantiate(mapTilePrefab);
-                        newTileObject.Tile.transform.position = new Vector3(x - 8, newTileObject.Tile.transform.localScale.y / 2, z - 8);
+                        newTileObject.Tile.transform.position = new Vector3(x - 8, newTileObject.Tile.transform.localScale.y / 2, 7 - z);
                         newTileObject.Tile.transform.SetParent(mapTileParent.transform);
                         break;
 
                     case 'B':
                         newTileObject.Type = TILE_TYPE.TILE_BASE;
-                        playerBase.transform.position = new Vector3(x - 8, playerBase.transform.localScale.y / 2, z - 8);
+                        playerBase.transform.position = new Vector3(x - 8, playerBase.transform.localScale.y / 2, 7 - z);
                         break;
 
                     case 'S':
                         newTileObject.Type = TILE_TYPE.TILE_SPAWNER;
-                        enemySpawner.transform.position = new Vector3(x - 8, enemySpawner.transform.localScale.y / 2, z - 8);
+                        enemySpawner.transform.position = new Vector3(x - 8, enemySpawner.transform.localScale.y / 2, 7 - z);
+                        break;
+
+                    case 'X':
+                        newTileObject.Type = TILE_TYPE.TILE_BREAKABLE;
+
+                        newTileObject.Tile = Instantiate(breakableTilePrefab);
+                        newTileObject.Tile.transform.position = new Vector3(x - 8, newTileObject.Tile.transform.localScale.y / 2, 7 - z);
+                        newTileObject.Tile.transform.SetParent(mapTileParent.transform);
                         break;
 
                     default:

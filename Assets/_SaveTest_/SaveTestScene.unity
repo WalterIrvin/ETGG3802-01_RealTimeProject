@@ -187,13 +187,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219000998}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0.0000010592659, z: -0.0000010592659, w: -0.7071068}
   m_LocalPosition: {x: -0.44, y: 17.39, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 1800, z: 0}
 --- !u!1 &1032759848
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +274,8 @@ MonoBehaviour:
   enemySpawner: {fileID: 1562470670}
   mapTilePrefab: {fileID: 7478082634652536266, guid: 96d9993f0d35fb9498c917d95f5af06e,
     type: 3}
+  breakableTilePrefab: {fileID: 5456260225558425477, guid: e86796bd8b7c39043a5c9f26c87cdb95,
+    type: 3}
   mapTileParent: {fileID: 1734930518}
 --- !u!4 &1409815014
 Transform:
@@ -319,13 +321,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
+      propertyPath: WaveList.Array.data[0].bossList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
       propertyPath: waveOver
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[0].amount
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -338,6 +345,38 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4625691461517303479, guid: 0967732068efb984bbaa3294db862b08,
         type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[1].gobj
+      value: 
+      objectReference: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[1].timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[1].amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].bossList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].bossList.Array.data[0].timer
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[0].bossList.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_LocalPosition.x
