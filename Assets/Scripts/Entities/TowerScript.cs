@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerScript : MonoBehaviour
 {
+    public float turnSpeed = 10f;
     private TowerData towerData = null;
     private float startTime;
 
@@ -143,7 +144,7 @@ public class TowerScript : MonoBehaviour
 
         Vector3 direction = main_target.position - transform.position;
         Quaternion lookRot = Quaternion.LookRotation(direction);
-        Vector3 eulerRot = lookRot.eulerAngles;
+        Vector3 eulerRot = Quaternion.Lerp(TurretHead.rotation, lookRot, Time.deltaTime * turnSpeed).eulerAngles;
         TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
 
         float curTime = Time.fixedTime;
