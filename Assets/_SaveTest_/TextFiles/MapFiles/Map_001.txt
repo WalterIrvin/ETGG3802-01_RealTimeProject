@@ -1,5 +1,5 @@
 //LAYOUT// 
-//Top Left is (0,0)// '+' for path ' ' for tile
+//Top Left is (0,0)// '+' for path ' ' for tile // Why is the top left (0,0)? I don't know...
 0----------------0
 |        +       |0
 |        +       |1

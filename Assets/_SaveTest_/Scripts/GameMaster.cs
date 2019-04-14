@@ -22,23 +22,99 @@ public class GameMaster : MonoBehaviour
     public GameObject mapTilePrefab;
     private Material tileMaterial;
     public Material highlightMaterial;
+    public Material selectMaterial;
     public GameObject breakableTilePrefab;
     public GameObject mapTileParent;
     public Camera mapCamera;
 
     private TileObject[,] tileObjects;
-    private int[] currentTile = new int[2]{0, 0};
+    private TileObject prevTile, curTile, selTile, dummyTile;
+    private bool tileIsSelected = false;
 
     void Start()
     {
         tileMaterial = mapTilePrefab.GetComponent<MeshRenderer>().sharedMaterial;
+        dummyTile = new TileObject();
+        prevTile = curTile = selTile = dummyTile;
 
         LoadLevel();
     }
 
     void Update()
     {
+        if (RaycastToTile())
+        {
+            HighlightTile();
 
+            if (Input.GetMouseButton(0))
+                SelectTile();
+
+            if (selTile.Tile != null)
+                selTile.Tile.GetComponent<MeshRenderer>().material = selectMaterial;
+        }
+        else
+        {   
+            if(prevTile.Tile != null && prevTile.Tile != selTile.Tile)
+                prevTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
+        }
+        
+        if (tileIsSelected)
+        {
+            if(Input.GetMouseButtonDown(1))
+                DeselectTile();
+        }
+    }
+
+    private void HighlightTile()
+    {
+        if(prevTile.Tile != null)
+        {
+            prevTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
+            curTile.Tile.GetComponent<MeshRenderer>().material = highlightMaterial;
+        }
+    }
+
+    private void SelectTile()
+    {
+        if (selTile.Tile != null)
+            selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
+
+        selTile = curTile;
+        tileIsSelected = true;
+    }
+
+    private void DeselectTile()
+    {
+        selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
+        selTile = dummyTile;
+        tileIsSelected = false;
+    }
+
+    private bool RaycastToTile()
+    {
+        if(curTile.Tile != null)
+            prevTile = curTile;
+
+        RaycastHit rayHit;
+        Ray cameraRay = mapCamera.ScreenPointToRay(Input.mousePosition);
+
+        if(Physics.Raycast(cameraRay, out rayHit, mapCamera.transform.position.y * 2f, 1 << 10))
+        {
+            int newX, newZ;
+            newX = (int)(rayHit.point.x + 8.5f);
+            newZ = (int)(7.5f - rayHit.point.z);
+
+            if(0 <= newX && newX <= 15 && 0 <= newZ && newZ <= 15)
+            {
+                if(tileObjects[newZ, newX].Type == TILE_TYPE.TILE_TILE)
+                {
+                    curTile = tileObjects[newZ, newX];
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     public void LoadLevel()
