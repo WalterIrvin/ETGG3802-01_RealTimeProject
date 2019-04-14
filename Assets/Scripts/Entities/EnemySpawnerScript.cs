@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
+    public int mapX, mapZ;
 
     [System.Serializable]
     public class mookTier

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class BasicBaseScript : MonoBehaviour
 {
+    public int mapX, mapZ;
 
     public int health = 100;
     private float maxHealth;

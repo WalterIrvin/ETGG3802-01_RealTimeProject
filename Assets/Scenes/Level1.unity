@@ -17371,6 +17371,16 @@ PrefabInstance:
       propertyPath: WaveList.Array.data[2].bossList.Array.data[1].amount
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: mapPosition.Array.data[0]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: mapPosition.Array.data[1]
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_LocalRotation.x
