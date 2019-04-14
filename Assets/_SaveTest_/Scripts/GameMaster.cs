@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -261,13 +262,79 @@ public class GameMaster : MonoBehaviour
     {
         StreamWriter saveFile = new StreamWriter("Assets/_SaveTest_/TextFiles/SaveFiles/" + saveFileName + ".txt", false);
 
+        List<string> breakables = new List<string>();
+        List<string> towers     = new List<string>();
+        string coordString = "";
+        TileObject curObject;
 
+        for(int z = 0; z < 16; z++)
+        {
+            for(int x = 0; x < 16; x++)
+            {
+                curObject = tileObjects[z, x];
+                switch(curObject.Type)
+                {
+                    case TILE_TYPE.TILE_TILE:
+                        if(curObject.Tower != null)
+                        {
+                            coordString = CoordsToString(x, z);
+                            coordString += "?" + curObject.Tower.GetTowerType();
+                            towers.Add(coordString);
+                        }
+                        break;
 
+                    case TILE_TYPE.TILE_BREAKABLE:
+                        if(curObject.Tile != null)
+                        {
+                            coordString = CoordsToString(x, z);
+                            breakables.Add(coordString);
+                        }
+                        break;
 
+                    default:
+                        break;
+                }
+            }
+        }
 
-        //saveFile.WriteLine("TESTESTESTESTEST");
-        
+        saveFile.WriteLine("//BREAKABLES//");
+        foreach(string S in breakables)
+        {
+            saveFile.WriteLine(S);
+        }
+        saveFile.WriteLine("//END//");
+
+        saveFile.WriteLine("//TOWERS//");
+        foreach (string S in towers)
+        {
+            saveFile.WriteLine(S);
+        }
+        saveFile.WriteLine("//END//");
+
+        saveFile.WriteLine("//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM");
+        saveFile.WriteLine(playerHealth.ToString());
+        saveFile.WriteLine(playerMoney.ToString());
+        saveFile.WriteLine(currentWave.ToString());
 
         saveFile.Close();
+    }
+
+    private string CoordsToString(int x, int z)
+    {
+        string result = "(";
+
+        if(x < 10)
+            result += "0";
+        result += x.ToString();
+
+        result += "|";
+
+        if(z < 10)
+            result += "0";
+        result += z.ToString();
+
+        result += ")";
+
+        return result;
     }
 }
