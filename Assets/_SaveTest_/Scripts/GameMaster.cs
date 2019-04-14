@@ -13,8 +13,10 @@ public struct TileObject
 
 public class GameMaster : MonoBehaviour
 {
-    public string mapFileName;
-    public TextAsset saveData;
+    private int playerHealth, playerMoney, currentWave;
+
+    public bool loadSave;
+    public string mapFileName, saveFileName;
 
     public BasicBaseScript playerBase;
     public List<EnemySpawnerScript> enemySpawners;
@@ -26,10 +28,13 @@ public class GameMaster : MonoBehaviour
     public GameObject breakableTilePrefab;
     public GameObject mapTileParent;
     public Camera mapCamera;
+    public TowerScript towerPrefab;
 
     private TileObject[,] tileObjects;
     private TileObject prevTile, curTile, selTile, dummyTile;
     private bool tileIsSelected = false;
+    private int[] curCoords = new int[2];
+    private int[] selCoords = new int[2];
 
     void Start()
     {
@@ -42,14 +47,14 @@ public class GameMaster : MonoBehaviour
 
     void Update()
     {
-        if (RaycastToTile())
+        if(RaycastToTile())
         {
             HighlightTile();
 
-            if (Input.GetMouseButton(0))
+            if(Input.GetMouseButton(0))
                 SelectTile();
 
-            if (selTile.Tile != null)
+            if(selTile.Tile != null)
                 selTile.Tile.GetComponent<MeshRenderer>().material = selectMaterial;
         }
         else
@@ -58,11 +63,17 @@ public class GameMaster : MonoBehaviour
                 prevTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
         }
         
-        if (tileIsSelected)
+        if(tileIsSelected)
         {
+            if(Input.GetKeyDown(KeyCode.B))
+                BuildTower("BASE");
+
             if(Input.GetMouseButtonDown(1))
                 DeselectTile();
         }
+
+        if(Input.GetKeyDown(KeyCode.S))
+            SaveLevel();
     }
 
     private void HighlightTile()
@@ -80,6 +91,8 @@ public class GameMaster : MonoBehaviour
             selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
 
         selTile = curTile;
+        selCoords[0] = curCoords[0];
+        selCoords[1] = curCoords[1];
         tileIsSelected = true;
     }
 
@@ -109,6 +122,8 @@ public class GameMaster : MonoBehaviour
                 if(tileObjects[newZ, newX].Type == TILE_TYPE.TILE_TILE)
                 {
                     curTile = tileObjects[newZ, newX];
+                    curCoords[0] = newX;
+                    curCoords[1] = newZ;
                     return true;
                 }
             }
@@ -117,7 +132,20 @@ public class GameMaster : MonoBehaviour
         return false;
     }
 
-    public void LoadLevel()
+    private void BuildTower(string towerType)
+    {
+        if(selTile.Tower == null)
+        {
+            selTile.Tower = Instantiate(towerPrefab);
+
+            selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(towerType));
+            selTile.Tower.transform.position = selTile.Tile.transform.position;
+
+            tileObjects[selCoords[1], selCoords[0]] = selTile;
+        }
+    }
+
+    private void LoadLevel()
     {
         TileObject newTileObject;
         tileObjects = new TileObject[16, 16];
@@ -147,6 +175,8 @@ public class GameMaster : MonoBehaviour
                         newTileObject.Tile = Instantiate(mapTilePrefab);
                         newTileObject.Tile.transform.position = new Vector3(x - 8, newTileObject.Tile.transform.localScale.y / 2, 7 - z);
                         newTileObject.Tile.transform.SetParent(mapTileParent.transform);
+
+                        newTileObject.Tower = null;
                         break;
 
                     default:
@@ -159,6 +189,13 @@ public class GameMaster : MonoBehaviour
         }
         mapLine = mapFile.ReadLine(); // "0----------------0"
         mapLine = mapFile.ReadLine(); // " 0123456789ABCDEF "
+
+        if(loadSave)
+        {
+            mapFile.Close();
+            mapFile = new StreamReader("Assets/_SaveTest_/TextFiles/SaveFiles/" + saveFileName + ".txt");
+        }
+
         mapLine = mapFile.ReadLine(); // "//BREAKABLES//"
 
         int newX, newZ;
@@ -170,7 +207,7 @@ public class GameMaster : MonoBehaviour
             newZ = ((mapLine[4] - 48) * 10) + (mapLine[5] - 48);
 
             tileObjects[newZ, newX].Type = TILE_TYPE.TILE_BREAKABLE;
-
+        
             tileObjects[newZ, newX].Tile = Instantiate(breakableTilePrefab);
             tileObjects[newZ, newX].Tile.transform.position = new Vector3(newX - 8, tileObjects[newZ, newX].Tile.transform.localScale.y / 2, 7 - newZ);
             tileObjects[newZ, newX].Tile.transform.SetParent(mapTileParent.transform);
@@ -179,22 +216,58 @@ public class GameMaster : MonoBehaviour
             mapLine = mapLine.Trim();
         }
 
+        mapLine = mapFile.ReadLine(); // "//TOWERS//"
+
+        mapLine = mapFile.ReadLine();
+        mapLine = mapLine.Trim();
+        while (mapLine != "//END//")
+        {
+            newX = ((mapLine[1] - 48) * 10) + (mapLine[2] - 48);
+            newZ = ((mapLine[4] - 48) * 10) + (mapLine[5] - 48);
+            mapLine = mapLine.Remove(0, 8);
+
+            tileObjects[newZ, newX].Tower = Instantiate(towerPrefab);
+
+            tileObjects[newZ, newX].Tower.SetTowerData(TowerDictionary.GetTowerData(mapLine));
+            tileObjects[newZ, newX].Tower.transform.position = new Vector3(tileObjects[newZ, newX].Tile.transform.position.x, 
+                                                                           tileObjects[newZ, newX].Tile.transform.localScale.y + (tileObjects[newZ, newX].Tower.transform.localScale.y), 
+                                                                           tileObjects[newZ, newX].Tile.transform.position.z);
+
+            mapLine = mapFile.ReadLine();
+            mapLine = mapLine.Trim();
+        }
+
+        mapLine = mapFile.ReadLine(); // "//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM"
+
+        playerHealth = int.Parse(mapFile.ReadLine().Trim());
+        playerMoney  = int.Parse(mapFile.ReadLine().Trim());
+        currentWave  = int.Parse(mapFile.ReadLine().Trim());
+
+        mapFile.Close();
+
         tileObjects[playerBase.mapZ, playerBase.mapX].Type = TILE_TYPE.TILE_BASE;
         playerBase.transform.position = new Vector3(playerBase.mapX - 8, playerBase.transform.localScale.y / 2, 7 - playerBase.mapZ);
 
         EnemySpawnerScript ESS;
-        foreach(EnemySpawnerScript E in enemySpawners)
+        foreach (EnemySpawnerScript E in enemySpawners)
         {
             ESS = E;
             tileObjects[ESS.mapZ, ESS.mapX].Type = TILE_TYPE.TILE_SPAWNER;
             ESS.transform.position = new Vector3(ESS.mapX - 8, ESS.transform.localScale.y / 2, 7 - ESS.mapZ);
         }
-
-        mapFile.Close();
     }
 
     public void SaveLevel()
     {
+        StreamWriter saveFile = new StreamWriter("Assets/_SaveTest_/TextFiles/SaveFiles/" + saveFileName + ".txt", false);
 
+
+
+
+
+        //saveFile.WriteLine("TESTESTESTESTEST");
+        
+
+        saveFile.Close();
     }
 }

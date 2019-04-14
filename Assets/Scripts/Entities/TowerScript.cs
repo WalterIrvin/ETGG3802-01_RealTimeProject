@@ -28,6 +28,13 @@ public class TowerScript : MonoBehaviour
 
     void Start()
     {
+        OnSpawn();
+    }
+
+    private void OnSpawn()
+    {
+        // Moving the code here fixes the issues with spawning laser towers //
+
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
         source = GetComponent<AudioSource>();
@@ -87,6 +94,8 @@ public class TowerScript : MonoBehaviour
     {
         if(newData == null)
             return;
+
+        OnSpawn();
 
         towerData = newData;
         TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = towerData.towerMaterial;

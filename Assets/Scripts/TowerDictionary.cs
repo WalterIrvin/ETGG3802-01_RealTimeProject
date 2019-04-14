@@ -11,8 +11,6 @@ public class TowerDictionary : MonoBehaviour
 
     void Start()
     {
-        // Can't add elements to a dictionary or static list through the inspector. //
-
         towerDictionary = new Dictionary<string, TowerData>();
         foreach(TowerData TD in towerData)
         {
