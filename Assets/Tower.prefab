@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5c04d43db84b14fb1a3586db071a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 10
   TurretHead: {fileID: 986590908552516079}
 --- !u!120 &534874580216229541
 LineRenderer:
