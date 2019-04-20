@@ -30,6 +30,7 @@ public class GameMaster : MonoBehaviour
     public GameObject mapTileParent;
     public Camera mapCamera;
     public TowerScript towerPrefab;
+    public GameObject towerRangeIndicator;
 
     private TileObject[,] tileObjects;
     private TileObject prevTile, curTile, selTile, dummyTile;
@@ -39,6 +40,8 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
+        towerRangeIndicator.SetActive(false);
+
         tileMaterial = mapTilePrefab.GetComponent<MeshRenderer>().sharedMaterial;
         dummyTile = new TileObject();
         prevTile = curTile = selTile = dummyTile;
@@ -88,13 +91,26 @@ public class GameMaster : MonoBehaviour
 
     private void SelectTile()
     {
-        if (selTile.Tile != null)
+        if(selTile.Tile != null)
             selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
 
         selTile = curTile;
         selCoords[0] = curCoords[0];
         selCoords[1] = curCoords[1];
         tileIsSelected = true;
+
+        if(selTile.Tower != null)
+        {
+            towerRangeIndicator.SetActive(true);
+            towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.166f, 7 - selCoords[1]);
+            towerRangeIndicator.GetComponent<MeshRenderer>().material = selTile.Tower.GetMaterial();
+
+            float range = selTile.Tower.GetRange();
+            towerRangeIndicator.transform.localScale = new Vector3(range * 2, 0.01f, range * 2);
+        }
+        else
+            towerRangeIndicator.SetActive(false);
+
     }
 
     private void DeselectTile()

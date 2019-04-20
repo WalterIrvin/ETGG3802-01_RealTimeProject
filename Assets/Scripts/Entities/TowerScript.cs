@@ -90,6 +90,16 @@ public class TowerScript : MonoBehaviour
         return towerData.towerType;
     }
 
+    public Material GetMaterial()
+    {
+        return towerData.towerMaterial;
+    }
+
+    public float GetRange()
+    {
+        return towerData.detectRange;
+    }
+
     public void SetTowerData(TowerData newData)
     {
         if(newData == null)
