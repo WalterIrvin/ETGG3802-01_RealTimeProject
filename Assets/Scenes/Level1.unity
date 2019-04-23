@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
+  m_IndirectSpecularColor: {r: 0.0029126708, g: 0.0030261662, b: 0.0029790148, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -414,6 +414,67 @@ Transform:
   m_Father: {fileID: 2014798828181478273}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &15967213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15967214}
+  - component: {fileID: 15967215}
+  - component: {fileID: 15967216}
+  m_Layer: 0
+  m_Name: ResearchHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &15967214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15967213}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 537.3898, y: 273.47214, z: 189.26091}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2014798828181478273}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &15967215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15967213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 555e428d7866fa7439342b2fca4584d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillBar: {fileID: 1824776871}
+  moneyHandler: {fileID: 3787820657134294911}
+  flavorText: {fileID: 576913013}
+  statsText: {fileID: 355938787}
+--- !u!114 &15967216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15967213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b4ac56c1f5ea449a6ae16b82b59587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeResearch: {fileID: 0}
 --- !u!1 &57319102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,7 +4272,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -4277,6 +4338,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1912184913}
+  researching: 0
 --- !u!1 &663226877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6579,7 +6641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -6645,6 +6707,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1229647610}
+  researching: 0
 --- !u!1 &1090060069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,7 +7575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -7578,6 +7641,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1089317656}
+  researching: 0
 --- !u!1 &1229647605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7657,7 +7721,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -7723,6 +7787,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 0}
+  researching: 0
 --- !u!1 &1242001657
 GameObject:
   m_ObjectHideFlags: 0
@@ -8359,7 +8424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -8425,6 +8490,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1229647610}
+  researching: 0
 --- !u!1 &1303958799
 GameObject:
   m_ObjectHideFlags: 0
@@ -10247,7 +10313,6 @@ GameObject:
   - component: {fileID: 1591007319}
   - component: {fileID: 1591007318}
   - component: {fileID: 1591007317}
-  - component: {fileID: 1591007320}
   m_Layer: 5
   m_Name: Research
   m_TagString: Untagged
@@ -10315,11 +10380,11 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
+      - m_Target: {fileID: 15967215}
         m_MethodName: startResearch
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1591007320}
+          m_ObjectArgument: {fileID: 15967216}
           m_ObjectArgumentAssemblyTypeName: SetActiveResearch, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -10365,19 +10430,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591007315}
   m_CullTransparentMesh: 0
---- !u!114 &1591007320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591007315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b4ac56c1f5ea449a6ae16b82b59587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeResearch: {fileID: 0}
 --- !u!1 &1593751706
 GameObject:
   m_ObjectHideFlags: 0
@@ -11950,7 +12002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -12016,6 +12068,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1286107284}
+  researching: 0
 --- !u!1 &1938034794
 GameObject:
   m_ObjectHideFlags: 0
@@ -12407,7 +12460,6 @@ GameObject:
   - component: {fileID: 1957418216}
   - component: {fileID: 1957418218}
   - component: {fileID: 1957418217}
-  - component: {fileID: 1957418219}
   m_Layer: 5
   m_Name: ResearchTab
   m_TagString: Untagged
@@ -12477,22 +12529,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957418215}
   m_CullTransparentMesh: 0
---- !u!114 &1957418219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957418215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 555e428d7866fa7439342b2fca4584d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillBar: {fileID: 1824776871}
-  moneyHandler: {fileID: 3787820657134294911}
-  flavorText: {fileID: 576913013}
-  statsText: {fileID: 355938787}
 --- !u!1 &1964116479
 GameObject:
   m_ObjectHideFlags: 0
@@ -12790,7 +12826,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1591007320}
+      - m_Target: {fileID: 15967216}
         m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
@@ -12856,6 +12892,7 @@ MonoBehaviour:
     type: 3}
   isResearched: 0
   preReq: {fileID: 1228406243}
+  researching: 0
 --- !u!1 &2030934327
 GameObject:
   m_ObjectHideFlags: 0
@@ -16914,6 +16951,7 @@ Transform:
   - {fileID: 1393358713}
   - {fileID: 826367111}
   - {fileID: 2014798828047119416}
+  - {fileID: 15967214}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
