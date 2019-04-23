@@ -17,11 +17,21 @@ public class ResearchScript : MonoBehaviour
     private float totalTime = 0;
     private bool researching = false;
 
-    public void startResearch(TowerButtonResearchTab buttonObj)
+    public void startResearch(SetActiveResearch researchObj)
     {
+        if(researching)
+        {
+            return;
+        }
+        TowerButtonResearchTab buttonObj = researchObj.activeResearch;
+        if (buttonObj == null)
+        {
+            return;
+        } 
         buttonObject = buttonObj;
         TowerData tower = buttonObj.attachedTower;
-        if (tower.researchCost <= moneyHandler.Money)
+
+        if (tower.researchCost <= moneyHandler.Money && !buttonObj.researching && !buttonObj.isResearched)
         {
             if(buttonObj.preReq != null)
             {
@@ -29,6 +39,7 @@ public class ResearchScript : MonoBehaviour
                 {
                     Debug.Log("Researching");
                     moneyHandler.Money -= tower.buildCost;
+                    buttonObj.researching = true;
                     researching = true;
                 }
             }
@@ -36,6 +47,7 @@ public class ResearchScript : MonoBehaviour
             {
                 Debug.Log("Researching base tech");
                 moneyHandler.Money -= tower.buildCost;
+                buttonObj.researching = true;
                 researching = true;
             }
         }
@@ -51,6 +63,7 @@ public class ResearchScript : MonoBehaviour
             {
                 tmp = 1;
                 buttonObject.isResearched = true;
+                buttonObject.researching = false;
                 totalTime = 0;
                 buttonObject = null;
                 researching = false;

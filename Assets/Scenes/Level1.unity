@@ -4211,8 +4211,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 640037473}
@@ -6579,8 +6579,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1089317656}
@@ -7512,8 +7512,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1228406243}
@@ -7657,8 +7657,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1229647610}
@@ -8359,8 +8359,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1286107284}
@@ -10247,6 +10247,7 @@ GameObject:
   - component: {fileID: 1591007319}
   - component: {fileID: 1591007318}
   - component: {fileID: 1591007317}
+  - component: {fileID: 1591007320}
   m_Layer: 5
   m_Name: Research
   m_TagString: Untagged
@@ -10313,7 +10314,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1591007318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1957418219}
+        m_MethodName: startResearch
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1591007320}
+          m_ObjectArgumentAssemblyTypeName: SetActiveResearch, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1591007318
@@ -10353,6 +10365,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591007315}
   m_CullTransparentMesh: 0
+--- !u!114 &1591007320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591007315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b4ac56c1f5ea449a6ae16b82b59587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeResearch: {fileID: 0}
 --- !u!1 &1593751706
 GameObject:
   m_ObjectHideFlags: 0
@@ -11925,8 +11950,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1912184913}
@@ -12765,8 +12790,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1957418219}
-        m_MethodName: startResearch
+      - m_Target: {fileID: 1591007320}
+        m_MethodName: setActiveResearch
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2020790814}

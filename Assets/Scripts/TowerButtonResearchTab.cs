@@ -8,6 +8,7 @@ public class TowerButtonResearchTab : MonoBehaviour
     public TowerData attachedTower;
     public bool isResearched;
     public TowerButtonResearchTab preReq = null;
+    public bool researching = false;
     void Start()
     {
         
