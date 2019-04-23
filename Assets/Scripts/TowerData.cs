@@ -19,5 +19,7 @@ public class TowerData : MonoBehaviour
     public int bulletDamage;
     public MODIFIER_EFFECT bulletEffect;
     public float effectTimer;
+    public int researchCost;
+    public float researchTime;
     //public List<EntityModifier> bulletEffects;
 }

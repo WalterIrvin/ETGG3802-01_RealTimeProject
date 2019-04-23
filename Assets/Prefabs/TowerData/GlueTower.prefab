@@ -59,3 +59,5 @@ MonoBehaviour:
   bulletDamage: 25
   bulletEffect: 1
   effectTimer: 1
+  researchCost: 250
+  researchTime: 15

@@ -6,6 +6,8 @@ public class TowerButtonResearchTab : MonoBehaviour
 {
     // Start is called before the first frame update
     public TowerData attachedTower;
+    public bool isResearched;
+    public TowerButtonResearchTab preReq = null;
     void Start()
     {
         

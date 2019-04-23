@@ -4275,6 +4275,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 5921622267165623698, guid: 7bc850d699e6c7a4bbeb463d16e9555c,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1912184913}
 --- !u!1 &663226877
 GameObject:
   m_ObjectHideFlags: 0
@@ -6641,6 +6643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 445474987109212000, guid: a8c774f1fe2876249a73fbf883c6d0b7,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1229647610}
 --- !u!1 &1090060069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7572,6 +7576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 1994374987744982516, guid: 7408d32c73e56b740892ecaeed7cc0bc,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1089317656}
 --- !u!1 &1229647605
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,6 +7721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 1262248648635162136, guid: 830a6220a570243409aef5602127bee5,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 0}
 --- !u!1 &1242001657
 GameObject:
   m_ObjectHideFlags: 0
@@ -8415,6 +8423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 3382526545054819534, guid: 83c16ceb4e6f35745916df1e5b2e399c,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1229647610}
 --- !u!1 &1303958799
 GameObject:
   m_ObjectHideFlags: 0
@@ -10841,7 +10851,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.47
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -11979,6 +11989,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 1958045532674500303, guid: 4a185db83899f1543a2871d4368616b9,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1286107284}
 --- !u!1 &1938034794
 GameObject:
   m_ObjectHideFlags: 0
@@ -12452,7 +12464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555e428d7866fa7439342b2fca4584d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerDict: {fileID: 532552304}
+  fillBar: {fileID: 1824776871}
+  moneyHandler: {fileID: 3787820657134294911}
   flavorText: {fileID: 576913013}
   statsText: {fileID: 355938787}
 --- !u!1 &1964116479
@@ -12816,6 +12829,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 2640537402839436743, guid: cc4a99b307eb1e44a907ffa12ef93434,
     type: 3}
+  isResearched: 0
+  preReq: {fileID: 1228406243}
 --- !u!1 &2030934327
 GameObject:
   m_ObjectHideFlags: 0
