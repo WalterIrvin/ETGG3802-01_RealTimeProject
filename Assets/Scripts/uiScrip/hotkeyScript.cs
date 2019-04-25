@@ -5,12 +5,23 @@ using UnityEngine.UI;
 
 public class hotkeyScript : MonoBehaviour
 {
+    //Menu Bar
     public Button fileButton;
     public Button buildMenu;
     public Button researchMenu;
     public Button settingsMenu;
     public Button pauseButton;
     public Button nextWaveButton;
+
+    //Tower Buttons
+    public Button buildTower;
+    public Button upgradeTower;
+    public Button slow1Upgrade;
+    public Button slow2Upgrade;
+    public Button slow3Upgrade;
+    public Button rapid1Upgrade;
+    public Button rapid2Upgrade;
+    public Button rapid3Upgrade;
 
     // Update is called once per frame
     void Update()
@@ -32,5 +43,27 @@ public class hotkeyScript : MonoBehaviour
 
         //Skip downtime and go to the next wave
         if (Input.GetKeyDown(KeyCode.Alpha5)) { nextWaveButton.onClick.Invoke(); }
+
+
+        //####OTHER BUTTONS####\\
+
+        //Build a tower on the selected block
+        if (Input.GetKeyDown(KeyCode.Q)) { buildTower.onClick.Invoke(); }
+
+        //Upgrade the selected tower (slowing path)
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            //buildTower.onClick.Invoke();
+            slow1Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
+
+        //Upgrade the selected tower (rapid fire path)
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            //buildTower.onClick.Invoke();
+            rapid1Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
     }
 }

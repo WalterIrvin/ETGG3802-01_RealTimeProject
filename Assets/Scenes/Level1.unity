@@ -11310,6 +11310,14 @@ MonoBehaviour:
   settingsMenu: {fileID: 2061555595}
   pauseButton: {fileID: 971175280}
   nextWaveButton: {fileID: 1277382058}
+  buildTower: {fileID: 1908066762}
+  upgradeTower: {fileID: 1038888499}
+  slow1Upgrade: {fileID: 2133725911}
+  slow2Upgrade: {fileID: 483679257}
+  slow3Upgrade: {fileID: 2020790811}
+  rapid1Upgrade: {fileID: 834134139}
+  rapid2Upgrade: {fileID: 1912184910}
+  rapid3Upgrade: {fileID: 1861063084}
 --- !u!1 &1887617136
 GameObject:
   m_ObjectHideFlags: 0
