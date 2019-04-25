@@ -49,13 +49,16 @@ MonoBehaviour:
   prevTowerType: SLOW_2
   buildCost: 450
   refundAmount: 225
-  towerMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
+  towerMaterial: {fileID: 2100000, guid: 07cfceaced1d3204cbe3b663b9a7f026, type: 2}
+  rangeMaterial: {fileID: 2100000, guid: c97a222653a73994bb5b933bca0e7148, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 4d722a933f529ad4e94f3ff7fac90a36, type: 2}
+  selectMaterial: {fileID: 2100000, guid: ea217027e4232654cafedb848663b22e, type: 2}
   whatDoesThisShoot: 1
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
   projectileMaterial: {fileID: 2100000, guid: 51422764823e23f4fa66d46525cc509d, type: 2}
   fireDelay: 0.05
-  detectRange: 3
+  detectRange: 10
   bulletDamage: 2
   bulletEffect: 2
   effectTimer: 0.3

@@ -11,6 +11,9 @@ public class TowerData : MonoBehaviour
     public int buildCost;
     public int refundAmount;
     public Material towerMaterial;
+    public Material rangeMaterial;
+    public Material highlightMaterial;
+    public Material selectMaterial;
     public PROJECTILE_TYPE whatDoesThisShoot;
     public GameObject bulletPrefab;
     public Material projectileMaterial;

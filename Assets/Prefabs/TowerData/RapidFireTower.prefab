@@ -49,7 +49,10 @@ MonoBehaviour:
   prevTowerType: BASE
   buildCost: 150
   refundAmount: 75
-  towerMaterial: {fileID: 2100000, guid: 3db11128c0f590842a88c7df4695f921, type: 2}
+  towerMaterial: {fileID: 2100000, guid: 114a38ce6c5fb474db3b690965a53622, type: 2}
+  rangeMaterial: {fileID: 2100000, guid: 44f7952571e33d24c9d578347984acdc, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 1685e6c3e37584540a1347fb6d8528ba, type: 2}
+  selectMaterial: {fileID: 2100000, guid: 7873c0912a7d633479cb5b724476a801, type: 2}
   whatDoesThisShoot: 0
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}

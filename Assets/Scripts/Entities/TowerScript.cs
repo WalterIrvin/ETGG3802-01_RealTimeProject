@@ -92,7 +92,17 @@ public class TowerScript : MonoBehaviour
 
     public Material GetMaterial()
     {
-        return towerData.towerMaterial;
+        return towerData.rangeMaterial;
+    }
+
+    public Material GetHighlightMaterial()
+    {
+        return towerData.highlightMaterial;
+    }
+
+    public Material GetSelectMaterial()
+    {
+        return towerData.selectMaterial;
     }
 
     public float GetRange()

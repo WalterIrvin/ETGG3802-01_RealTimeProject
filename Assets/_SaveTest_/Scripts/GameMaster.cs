@@ -37,9 +37,11 @@ public class GameMaster : MonoBehaviour
     private bool tileIsSelected = false;
     private int[] curCoords = new int[2];
     private int[] selCoords = new int[2];
+    private Material currentSelectMaterial;
 
     void Start()
     {
+        currentSelectMaterial = selectMaterial;
         towerRangeIndicator.SetActive(false);
 
         tileMaterial = mapTilePrefab.GetComponent<MeshRenderer>().sharedMaterial;
@@ -59,7 +61,7 @@ public class GameMaster : MonoBehaviour
                 SelectTile();
 
             if(selTile.Tile != null)
-                selTile.Tile.GetComponent<MeshRenderer>().material = selectMaterial;
+                selTile.Tile.GetComponent<MeshRenderer>().material = currentSelectMaterial;
         }
         else
         {   
@@ -85,7 +87,11 @@ public class GameMaster : MonoBehaviour
         if(prevTile.Tile != null)
         {
             prevTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
-            curTile.Tile.GetComponent<MeshRenderer>().material = highlightMaterial;
+
+            if(curTile.Tower != null)
+                curTile.Tile.GetComponent<MeshRenderer>().material = curTile.Tower.GetHighlightMaterial();
+            else
+                curTile.Tile.GetComponent<MeshRenderer>().material = highlightMaterial;
         }
     }
 
@@ -107,9 +113,14 @@ public class GameMaster : MonoBehaviour
 
             float range = selTile.Tower.GetRange();
             towerRangeIndicator.transform.localScale = new Vector3(range * 2, 0.01f, range * 2);
+
+            currentSelectMaterial = selTile.Tower.GetSelectMaterial();
         }
         else
+        {
             towerRangeIndicator.SetActive(false);
+            currentSelectMaterial = selectMaterial;
+        }
 
     }
 

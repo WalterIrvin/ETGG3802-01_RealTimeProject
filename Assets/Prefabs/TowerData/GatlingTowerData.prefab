@@ -49,7 +49,10 @@ MonoBehaviour:
   prevTowerType: RAPID
   buildCost: 300
   refundAmount: 150
-  towerMaterial: {fileID: 2100000, guid: 9cafeee87a06c7f49a1cf3292b756819, type: 2}
+  towerMaterial: {fileID: 2100000, guid: 7ab50f31d25fbb14b83a95e9604b0bed, type: 2}
+  rangeMaterial: {fileID: 2100000, guid: 29f657b28a2b05142baa2e04164b35e7, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6eee134596d93a14a86276fca8dca5a2, type: 2}
+  selectMaterial: {fileID: 2100000, guid: 0f75ad633cc95da44bb04bca14ce7708, type: 2}
   whatDoesThisShoot: 0
   bulletPrefab: {fileID: 5343105490023573500, guid: c2b4a1195aaa5fe43ae30467a5c27761,
     type: 3}
