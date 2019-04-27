@@ -14,16 +14,6 @@ public class TowerScript : MonoBehaviour
     private GameObject laserTarget;
     private LineRenderer laserBeam;
 
-    //public float fireDelay = 1f;
-    //public float range = 3f;
-    //public int towerDamage = 50;
-    //public GameObject projecticle_prefab;
-    //public GameObject projecticle_slower_prefab;
-    
-    //public string type = "Base";
-    //public Material MAT_RapidFire;
-    //public Material MAT_Slow;
-
     private AudioSource source;
 
     void Start()
@@ -33,7 +23,7 @@ public class TowerScript : MonoBehaviour
 
     private void OnSpawn()
     {
-        // Moving the code here fixes the issues with spawning laser towers //
+        // Moving the start code here fixes the issues with spawning laser towers //
 
         startTime = Time.fixedTime;
         InvokeRepeating("SearchTarget", 0f, 0.1f);
@@ -129,52 +119,22 @@ public class TowerScript : MonoBehaviour
         }
     }
 
-    public void Upgrade_RapidFire()
-    {
-        /*
-        GameObject MoneyHandle = GameObject.FindWithTag("Money");
-        if (type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
-        {
-            MoneyHandle.BroadcastMessage("ChangeMoney", -100);
-            fireDelay *= .25f;
-            TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = MAT_RapidFire;
-            this.GetComponent<MeshRenderer>().material = MAT_RapidFire;
-            type = "Rapid";
-        }
-        else
-        {
-            Debug.Log("Something went wrong upgrading tower...");
-        */
-    }
-
-    void Upgrade_Slow()
-    {
-        /*
-        GameObject MoneyHandle = GameObject.FindWithTag("Money");
-        if(type == "Base" && MoneyHandle.GetComponent<MoneyScript>().Money >= 100)
-        {
-            MoneyHandle.BroadcastMessage("ChangeMoney", -100);
-            TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = MAT_Slow;
-            this.GetComponent<MeshRenderer>().material = MAT_Slow;
-            towerDamage /= 2;
-            type = "Slow";
-        }
-        else
-        {
-            Debug.Log("Something went wrong upgrading tower...");
-        }
-        */
-    }
-
     void Update()
     {
         if(towerData == null || main_target == null)
             return;
 
-        Vector3 direction = main_target.position - transform.position;
-        Quaternion lookRot = Quaternion.LookRotation(direction);
-        Vector3 eulerRot = Quaternion.Lerp(TurretHead.rotation, lookRot, Time.deltaTime * turnSpeed).eulerAngles;
-        TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
+        if(towerData.whatDoesThisShoot == PROJECTILE_TYPE.PROJ_LASER)
+        {
+            TurretHead.transform.LookAt(main_target.position);
+        }
+        else
+        {
+            Vector3 direction = main_target.position - transform.position;
+            Quaternion lookRot = Quaternion.LookRotation(direction);
+            Vector3 eulerRot = Quaternion.Lerp(TurretHead.rotation, lookRot, Time.deltaTime * turnSpeed).eulerAngles;
+            TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
+        }
 
         float curTime = Time.fixedTime;
         if (curTime - startTime >= towerData.fireDelay)
