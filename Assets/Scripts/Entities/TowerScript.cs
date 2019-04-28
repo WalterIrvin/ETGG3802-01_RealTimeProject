@@ -21,7 +21,7 @@ public class TowerScript : MonoBehaviour
         OnSpawn();
     }
 
-    private void OnSpawn()
+    public void OnSpawn()
     {
         // Moving the start code here fixes the issues with spawning laser towers //
 
@@ -111,12 +111,8 @@ public class TowerScript : MonoBehaviour
         TurretHead.GetChild(0).GetComponent<MeshRenderer>().material = towerData.towerMaterial;
 
         if(newData.whatDoesThisShoot == PROJECTILE_TYPE.PROJ_LASER)
-        {
             laserBeam.material = towerData.projectileMaterial;
-
-            //laserBeam.materials[0] = towerData.bulletPrefab.GetComponent<MeshRenderer>().material;
-            //laserBeam.startColor = laserBeam.endColor = towerData.bulletPrefab.GetComponent<MeshRenderer>().material.color;
-        }
+        
     }
 
     void Update()
@@ -180,37 +176,5 @@ public class TowerScript : MonoBehaviour
                     break;
             }
         }
-        
-
-        /*
-        if (main_target == null)
-            return;
-        Vector3 direction = main_target.position - transform.position;
-        Quaternion lookRot = Quaternion.LookRotation(direction);
-        Vector3 eulerRot = lookRot.eulerAngles;
-        TurretHead.rotation = Quaternion.Euler(new Vector3(0f, eulerRot.y, 0f));
-
-        float curTime = Time.fixedTime;
-        if (curTime - startTime >= fireDelay)
-        {
-            if (type != "Slow")
-            {
-                GameObject bullet = Instantiate(projecticle_prefab, transform.position, Quaternion.identity);
-                BulletController bullet_script = bullet.GetComponent<BulletController>();
-                bullet_script.mDamage = towerDamage;
-                bullet_script.mDestination = main_target.position;
-                startTime = Time.fixedTime;
-            }
-            else
-            {
-                GameObject bullet = Instantiate(projecticle_slower_prefab, transform.position, Quaternion.identity);
-                SlowController bullet_script = bullet.GetComponent<SlowController>();
-                bullet_script.mDamage = towerDamage;
-                bullet_script.mDestination = main_target.position;
-                startTime = Time.fixedTime;
-            }
-            source.Play(0);
-        }
-        */
     }
 }

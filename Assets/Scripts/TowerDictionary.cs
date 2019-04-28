@@ -34,18 +34,11 @@ public class TowerDictionary : MonoBehaviour
     public static TowerData GetTowerData(string whichType)
     {
         TowerData result;
-
-        if(towerDictionary.TryGetValue(whichType, out result))
-        {
-            //print(result.towerType);
-            return result;
-        }
-
-        //print("Tried to get TowerData for a tower type that doesn't exist!");
+        towerDictionary.TryGetValue(whichType, out result);
         return result;
     }
 
-    public static bool IsValidUpgrade(string currentType, string upgradeType)
+    public static bool IsValidUpgrade(string currentType, string upgradeType)//bool checkReseach)
     {
         if(currentType == upgradeType)
             return false;
@@ -53,14 +46,17 @@ public class TowerDictionary : MonoBehaviour
         if(!ContainsTowerType(currentType) || !ContainsTowerType(upgradeType))
             return false;
 
-
-        //return (towerDictionary[upgradeType].prevTowerType == currentType);
-
-        // This 'works' but doesn't take away money for some reason. //
-
         TowerData upgradeData = GetTowerData(upgradeType);
-        while (upgradeData != null)
+        while(upgradeData != null)
         {
+            /*
+            if(checkResearch)
+            {
+                if(!upgradeData.isResearched)
+                    return false;
+            }
+            */
+
             upgradeType = upgradeData.prevTowerType;
             if(upgradeType == currentType)
                 return true;
@@ -69,7 +65,6 @@ public class TowerDictionary : MonoBehaviour
         }
         
         return false;
-        
     }
 
     public static bool GetValueTotals(string towerType, out int totalBuyValue, out int totalSellValue)

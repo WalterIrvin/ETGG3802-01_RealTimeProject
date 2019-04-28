@@ -181,45 +181,4 @@ public class uiManager : MonoBehaviour
 
         SetCurrentTowerType("BASE");
     }
-
-    /*
-    public void BuyTower()
-    {
-        print("Buy Tower Button Pressed");
-        bool ifHasATower = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower;
-        if (!ifHasATower)
-        {
-            //pos = CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.transform.position;
-            //pos.y += 0.325f;
-            //Instantiate(TowerPrefab, pos, Quaternion.identity);
-            M.Money -= 100;
-            CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().spawnTowerOnThisBlock();
-            CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower = true;
-        }
-    }
-
-    public void UpgradeTower()
-    {
-        Debug.Log("Upgrade Tower Button Pressed");
-        if (CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().hasTower == true)
-        {
-            if(CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().isTowerUpgraded == false)
-            {
-                //if there is a tower, and it isn't upgraded
-                //then upgrade it
-                Debug.Log("Upgrading tower");
-                M.Money -= 150;
-                CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().isTowerUpgraded = true;
-                CurrentlySelectedBlck.GetComponent<ChangeSelectedBlock>().currentlySelectedBlock.GetComponent<ObstacleHighlighterScript>().upgradeTowerOnThisBlock();
-                
-            }
-            else
-            {
-                //if there is a tower, and it is upgraded
-                //then do nothing
-                Debug.Log("I'm already upgraded");
-            }
-        }
-    }
-    */
 }

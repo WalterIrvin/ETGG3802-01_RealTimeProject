@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum TILE_TYPE { TILE_PATH, TILE_TILE, TILE_BREAKABLE, TILE_SPAWNER, TILE_BASE }
 
@@ -14,7 +15,8 @@ public struct TileObject
 
 public class GameMaster : MonoBehaviour
 {
-    private int playerHealth, playerMoney, currentWave;
+    private int playerHealth, currentWave;
+    public int playerMoney;
 
     public bool loadSave;
     public string mapFileName, saveFileName;
@@ -29,6 +31,7 @@ public class GameMaster : MonoBehaviour
     public GameObject breakableTilePrefab;
     public GameObject mapTileParent;
     public Camera mapCamera;
+    public GameObject mapGround;
     public TowerScript towerPrefab;
     public GameObject towerRangeIndicator;
 
@@ -38,6 +41,19 @@ public class GameMaster : MonoBehaviour
     private int[] curCoords = new int[2];
     private int[] selCoords = new int[2];
     private Material currentSelectMaterial;
+
+    //===========//
+    // uiManager //
+    //===========//
+    public string baseTowerType;
+    private string currentTowerType;
+
+    public Text moneyText;
+    public Text towerCostText;
+    public uiTowerInfo towerInfoText;
+    //===============//
+    // End uiManager //
+    //===============//
 
     void Start()
     {
@@ -72,7 +88,7 @@ public class GameMaster : MonoBehaviour
         if(tileIsSelected)
         {
             if(Input.GetKeyDown(KeyCode.B))
-                BuildTower("BASE");
+                BuyOrUpgradeTower("RAPID_2");
 
             if(Input.GetMouseButtonDown(1))
                 DeselectTile();
@@ -80,6 +96,43 @@ public class GameMaster : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.S))
             SaveLevel();
+
+        // TowerController //
+        // Centered camera rotation ||| Middle Mouse Wheel ||| Alt + Mouse 1 //
+        if ((Input.GetMouseButton(2) && !Input.GetButton("Camera Control Modifier")) || (Input.GetButton("Camera Control Modifier") && Input.GetMouseButton(0)))
+        {
+            RotateCamera_YAxis(Input.GetAxis("Horizontal") * 10);
+            RotateCamera_XAxis(Input.GetAxis("Vertical") * 10);
+        }
+
+        // Zooming in and out ||| Mouse wheel up and down //
+        if (Input.mouseScrollDelta.y != 0)
+        {
+            ZoomCamera(Input.mouseScrollDelta.y);
+        }
+
+        mapCamera.transform.LookAt(new Vector3(0, 1, 0));
+        // End TowerController //
+    }
+
+    private void RefreshRangeIndicator()
+    {
+        if (selTile.Tower != null)
+        {
+            towerRangeIndicator.SetActive(true);
+            towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.166f, 7 - selCoords[1]);
+            towerRangeIndicator.GetComponent<MeshRenderer>().material = selTile.Tower.GetMaterial();
+
+            float range = selTile.Tower.GetRange();
+            towerRangeIndicator.transform.localScale = new Vector3(range * 2, 0.01f, range * 2);
+
+            currentSelectMaterial = selTile.Tower.GetSelectMaterial();
+        }
+        else
+        {
+            towerRangeIndicator.SetActive(false);
+            currentSelectMaterial = selectMaterial;
+        }
     }
 
     private void HighlightTile()
@@ -105,23 +158,7 @@ public class GameMaster : MonoBehaviour
         selCoords[1] = curCoords[1];
         tileIsSelected = true;
 
-        if(selTile.Tower != null)
-        {
-            towerRangeIndicator.SetActive(true);
-            towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.166f, 7 - selCoords[1]);
-            towerRangeIndicator.GetComponent<MeshRenderer>().material = selTile.Tower.GetMaterial();
-
-            float range = selTile.Tower.GetRange();
-            towerRangeIndicator.transform.localScale = new Vector3(range * 2, 0.01f, range * 2);
-
-            currentSelectMaterial = selTile.Tower.GetSelectMaterial();
-        }
-        else
-        {
-            towerRangeIndicator.SetActive(false);
-            currentSelectMaterial = selectMaterial;
-        }
-
+        RefreshRangeIndicator();
     }
 
     private void DeselectTile()
@@ -139,7 +176,7 @@ public class GameMaster : MonoBehaviour
         RaycastHit rayHit;
         Ray cameraRay = mapCamera.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(cameraRay, out rayHit, mapCamera.transform.position.y * 2f, 1 << 10))
+        if(Physics.Raycast(cameraRay, out rayHit, mapCamera.transform.position.y * 10f, 1 << 10))
         {
             int newX, newZ;
             newX = (int)(rayHit.point.x + 8.5f);
@@ -158,19 +195,6 @@ public class GameMaster : MonoBehaviour
         }
 
         return false;
-    }
-
-    private void BuildTower(string towerType)
-    {
-        if(selTile.Tower == null)
-        {
-            selTile.Tower = Instantiate(towerPrefab);
-
-            selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(towerType));
-            selTile.Tower.transform.position = selTile.Tile.transform.position;
-
-            tileObjects[selCoords[1], selCoords[0]] = selTile;
-        }
     }
 
     private void LoadLevel()
@@ -364,4 +388,106 @@ public class GameMaster : MonoBehaviour
 
         return result;
     }
+
+    //=================//
+    // TowerController //
+    //=================//
+    private void RotateCamera_YAxis(float amt)
+    {
+        mapCamera.transform.RotateAround(mapGround.transform.position + new Vector3(0, 1, 0), new Vector3(0, 1, 0), amt * Time.deltaTime);
+    }
+
+    private void RotateCamera_XAxis(float amt)
+    {
+        mapCamera.transform.RotateAround(mapGround.transform.position + new Vector3(0, 1, 0), mapCamera.transform.right, amt * Time.deltaTime);
+        //In the future it would be a good idea to make it so that the viewing angles are restricted, but I don't think it's that important right now.
+    }
+
+    private void ZoomCamera(float dir)
+    {
+        Vector3 cam_to_center = mapCamera.transform.position - new Vector3(0, 1, 0);
+        if ((cam_to_center - cam_to_center.normalized).magnitude >= 3 || (dir * -1) > 0)
+        {
+            mapCamera.transform.Translate(cam_to_center.normalized * dir * -1, Space.World);
+        }
+    }
+    //=====================//
+    // End TowerController //
+    //=====================//
+
+    //===========//
+    // uiManager //
+    //===========//
+    public void UpdateMoneyText()
+    {
+        moneyText.text = "Money: " + playerMoney.ToString();
+    }
+
+    public void SetCurrentTowerType(string newType)
+    {
+        currentTowerType = newType;
+
+        TowerData towerData = TowerDictionary.GetTowerData(newType);
+        if(towerData != null)
+        {
+            int buyAmount, sellAmount;
+            TowerDictionary.GetValueTotals(towerData.towerType, out buyAmount, out sellAmount);
+
+            towerCostText.text = "Cost: " + buyAmount.ToString();
+            towerInfoText.UpdateUIText(towerData.towerType);
+        }
+        else
+            towerCostText.text = "";
+    }
+
+    public void BuyOrUpgradeTower(string whichType)
+    {
+        int buyAmount, sellAmount;
+        if(selTile.Tower == null) 
+        {
+            // Buy //
+            if(TowerDictionary.GetValueTotals(whichType, out buyAmount, out sellAmount))
+            {
+                if(playerMoney >= buyAmount)
+                {
+                    selTile.Tower = Instantiate(towerPrefab);
+                    selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                    selTile.Tower.transform.position = selTile.Tile.transform.position + new Vector3(0, selTile.Tile.transform.localScale.y * 2, 0);
+                    tileObjects[selCoords[1], selCoords[0]] = selTile;
+                    RefreshRangeIndicator();
+
+                    playerMoney -= buyAmount;
+                    UpdateMoneyText();
+                    towerInfoText.UpdateUIText(whichType);
+                }
+            }
+        }
+        else 
+        {
+            // Upgrade //
+            if(whichType == baseTowerType)
+                return;
+
+            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), whichType))
+            {
+                int buy2, sell2;
+                TowerDictionary.GetValueTotals(selTile.Tower.GetTowerType(), out buy2, out sell2);
+                TowerDictionary.GetValueTotals(whichType, out buyAmount, out sellAmount);
+
+                if(playerMoney >= (buy2 - buyAmount))
+                {
+                    selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                    tileObjects[selCoords[1], selCoords[0]] = selTile;
+                    RefreshRangeIndicator();
+
+                    playerMoney -= (buy2 - buyAmount);
+                    UpdateMoneyText();
+                    towerInfoText.UpdateUIText(whichType);
+                }
+            }
+        }
+    }
+    //===============//
+    // End uiManager //
+    //===============//
 }
