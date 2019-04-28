@@ -15,8 +15,8 @@ public struct TileObject
 
 public class GameMaster : MonoBehaviour
 {
-    private int playerHealth, currentWave;
-    public int playerMoney;
+    private int currentWave;
+    public MoneyScript playerMoney;
 
     public bool loadSave;
     public string mapFileName, saveFileName;
@@ -57,6 +57,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
+        currentTowerType = baseTowerType;
         currentSelectMaterial = selectMaterial;
         towerRangeIndicator.SetActive(false);
 
@@ -87,9 +88,6 @@ public class GameMaster : MonoBehaviour
         
         if(tileIsSelected)
         {
-            if(Input.GetKeyDown(KeyCode.B))
-                BuyOrUpgradeTower("RAPID_2");
-
             if(Input.GetMouseButtonDown(1))
                 DeselectTile();
         }
@@ -115,9 +113,29 @@ public class GameMaster : MonoBehaviour
         // End TowerController //
     }
 
+    private void RefreshTotalCostText()
+    {
+        int buyAmount, sellAmount;
+        TowerDictionary.GetValueTotals(currentTowerType, out buyAmount, out sellAmount);
+
+        if (selTile.Tower == null)
+            towerCostText.text = "Cost: " + buyAmount.ToString();
+        else
+        {
+            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), currentTowerType))
+            {
+                int buyAmount2, sellAmount2;
+                TowerDictionary.GetValueTotals(selTile.Tower.GetTowerType(), out buyAmount2, out sellAmount2);
+                towerCostText.text = "Cost: " + (buyAmount - buyAmount2).ToString();
+            }
+            else
+                towerCostText.text = "";
+        }
+    }
+
     private void RefreshRangeIndicator()
     {
-        if (selTile.Tower != null)
+        if(selTile.Tower != null)
         {
             towerRangeIndicator.SetActive(true);
             towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.166f, 7 - selCoords[1]);
@@ -152,11 +170,16 @@ public class GameMaster : MonoBehaviour
     {
         if(selTile.Tile != null)
             selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
-
+       
         selTile = curTile;
         selCoords[0] = curCoords[0];
         selCoords[1] = curCoords[1];
         tileIsSelected = true;
+
+        if(selTile.Tower != null)
+            towerInfoText.UpdateUIText(selTile.Tower.GetTowerType());
+        else
+            towerInfoText.UpdateUIText("NONE");
 
         RefreshRangeIndicator();
     }
@@ -166,6 +189,7 @@ public class GameMaster : MonoBehaviour
         selTile.Tile.GetComponent<MeshRenderer>().material = tileMaterial;
         selTile = dummyTile;
         tileIsSelected = false;
+        towerRangeIndicator.SetActive(false);
     }
 
     private bool RaycastToTile()
@@ -291,9 +315,11 @@ public class GameMaster : MonoBehaviour
 
         mapLine = mapFile.ReadLine(); // "//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM"
 
-        playerHealth = int.Parse(mapFile.ReadLine().Trim());
-        playerMoney  = int.Parse(mapFile.ReadLine().Trim());
-        currentWave  = int.Parse(mapFile.ReadLine().Trim());
+        playerBase.health  = int.Parse(mapFile.ReadLine().Trim());
+        playerMoney.Money  = int.Parse(mapFile.ReadLine().Trim());
+        currentWave        = int.Parse(mapFile.ReadLine().Trim());
+
+        playerBase.RefreshFillAmount();
 
         mapFile.Close();
 
@@ -363,8 +389,8 @@ public class GameMaster : MonoBehaviour
         saveFile.WriteLine("//END//");
 
         saveFile.WriteLine("//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM");
-        saveFile.WriteLine(playerHealth.ToString());
-        saveFile.WriteLine(playerMoney.ToString());
+        saveFile.WriteLine(playerBase.health.ToString());
+        saveFile.WriteLine(playerMoney.Money.ToString());
         saveFile.WriteLine(currentWave.ToString());
 
         saveFile.Close();
@@ -420,7 +446,7 @@ public class GameMaster : MonoBehaviour
     //===========//
     public void UpdateMoneyText()
     {
-        moneyText.text = "Money: " + playerMoney.ToString();
+        moneyText.text = "Money: " + playerMoney.Money.ToString();
     }
 
     public void SetCurrentTowerType(string newType)
@@ -430,33 +456,33 @@ public class GameMaster : MonoBehaviour
         TowerData towerData = TowerDictionary.GetTowerData(newType);
         if(towerData != null)
         {
-            int buyAmount, sellAmount;
-            TowerDictionary.GetValueTotals(towerData.towerType, out buyAmount, out sellAmount);
-
-            towerCostText.text = "Cost: " + buyAmount.ToString();
             towerInfoText.UpdateUIText(towerData.towerType);
+            RefreshTotalCostText();
         }
         else
             towerCostText.text = "";
     }
 
-    public void BuyOrUpgradeTower(string whichType)
+    public void BuyOrUpgradeTower()//string whichType)
     {
+        string whichType = currentTowerType;
+
         int buyAmount, sellAmount;
         if(selTile.Tower == null) 
         {
             // Buy //
             if(TowerDictionary.GetValueTotals(whichType, out buyAmount, out sellAmount))
             {
-                if(playerMoney >= buyAmount)
+                if(playerMoney.Money >= buyAmount)
                 {
                     selTile.Tower = Instantiate(towerPrefab);
                     selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(whichType));
                     selTile.Tower.transform.position = selTile.Tile.transform.position + new Vector3(0, selTile.Tile.transform.localScale.y * 2, 0);
+                    selTile.Tile.GetComponent<MeshRenderer>().material = selTile.Tower.GetSelectMaterial();
                     tileObjects[selCoords[1], selCoords[0]] = selTile;
                     RefreshRangeIndicator();
 
-                    playerMoney -= buyAmount;
+                    playerMoney.Money -= buyAmount;
                     UpdateMoneyText();
                     towerInfoText.UpdateUIText(whichType);
                 }
@@ -474,13 +500,14 @@ public class GameMaster : MonoBehaviour
                 TowerDictionary.GetValueTotals(selTile.Tower.GetTowerType(), out buy2, out sell2);
                 TowerDictionary.GetValueTotals(whichType, out buyAmount, out sellAmount);
 
-                if(playerMoney >= (buy2 - buyAmount))
+                if(playerMoney.Money >= (buyAmount - buy2))
                 {
                     selTile.Tower.SetTowerData(TowerDictionary.GetTowerData(whichType));
+                    selTile.Tile.GetComponent<MeshRenderer>().material = selTile.Tower.GetSelectMaterial();
                     tileObjects[selCoords[1], selCoords[0]] = selTile;
                     RefreshRangeIndicator();
 
-                    playerMoney -= (buy2 - buyAmount);
+                    playerMoney.Money -= (buyAmount - buy2);
                     UpdateMoneyText();
                     towerInfoText.UpdateUIText(whichType);
                 }

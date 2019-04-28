@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -919,10 +919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154a6b904936a2c4587e7831911c5a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMaster: {fileID: 0}
   CurrentlySelectedBlck: {fileID: 2527607626952771284}
   TowerPrefab: {fileID: 2770484832960667334, guid: c9d3bdec5fca49e4e8a2597ed1b3b32b,
     type: 3}
   MoneyHandler: {fileID: 0}
+  towerCostText: {fileID: 0}
   baseTowerType: BASE
 --- !u!4 &154603199
 Transform:
@@ -1840,8 +1842,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 605163576}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b817458b5e8522b458eefae9247d427a, type: 3}
+--- !u!114 &605163576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5342346841488317973, guid: b817458b5e8522b458eefae9247d427a,
+    type: 3}
+  m_PrefabInstance: {fileID: 605163575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &610367464
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,6 +3382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -4713,7 +4738,7 @@ MonoBehaviour:
   towerName: {fileID: 0}
   towerCost: {fileID: 0}
   towerDamage: {fileID: 0}
-  towerDelay: {fileID: 0}
+  towerRange: {fileID: 0}
   towerSpecial: {fileID: 0}
 --- !u!1 &1307073306
 GameObject:
@@ -7272,6 +7297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -7291,6 +7317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -9693,6 +9720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -9712,6 +9740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -9826,6 +9855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -9953,6 +9983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10046,6 +10077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10081,6 +10113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10122,6 +10155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10162,6 +10196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10231,6 +10266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10403,6 +10439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10591,6 +10628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10650,6 +10688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10799,6 +10838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -10855,6 +10895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -12450,6 +12491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -12742,6 +12784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -12844,6 +12887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -18987,6 +19031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19051,6 +19096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19129,6 +19175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19172,6 +19219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19525,6 +19573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19565,6 +19614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19768,6 +19818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19828,6 +19879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -19855,6 +19907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20176,6 +20229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20246,6 +20300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20265,6 +20320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20313,6 +20369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20353,6 +20410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20482,6 +20540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20796,6 +20855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -20882,6 +20942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21066,6 +21127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21221,6 +21283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21277,6 +21340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21349,6 +21413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21389,6 +21454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21445,6 +21511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21501,6 +21568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21557,6 +21625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21613,6 +21682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21669,6 +21739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21725,6 +21796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21781,6 +21853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21837,6 +21910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21909,6 +21983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -21965,6 +22040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22005,6 +22081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22077,6 +22154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22117,6 +22195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22173,6 +22252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22245,6 +22325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22285,6 +22366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22341,6 +22423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22413,6 +22496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22469,6 +22553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22525,6 +22610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22581,6 +22667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22621,6 +22708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22677,6 +22765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22733,6 +22822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22805,6 +22895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22861,6 +22952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22917,6 +23009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -22957,6 +23050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23013,6 +23107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23085,6 +23180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23141,6 +23237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23181,6 +23278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23237,6 +23335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23309,6 +23408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23365,6 +23465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23421,6 +23522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23477,6 +23579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23533,6 +23636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23573,6 +23677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23629,6 +23734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23685,6 +23791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23757,6 +23864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23797,6 +23905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23853,6 +23962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23925,6 +24035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -23981,6 +24092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24037,6 +24149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24077,6 +24190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24149,6 +24263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24205,6 +24320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24245,6 +24361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24301,6 +24418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24373,6 +24491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24413,6 +24532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24485,6 +24605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24525,6 +24646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24581,6 +24703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24653,6 +24776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24672,6 +24796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24749,6 +24874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24805,6 +24931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24861,6 +24988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24917,6 +25045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -24952,6 +25081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25045,6 +25175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25101,6 +25232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25141,6 +25273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25197,6 +25330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25232,6 +25366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25309,6 +25444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25381,6 +25517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25421,6 +25558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25477,6 +25615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25533,6 +25672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25589,6 +25729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25645,6 +25786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25680,6 +25822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25773,6 +25916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25829,6 +25973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25869,6 +26014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25925,6 +26071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -25997,6 +26144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26037,6 +26185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26093,6 +26242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26165,6 +26315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26205,6 +26356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26277,6 +26429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26333,6 +26486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26389,6 +26543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26429,6 +26584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26501,6 +26657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26557,6 +26714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26597,6 +26755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26669,6 +26828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26725,6 +26885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26765,6 +26926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26821,6 +26983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26893,6 +27056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26949,6 +27113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -26989,6 +27154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27045,6 +27211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27117,6 +27284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27157,6 +27325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27213,6 +27382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27285,6 +27455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27341,6 +27512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27360,6 +27532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27437,6 +27610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27509,6 +27683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27549,6 +27724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27605,6 +27781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27661,6 +27838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27717,6 +27895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27789,6 +27968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27829,6 +28009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27901,6 +28082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27941,6 +28123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -27997,6 +28180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28053,6 +28237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28109,6 +28294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28181,6 +28367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28221,6 +28408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28293,6 +28481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28333,6 +28522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28405,6 +28595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28461,6 +28652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28501,6 +28693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28557,6 +28750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28629,6 +28823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28685,6 +28880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28741,6 +28937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28781,6 +28978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28837,6 +29035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28909,6 +29108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -28949,6 +29149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29021,6 +29222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29061,6 +29263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29117,6 +29320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29189,6 +29393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29229,6 +29434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29285,6 +29491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29357,6 +29564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29413,6 +29621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29469,6 +29678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29525,6 +29735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29565,6 +29776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29621,6 +29833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29677,6 +29890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29749,6 +29963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29805,6 +30020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29861,6 +30077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29901,6 +30118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -29957,6 +30175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30013,6 +30232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30085,6 +30305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30141,6 +30362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30181,6 +30403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30309,6 +30532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30349,6 +30573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30426,6 +30651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30493,6 +30719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30541,6 +30768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30638,6 +30866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30657,6 +30886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30855,6 +31085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30874,6 +31105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30909,6 +31141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -30928,6 +31161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31054,6 +31288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31299,6 +31534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31318,6 +31554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31447,6 +31684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31650,6 +31888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31763,6 +32002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31831,6 +32071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31850,6 +32091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -31971,6 +32213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -32134,6 +32377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -32860,6 +33104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -32908,6 +33153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33078,6 +33324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33184,6 +33431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33731,6 +33979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33766,6 +34015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33785,6 +34035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -33847,6 +34098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34158,6 +34410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34299,6 +34552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34427,6 +34681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34496,6 +34751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34720,6 +34976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34856,6 +35113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -34976,6 +35234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35112,6 +35371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35240,6 +35500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35451,6 +35712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35587,6 +35849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35707,6 +35970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -35843,6 +36107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36153,6 +36418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36281,6 +36547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36409,6 +36676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36537,6 +36805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36657,6 +36926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -36884,6 +37154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37012,6 +37283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37140,6 +37412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37260,6 +37533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37287,6 +37561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37516,6 +37791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37652,6 +37928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37878,6 +38155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -37905,6 +38183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -41139,6 +41418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}
@@ -41199,6 +41479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05145c5002b68d43b89665d42bc4a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerInfo: {fileID: 0}
   selectedBlock: {fileID: 2527607626952771284}
   oldMaterial: {fileID: 2100000, guid: 99ee90d9949b9ff41821abc9c2157443, type: 2}
   highlightMaterial: {fileID: 2100000, guid: 6178e1d77679e494a80850f2fd90ce29, type: 2}

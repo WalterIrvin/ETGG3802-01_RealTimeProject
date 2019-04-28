@@ -8,9 +8,8 @@ public class BasicBaseScript : MonoBehaviour
 {
     public int mapX, mapZ;
 
-    public int health = 100;
-    private float maxHealth;
-    private Image healthBar;
+    public int health, maxHealth;
+    [SerializeField] private Image healthBar;
     //public Text gameover;
     private AudioSource source;
     public float AudioFactor = 1;
@@ -19,9 +18,9 @@ public class BasicBaseScript : MonoBehaviour
     void Start()
     {
         //gameover.text = "";
-        maxHealth = health;
+        //maxHealth = health;
         source = GetComponent<AudioSource>();
-        healthBar = transform.Find("BaseCanvas").Find("healthBG").Find("health").GetComponent<Image>();
+        //healthBar = transform.Find("BaseCanvas").Find("healthBG").Find("health").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -43,9 +42,14 @@ public class BasicBaseScript : MonoBehaviour
             source.Play(0);
             Destroy(other.gameObject);
             this.health -= 10;
-            healthBar.fillAmount = (float)health / (float)maxHealth;
+            RefreshFillAmount();
         }
 
+    }
+
+    public void RefreshFillAmount()
+    {
+        healthBar.GetComponent<Image>().fillAmount = (float)health / (float)maxHealth;
     }
 
     public void UpdateVolume(float n_vol)

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class uiManager : MonoBehaviour
 {
-
+    public GameMaster gameMaster;
     protected Vector3 pos;
     public GameObject CurrentlySelectedBlck;
     public TowerScript TowerPrefab;
