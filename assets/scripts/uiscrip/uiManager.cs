@@ -156,6 +156,7 @@ public class uiManager : MonoBehaviour
                 string currentType = ohs.towerOnThisBlock.GetTowerType();
                 if(TowerDictionary.IsValidUpgrade(currentType, currentTowerType))
                 {
+                    Debug.Log("Testing");
                     int currentCost, upgradeCost, uselessValue1, uselessValue2;
                     TowerDictionary.GetValueTotals(currentType, out currentCost, out uselessValue1);
                     TowerDictionary.GetValueTotals(currentTowerType, out upgradeCost, out uselessValue2);

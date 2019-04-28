@@ -68,6 +68,10 @@ public class ResearchScript : MonoBehaviour
                 buttonObject = null;
                 researching = false;
                 fillBar.fillAmount = 0;
+                TowerData tower = buttonObject.attachedTower;
+                string type = tower.towerType;
+                TowerDictionary.setResearch(type);
+                tower.isResearched = true;
                 return;
             }
             fillBar.fillAmount = tmp;

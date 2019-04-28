@@ -8,7 +8,6 @@ public class TowerDictionary : MonoBehaviour
 {
     public List<TowerData> towerData;
     private static Dictionary<string, TowerData> towerDictionary;
-
     void Start()
     {
         towerDictionary = new Dictionary<string, TowerData>();
@@ -44,9 +43,17 @@ public class TowerDictionary : MonoBehaviour
         //print("Tried to get TowerData for a tower type that doesn't exist!");
         return result;
     }
-
+    public static void setResearch(string currentType)
+    {
+        if (ContainsTowerType(currentType))
+        {
+            towerDictionary[currentType].isResearched = true;
+        }
+    }
     public static bool IsValidUpgrade(string currentType, string upgradeType)
     {
+        
+
         if(currentType == upgradeType)
             return false;
 
@@ -62,7 +69,7 @@ public class TowerDictionary : MonoBehaviour
         while (upgradeData != null)
         {
             upgradeType = upgradeData.prevTowerType;
-            if(upgradeType == currentType)
+            if(upgradeType == currentType && upgradeData.isResearched)
                 return true;
 
             upgradeData = GetTowerData(upgradeData.prevTowerType);

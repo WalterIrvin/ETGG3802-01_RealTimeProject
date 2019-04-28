@@ -6,7 +6,9 @@ public class uiRelay : MonoBehaviour
 {
     public string towerType;
     public uiManager commandTarget;
+    public TowerButtonResearchTab ResearchChecker;
     private AudioSource source;
+    private bool isResearch = false;
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class uiRelay : MonoBehaviour
 
     public void BuyTower()
     {
+        //if (!isResearch)
+          //  return;
         commandTarget.BuyTower();
         source.Play(0);
     }
@@ -28,5 +32,9 @@ public class uiRelay : MonoBehaviour
     {
         commandTarget.UpgradeTower();
         source.Play(0);
+    }
+    private void Update()
+    {
+
     }
 }
