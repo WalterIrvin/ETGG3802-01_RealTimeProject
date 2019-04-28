@@ -50,19 +50,45 @@ public class hotkeyScript : MonoBehaviour
         //Build a tower on the selected block
         if (Input.GetKeyDown(KeyCode.Q)) { buildTower.onClick.Invoke(); }
 
-        //Upgrade the selected tower (slowing path)
+        //Upgrade the selected tower (slowing 1)
         if (Input.GetKeyDown(KeyCode.W))
         {
-            //buildTower.onClick.Invoke();
             slow1Upgrade.onClick.Invoke();
             upgradeTower.onClick.Invoke();
         }
 
-        //Upgrade the selected tower (rapid fire path)
+        //Upgrade the selected tower (rapid fire 1)
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //buildTower.onClick.Invoke();
             rapid1Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
+
+        //Upgrade the selected tower (slowing 2)
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            slow2Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
+
+        //Upgrade the selected tower (rapid fire 2)
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            rapid2Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
+
+        //Upgrade the selected tower (slowing 3)
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            slow3Upgrade.onClick.Invoke();
+            upgradeTower.onClick.Invoke();
+        }
+
+        //Upgrade the selected tower (rapid fire 3)
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            rapid3Upgrade.onClick.Invoke();
             upgradeTower.onClick.Invoke();
         }
     }

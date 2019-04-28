@@ -11315,9 +11315,9 @@ MonoBehaviour:
   upgradeTower: {fileID: 1038888499}
   slow1Upgrade: {fileID: 2133725911}
   slow2Upgrade: {fileID: 483679257}
-  slow3Upgrade: {fileID: 2020790811}
+  slow3Upgrade: {fileID: 544440198}
   rapid1Upgrade: {fileID: 834134139}
-  rapid2Upgrade: {fileID: 1912184910}
+  rapid2Upgrade: {fileID: 105225507}
   rapid3Upgrade: {fileID: 1861063084}
 --- !u!1 &1887617136
 GameObject:
