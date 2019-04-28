@@ -141,7 +141,7 @@ public class TowerScript : MonoBehaviour
                     source.Play(0);
                     GameObject bullet = Instantiate(towerData.bulletPrefab, transform.position, Quaternion.identity);
                     BulletController bullet_script = bullet.GetComponent<BulletController>();
-                    bullet_script.GetComponent<MeshRenderer>().material = towerData.projectileMaterial;
+                    bullet_script.GetComponent<MeshRenderer>().material = towerData.selectMaterial;// projectileMaterial;
 
                     bullet_script.mDamage = towerData.bulletDamage;
                     bullet_script.mDestination = main_target.position;

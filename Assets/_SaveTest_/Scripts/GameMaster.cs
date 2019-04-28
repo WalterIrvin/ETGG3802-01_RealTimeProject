@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -138,7 +137,7 @@ public class GameMaster : MonoBehaviour
         if(selTile.Tower != null)
         {
             towerRangeIndicator.SetActive(true);
-            towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.166f, 7 - selCoords[1]);
+            towerRangeIndicator.transform.position = new Vector3(selCoords[0] - 8, 0.201f, 7 - selCoords[1]);
             towerRangeIndicator.GetComponent<MeshRenderer>().material = selTile.Tower.GetMaterial();
 
             float range = selTile.Tower.GetRange();
