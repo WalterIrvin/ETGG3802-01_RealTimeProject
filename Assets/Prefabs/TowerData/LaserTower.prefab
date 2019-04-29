@@ -63,4 +63,5 @@ MonoBehaviour:
   bulletEffect: 0
   effectTimer: 0
   researchCost: 150
-  researchTime: 50
+  researchTime: 5
+  isResearched: 0

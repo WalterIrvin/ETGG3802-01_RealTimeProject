@@ -24,5 +24,6 @@ public class TowerData : MonoBehaviour
     public float effectTimer;
     public int researchCost;
     public float researchTime;
+    public bool isResearched;
     //public List<EntityModifier> bulletEffects;
 }

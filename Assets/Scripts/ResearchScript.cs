@@ -14,20 +14,20 @@ public class ResearchScript : MonoBehaviour
     public Text flavorText;
     public Text statsText;
     private TowerButtonResearchTab buttonObject;
-    private float totalTime = 0;
+    public float totalTime = 0;
     private bool researching = false;
+    private TowerData towerToResearch;
+    public bool otherOption;
 
     public void startResearch(SetActiveResearch researchObj)
     {
         if(researching)
-        {
-            return;
-        }
+            return;        
+
         TowerButtonResearchTab buttonObj = researchObj.activeResearch;
-        if (buttonObj == null)
-        {
+        if(buttonObj == null)
             return;
-        } 
+         
         buttonObject = buttonObj;
         TowerData tower = buttonObj.attachedTower;
 
@@ -53,9 +53,66 @@ public class ResearchScript : MonoBehaviour
         }
     }
 
+    public void SetValuesWithSave(string whichType, float currentTime)
+    {
+        if(whichType == "NONE")
+            researching = false;
+        else
+        {
+            SetTowerToResearch(whichType);
+            if(towerToResearch == null || TowerDictionary.GetResearchStatus(towerToResearch.towerType) || !TowerDictionary.ResearchPreReqComplete(towerToResearch.towerType))
+                return;
+
+            researching = true;
+            totalTime = currentTime;
+        }
+    }
+
+    public void GetValuesForSave(out string whichType, out float currentTime)
+    {
+        if(!researching)
+        {
+            whichType = "NONE";
+            currentTime = 0;
+        }
+        else
+        {
+            whichType = towerToResearch.towerType;
+            currentTime = totalTime;
+        }
+    }
+
+    public void SetTowerToResearch(string whichType)
+    {
+        if(researching)
+            return;
+
+        towerToResearch = TowerDictionary.GetTowerData(whichType);
+    }
+
+    public void StartResearch_()
+    {
+        if(researching || towerToResearch == null || TowerDictionary.GetResearchStatus(towerToResearch.towerType) || !TowerDictionary.ResearchPreReqComplete(towerToResearch.towerType) || moneyHandler.Money < towerToResearch.researchCost)
+            return;
+
+        moneyHandler.Money -= towerToResearch.researchCost;
+        researching = true;
+    }
+
+    public void SpeedUpResearch()
+    {
+
+    }
+
     void Update()
     {
-        if (buttonObject != null)
+        if(otherOption)
+        {
+            Update_();
+            return;
+        }
+
+        if(buttonObject != null)
         {
             totalTime += Time.deltaTime;
             float tmp = totalTime / buttonObject.attachedTower.researchTime;
@@ -68,10 +125,31 @@ public class ResearchScript : MonoBehaviour
                 buttonObject = null;
                 researching = false;
                 fillBar.fillAmount = 0;
-                return;
+                TowerDictionary.SetResearch(buttonObject.attachedTower.towerType, true);
             }
-            fillBar.fillAmount = tmp;
+            else
+                fillBar.fillAmount = tmp;
         }
-        
+    }
+
+    private void Update_()
+    {
+        if(researching)
+        {
+            totalTime += Time.deltaTime;
+            float tmp = totalTime / towerToResearch.researchTime;
+            if(tmp >= 1)
+            {
+                tmp = 1;
+                totalTime = 0;
+                fillBar.fillAmount = 0;
+
+                TowerDictionary.SetResearch(towerToResearch.towerType, true);
+                towerToResearch = null;
+                researching = false;
+            }
+            else
+                fillBar.fillAmount = tmp;
+        }
     }
 }

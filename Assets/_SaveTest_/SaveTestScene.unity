@@ -1107,7 +1107,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 304442503}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SpeedUpResearch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &304442503
@@ -1796,7 +1807,6 @@ GameObject:
   - component: {fileID: 427772674}
   - component: {fileID: 427772673}
   - component: {fileID: 427772672}
-  - component: {fileID: 427772671}
   m_Layer: 5
   m_Name: GatlingTower
   m_TagString: Untagged
@@ -1804,23 +1814,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &427772671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 427772670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 1958045532674500303, guid: 4a185db83899f1543a2871d4368616b9,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 1475749172}
-  researching: 0
 --- !u!114 &427772672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1861,15 +1854,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 427772671}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: RAPID_2
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3193,11 +3186,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1510859009}
-        m_MethodName: startResearch
-        m_Mode: 2
+        m_MethodName: StartResearch_
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1510859008}
-          m_ObjectArgumentAssemblyTypeName: SetActiveResearch, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4794,7 +4787,6 @@ GameObject:
   - component: {fileID: 1121554715}
   - component: {fileID: 1121554714}
   - component: {fileID: 1121554713}
-  - component: {fileID: 1121554712}
   m_Layer: 5
   m_Name: DeathLaser
   m_TagString: Untagged
@@ -4821,23 +4813,6 @@ RectTransform:
   m_AnchoredPosition: {x: 117.3, y: 18.99997}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1121554712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121554710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 5921622267165623698, guid: 7bc850d699e6c7a4bbeb463d16e9555c,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 427772671}
-  researching: 0
 --- !u!114 &1121554713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,15 +4853,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1121554712}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: RAPID_3
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -5162,7 +5137,6 @@ GameObject:
   - component: {fileID: 1154764189}
   - component: {fileID: 1154764188}
   - component: {fileID: 1154764187}
-  - component: {fileID: 1154764186}
   m_Layer: 5
   m_Name: CryoLaser
   m_TagString: Untagged
@@ -5189,23 +5163,6 @@ RectTransform:
   m_AnchoredPosition: {x: 117.29998, y: -151.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1154764186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154764184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 2640537402839436743, guid: cc4a99b307eb1e44a907ffa12ef93434,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 1436624708}
-  researching: 0
 --- !u!114 &1154764187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5246,15 +5203,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1154764186}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SLOW_3
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -6146,7 +6103,6 @@ GameObject:
   - component: {fileID: 1405788614}
   - component: {fileID: 1405788613}
   - component: {fileID: 1405788612}
-  - component: {fileID: 1405788611}
   m_Layer: 5
   m_Name: Basic
   m_TagString: Untagged
@@ -6154,23 +6110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1405788611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1405788610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 1262248648635162136, guid: 830a6220a570243409aef5602127bee5,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 0}
-  researching: 0
 --- !u!114 &1405788612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6211,15 +6150,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1405788611}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: BASE
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -6310,7 +6249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoney: {fileID: 1846108315}
-  loadSave: 0
+  loadSave: 1
   mapFileName: Map_001
   saveFileName: Save_001
   playerBase: {fileID: 1987308666}
@@ -6332,6 +6271,7 @@ MonoBehaviour:
   moneyText: {fileID: 402722812}
   towerCostText: {fileID: 807748300}
   towerInfoText: {fileID: 572433444}
+  researchMaster: {fileID: 1510859009}
 --- !u!4 &1409815014
 Transform:
   m_ObjectHideFlags: 0
@@ -6569,7 +6509,6 @@ GameObject:
   - component: {fileID: 1436624711}
   - component: {fileID: 1436624710}
   - component: {fileID: 1436624709}
-  - component: {fileID: 1436624708}
   m_Layer: 5
   m_Name: IceTower
   m_TagString: Untagged
@@ -6577,23 +6516,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1436624708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436624707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 1994374987744982516, guid: 7408d32c73e56b740892ecaeed7cc0bc,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 2131902236}
-  researching: 0
 --- !u!114 &1436624709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6634,15 +6556,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1436624708}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SLOW_2
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -6715,7 +6637,6 @@ GameObject:
   - component: {fileID: 1475749175}
   - component: {fileID: 1475749174}
   - component: {fileID: 1475749173}
-  - component: {fileID: 1475749172}
   m_Layer: 5
   m_Name: RapidFire
   m_TagString: Untagged
@@ -6723,23 +6644,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1475749172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1475749171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 3382526545054819534, guid: 83c16ceb4e6f35745916df1e5b2e399c,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 1405788611}
-  researching: 0
 --- !u!114 &1475749173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6780,15 +6684,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 1475749172}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: RAPID
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -6933,7 +6837,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1510859007}
   - component: {fileID: 1510859009}
-  - component: {fileID: 1510859008}
   m_Layer: 0
   m_Name: ResearchHandler
   m_TagString: Untagged
@@ -6955,19 +6858,6 @@ Transform:
   m_Father: {fileID: 172700661}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1510859008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510859006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b4ac56c1f5ea449a6ae16b82b59587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeResearch: {fileID: 0}
 --- !u!114 &1510859009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6984,6 +6874,8 @@ MonoBehaviour:
   moneyHandler: {fileID: 1846108315}
   flavorText: {fileID: 1759426658}
   statsText: {fileID: 527470976}
+  totalTime: 0
+  otherOption: 1
 --- !u!1 &1537605065
 GameObject:
   m_ObjectHideFlags: 0
@@ -10670,7 +10562,6 @@ GameObject:
   - component: {fileID: 2131902239}
   - component: {fileID: 2131902238}
   - component: {fileID: 2131902237}
-  - component: {fileID: 2131902236}
   m_Layer: 5
   m_Name: GlueTower
   m_TagString: Untagged
@@ -10678,23 +10569,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2131902236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131902235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d447569885d06b148acdfead9657f194, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachedTower: {fileID: 445474987109212000, guid: a8c774f1fe2876249a73fbf883c6d0b7,
-    type: 3}
-  isResearched: 0
-  preReq: {fileID: 1405788611}
-  researching: 0
 --- !u!114 &2131902237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10735,15 +10609,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1510859008}
-        m_MethodName: setActiveResearch
-        m_Mode: 2
+      - m_Target: {fileID: 1510859009}
+        m_MethodName: SetTowerToResearch
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 2131902236}
-          m_ObjectArgumentAssemblyTypeName: TowerButtonResearchTab, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: SLOW
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,

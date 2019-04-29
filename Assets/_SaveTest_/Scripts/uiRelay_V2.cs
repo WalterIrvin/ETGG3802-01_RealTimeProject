@@ -22,6 +22,8 @@ public class uiRelay_V2 : MonoBehaviour
     public void BuyOrUpgradeTower()
     {
         commandTarget.BuyOrUpgradeTower();
-        source.Play(0);
+
+        if(source != null)
+            source.Play(0);
     }
 }

@@ -122,7 +122,7 @@ public class TowerScript : MonoBehaviour
 
         if(towerData.whatDoesThisShoot == PROJECTILE_TYPE.PROJ_LASER)
         {
-            TurretHead.transform.LookAt(main_target.position);
+            TurretHead.transform.LookAt(new Vector3(main_target.position.x, TurretHead.transform.position.y, main_target.position.z));
         }
         else
         {

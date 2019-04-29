@@ -54,6 +54,8 @@ public class GameMaster : MonoBehaviour
     // End uiManager //
     //===============//
 
+    [SerializeField] private ResearchScript researchMaster;
+
     void Start()
     {
         currentTowerType = baseTowerType;
@@ -121,7 +123,7 @@ public class GameMaster : MonoBehaviour
             towerCostText.text = "Cost: " + buyAmount.ToString();
         else
         {
-            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), currentTowerType))
+            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), currentTowerType, true))
             {
                 int buyAmount2, sellAmount2;
                 TowerDictionary.GetValueTotals(selTile.Tower.GetTowerType(), out buyAmount2, out sellAmount2);
@@ -177,8 +179,8 @@ public class GameMaster : MonoBehaviour
 
         if(selTile.Tower != null)
             towerInfoText.UpdateUIText(selTile.Tower.GetTowerType());
-        else
-            towerInfoText.UpdateUIText("NONE");
+        //else
+        //    towerInfoText.UpdateUIText("NONE");
 
         RefreshRangeIndicator();
     }
@@ -228,9 +230,9 @@ public class GameMaster : MonoBehaviour
         StreamReader mapFile = new StreamReader("Assets/_SaveTest_/TextFiles/MapFiles/" + mapFileName + ".txt");
         string mapLine;
         
-        mapLine = mapFile.ReadLine(); // "//LAYOUT//"
-        mapLine = mapFile.ReadLine(); // "//Top Left is (0,0)// '+' for path ' ' for tile"
-        mapLine = mapFile.ReadLine(); // "0----------------0"
+        mapFile.ReadLine(); // "//LAYOUT//"
+        mapFile.ReadLine(); // "//Top Left is (0,0)// '+' for path ' ' for tile"
+        mapFile.ReadLine(); // "0----------------0"
         for (int z = 0; z < 16; z++)
         {
             mapLine = mapFile.ReadLine();
@@ -262,8 +264,8 @@ public class GameMaster : MonoBehaviour
                 tileObjects[z, x] = newTileObject;
             }
         }
-        mapLine = mapFile.ReadLine(); // "0----------------0"
-        mapLine = mapFile.ReadLine(); // " 0123456789ABCDEF "
+        mapFile.ReadLine(); // "0----------------0"
+        mapFile.ReadLine(); // " 0123456789ABCDEF "
 
         if(loadSave)
         {
@@ -271,11 +273,10 @@ public class GameMaster : MonoBehaviour
             mapFile = new StreamReader("Assets/_SaveTest_/TextFiles/SaveFiles/" + saveFileName + ".txt");
         }
 
-        mapLine = mapFile.ReadLine(); // "//BREAKABLES//"
+        mapFile.ReadLine(); // "//BREAKABLES//"
 
         int newX, newZ;
-        mapLine = mapFile.ReadLine();
-        mapLine = mapLine.Trim();
+        mapLine = mapFile.ReadLine().Trim();
         while(mapLine != "//END//")
         {
             newX = ((mapLine[1] - 48) * 10) + (mapLine[2] - 48);
@@ -291,10 +292,9 @@ public class GameMaster : MonoBehaviour
             mapLine = mapLine.Trim();
         }
 
-        mapLine = mapFile.ReadLine(); // "//TOWERS//"
+        mapFile.ReadLine(); // "//TOWERS//"
 
-        mapLine = mapFile.ReadLine();
-        mapLine = mapLine.Trim();
+        mapLine = mapFile.ReadLine().Trim();
         while (mapLine != "//END//")
         {
             newX = ((mapLine[1] - 48) * 10) + (mapLine[2] - 48);
@@ -308,20 +308,39 @@ public class GameMaster : MonoBehaviour
                                                                            tileObjects[newZ, newX].Tile.transform.localScale.y + (tileObjects[newZ, newX].Tower.transform.localScale.y), 
                                                                            tileObjects[newZ, newX].Tile.transform.position.z);
 
-            mapLine = mapFile.ReadLine();
-            mapLine = mapLine.Trim();
+            mapLine = mapFile.ReadLine().Trim();
         }
 
-        mapLine = mapFile.ReadLine(); // "//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM"
+        mapFile.ReadLine(); // "//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM"
 
         playerBase.health  = int.Parse(mapFile.ReadLine().Trim());
         playerMoney.Money  = int.Parse(mapFile.ReadLine().Trim());
         currentWave        = int.Parse(mapFile.ReadLine().Trim());
 
-        playerBase.RefreshFillAmount();
+        mapFile.ReadLine(); // "//END//"
+        mapFile.ReadLine(); // "//RESEARCH_LIST//"
+
+        string tempString;
+        mapLine = mapFile.ReadLine().Trim();
+        while(mapLine != "//END//")
+        {
+            TowerDictionary.SetResearch(mapLine.Remove(0, 2).Trim(), int.Parse(mapLine[0].ToString()) == 1);
+            mapLine = mapFile.ReadLine().Trim();
+        }
+
+        mapLine = mapFile.ReadLine(); // "//RESEARCH_TIME//"
+
+        float tempFloat;
+        tempString = mapFile.ReadLine().Trim();
+        tempFloat = float.Parse(mapFile.ReadLine().Trim());
+
+        researchMaster.SetValuesWithSave(tempString, tempFloat);
+
+        mapFile.ReadLine(); // "//END//"
 
         mapFile.Close();
 
+        playerBase.RefreshFillAmount();
         tileObjects[playerBase.mapZ, playerBase.mapX].Type = TILE_TYPE.TILE_BASE;
         playerBase.transform.position = new Vector3(playerBase.mapX - 8, playerBase.transform.localScale.y / 2, 7 - playerBase.mapZ);
 
@@ -391,6 +410,17 @@ public class GameMaster : MonoBehaviour
         saveFile.WriteLine(playerBase.health.ToString());
         saveFile.WriteLine(playerMoney.Money.ToString());
         saveFile.WriteLine(currentWave.ToString());
+        saveFile.WriteLine("//END//");
+
+        saveFile.WriteLine("//RESEARCH_LIST//\n" + TowerDictionary.CreateResearchSaveString() + "//END//");
+
+        string tempString; float tempFloat;
+        researchMaster.GetValuesForSave(out tempString, out tempFloat);
+
+        saveFile.WriteLine("//RESEARCH_TIME//");
+        saveFile.WriteLine(tempString);
+        saveFile.WriteLine(tempFloat.ToString());
+        saveFile.WriteLine("//END//");
 
         saveFile.Close();
     }
@@ -450,6 +480,9 @@ public class GameMaster : MonoBehaviour
 
     public void SetCurrentTowerType(string newType)
     {
+        if(!TowerDictionary.GetResearchStatus(newType))
+            return;
+
         currentTowerType = newType;
 
         TowerData towerData = TowerDictionary.GetTowerData(newType);
@@ -464,6 +497,9 @@ public class GameMaster : MonoBehaviour
 
     public void BuyOrUpgradeTower()//string whichType)
     {
+        if(!tileIsSelected)
+            return;
+
         string whichType = currentTowerType;
 
         int buyAmount, sellAmount;
@@ -493,7 +529,7 @@ public class GameMaster : MonoBehaviour
             if(whichType == baseTowerType)
                 return;
 
-            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), whichType))
+            if(TowerDictionary.IsValidUpgrade(selTile.Tower.GetTowerType(), whichType, true))
             {
                 int buy2, sell2;
                 TowerDictionary.GetValueTotals(selTile.Tower.GetTowerType(), out buy2, out sell2);

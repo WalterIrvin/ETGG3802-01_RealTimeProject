@@ -64,3 +64,4 @@ MonoBehaviour:
   effectTimer: 0
   researchCost: 50
   researchTime: 5
+  isResearched: 1
