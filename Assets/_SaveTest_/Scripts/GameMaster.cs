@@ -14,7 +14,6 @@ public struct TileObject
 
 public class GameMaster : MonoBehaviour
 {
-    private int currentWave;
     public MoneyScript playerMoney;
 
     public bool loadSave;
@@ -55,6 +54,7 @@ public class GameMaster : MonoBehaviour
     //===============//
 
     [SerializeField] private ResearchScript researchMaster;
+    [SerializeField] private WaveHandler waveMaster;
 
     void Start()
     {
@@ -92,9 +92,6 @@ public class GameMaster : MonoBehaviour
             if(Input.GetMouseButtonDown(1))
                 DeselectTile();
         }
-
-        if(Input.GetKeyDown(KeyCode.S))
-            SaveLevel();
 
         // TowerController //
         // Centered camera rotation ||| Middle Mouse Wheel ||| Alt + Mouse 1 //
@@ -313,9 +310,9 @@ public class GameMaster : MonoBehaviour
 
         mapFile.ReadLine(); // "//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM"
 
-        playerBase.health  = int.Parse(mapFile.ReadLine().Trim());
-        playerMoney.Money  = int.Parse(mapFile.ReadLine().Trim());
-        currentWave        = int.Parse(mapFile.ReadLine().Trim());
+        playerBase.health      = int.Parse(mapFile.ReadLine().Trim());
+        playerMoney.Money      = int.Parse(mapFile.ReadLine().Trim());
+        waveMaster.currentWave = int.Parse(mapFile.ReadLine().Trim());
 
         mapFile.ReadLine(); // "//END//"
         mapFile.ReadLine(); // "//RESEARCH_LIST//"
@@ -340,6 +337,7 @@ public class GameMaster : MonoBehaviour
 
         mapFile.Close();
 
+        waveMaster.StartUP();
         playerBase.RefreshFillAmount();
         tileObjects[playerBase.mapZ, playerBase.mapX].Type = TILE_TYPE.TILE_BASE;
         playerBase.transform.position = new Vector3(playerBase.mapX - 8, playerBase.transform.localScale.y / 2, 7 - playerBase.mapZ);
@@ -409,7 +407,7 @@ public class GameMaster : MonoBehaviour
         saveFile.WriteLine("//PLAYER_NUMBERS// HEALTH--MONEY--WAVE_NUM");
         saveFile.WriteLine(playerBase.health.ToString());
         saveFile.WriteLine(playerMoney.Money.ToString());
-        saveFile.WriteLine(currentWave.ToString());
+        saveFile.WriteLine(waveMaster.currentWave.ToString());
         saveFile.WriteLine("//END//");
 
         saveFile.WriteLine("//RESEARCH_LIST//\n" + TowerDictionary.CreateResearchSaveString() + "//END//");

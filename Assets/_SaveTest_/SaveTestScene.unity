@@ -3341,8 +3341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f80cbcdc5d1ea449802910629206ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWave: -2
   waveInterval: 30
   PAUSED: 0
+  otherOption: 1
+  gameMaster: {fileID: 1409815013}
 --- !u!4 &677812644
 Transform:
   m_ObjectHideFlags: 0
@@ -6272,6 +6275,7 @@ MonoBehaviour:
   towerCostText: {fileID: 807748300}
   towerInfoText: {fileID: 572433444}
   researchMaster: {fileID: 1510859009}
+  waveMaster: {fileID: 677812643}
 --- !u!4 &1409815014
 Transform:
   m_ObjectHideFlags: 0
@@ -7168,16 +7172,36 @@ PrefabInstance:
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: WaveList.Array.data[0].bossList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].GenericEnemyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].bossList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].bossList.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
@@ -7268,6 +7292,70 @@ PrefabInstance:
         type: 3}
       propertyPath: WaveList.Array.data[0].GenericEnemyList.Array.data[2].amount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].GenericEnemyList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 3010682455192397016, guid: aa1af154bb9954944ab9646dbc209edf,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].GenericEnemyList.Array.data[0].timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].GenericEnemyList.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].bossList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].bossList.Array.data[0].timer
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[1].bossList.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 6948746676915355302, guid: 980c1fd6ee64a8b4ca2ce7f1637efae9,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].timer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].GenericEnemyList.Array.data[0].amount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].bossList.Array.data[0].gobj
+      value: 
+      objectReference: {fileID: 6066025304056184572, guid: 09ed828e4e87a1d4595bffc36198d99d,
+        type: 3}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].bossList.Array.data[0].timer
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794948575033451303, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: WaveList.Array.data[2].bossList.Array.data[0].amount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -7984,7 +8072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1698029835
 MonoBehaviour:
   m_ObjectHideFlags: 0

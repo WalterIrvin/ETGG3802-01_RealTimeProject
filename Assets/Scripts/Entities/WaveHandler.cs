@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class WaveHandler : MonoBehaviour
 {
     //public int currentMaxLengthWave = 0;
-    private int currentWave = 0;
+    public int currentWave;
     private int numWaves;
     private bool isActive = true;
     private bool skipDowntime = false;
@@ -14,15 +14,24 @@ public class WaveHandler : MonoBehaviour
     public float waveInterval;
     private List<GameObject> mSpawners = new List<GameObject>();
     public bool PAUSED;
+    public bool otherOption;
+    public GameMaster gameMaster;
 
     void Start()
+    {
+        if(!otherOption)
+            StartUP();
+        
+    }
+
+    public void StartUP()
     {
         PAUSED = false;
         mSpawners = new List<GameObject>(GameObject.FindGameObjectsWithTag("Spawner"));
         int tmp = 0;
         int max = 0;
 
-        foreach (GameObject tmpObj in mSpawners)
+        foreach(GameObject tmpObj in mSpawners)
         {
             tmp = tmpObj.GetComponent<EnemySpawnerScript>().WaveList.Count;
             if (tmp > max)
@@ -78,6 +87,9 @@ public class WaveHandler : MonoBehaviour
                 ++currentWave;
                 downTime.Reset();
                 downTime.Start();
+
+                if(otherOption)
+                    gameMaster.SaveLevel();
             }
         }
     }
