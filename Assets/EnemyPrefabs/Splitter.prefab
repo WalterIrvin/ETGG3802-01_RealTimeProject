@@ -223,8 +223,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 5
   agentAcceleration: 30
-  agentMaxSpeed: 6
+  agentMaxSpeed: 3
   health: 100
+  maxHealth: 0
   _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
     type: 3}
   DestructionEffect: {fileID: 3781917230237610952, guid: 402e9bf510fbc17478d818d0c9be2b32,
@@ -241,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea0595896e42a24192bad9d4a6ec2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SplitCount: 2
+  SplitCount: 3
 --- !u!82 &2796940909390569841
 AudioSource:
   m_ObjectHideFlags: 0
