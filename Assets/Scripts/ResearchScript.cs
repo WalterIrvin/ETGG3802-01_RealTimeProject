@@ -122,10 +122,10 @@ public class ResearchScript : MonoBehaviour
                 buttonObject.isResearched = true;
                 buttonObject.researching = false;
                 totalTime = 0;
+                TowerDictionary.SetResearch(buttonObject.attachedTower.towerType, true);
                 buttonObject = null;
                 researching = false;
                 fillBar.fillAmount = 0;
-                TowerDictionary.SetResearch(buttonObject.attachedTower.towerType, true);
             }
             else
                 fillBar.fillAmount = tmp;

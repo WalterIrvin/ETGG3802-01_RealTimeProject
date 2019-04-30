@@ -462,6 +462,8 @@ MonoBehaviour:
   moneyHandler: {fileID: 3787820657134294911}
   flavorText: {fileID: 576913013}
   statsText: {fileID: 355938787}
+  totalTime: 0
+  otherOption: 0
 --- !u!114 &15967216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3b4ac56c1f5ea449a6ae16b82b59587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeResearch: {fileID: 0}
+  activeResearch: {fileID: 1229647610}
 --- !u!1 &57319102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4709,8 +4711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f80cbcdc5d1ea449802910629206ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWave: 0
   waveInterval: 30
   PAUSED: 0
+  otherOption: 0
+  gameMaster: {fileID: 0}
 --- !u!4 &803778265
 Transform:
   m_ObjectHideFlags: 0
