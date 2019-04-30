@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0026264612, g: 0.0030235564, b: 0.002689117, a: 1}
+  m_IndirectSpecularColor: {r: 0.0026264638, g: 0.0030235595, b: 0.0026891194, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00080861
       objectReference: {fileID: 0}
     - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
         type: 3}
@@ -313,7 +313,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.705342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.88961387
+      objectReference: {fileID: 0}
+    - target: {fileID: 8225087555042545638, guid: 54c6f2251549ee84c9e478a50d96ac6c,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9324608
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8440936629056671427, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
 --- !u!1 &349693528 stripped
 GameObject:
@@ -413,7 +429,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8440936629056671427, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54c6f2251549ee84c9e478a50d96ac6c, type: 3}
 --- !u!1 &658793652
 GameObject:
@@ -578,6 +595,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1816237745}
     - target: {fileID: 8132143112612773160, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -586,12 +613,12 @@ PrefabInstance:
     - target: {fileID: 8132143112612773160, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.361
       objectReference: {fileID: 0}
     - target: {fileID: 8132143112612773160, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7
+      value: 6.755
       objectReference: {fileID: 0}
     - target: {fileID: 8132143112612773160, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
@@ -633,16 +660,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
+    - target: {fileID: 6854936792832778360, guid: b817458b5e8522b458eefae9247d427a,
         type: 3}
-      propertyPath: maxHealth
-      value: 100
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4103032386255109933, guid: b817458b5e8522b458eefae9247d427a,
-        type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 1816237745}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b817458b5e8522b458eefae9247d427a, type: 3}
 --- !u!114 &1816237745 stripped
@@ -11701,8 +11723,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f80cbcdc5d1ea449802910629206ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWave: 0
   waveInterval: 30
   PAUSED: 0
+  otherOption: 0
+  gameMaster: {fileID: 0}
 --- !u!4 &1610289642086888202
 Transform:
   m_ObjectHideFlags: 0
