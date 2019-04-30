@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 1296152009}
   - component: {fileID: 3096332894412263247}
   - component: {fileID: 5753166564043720591}
+  - component: {fileID: 4247825191038951310}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -180,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4625691461517303479}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 1.33, z: -8.83}
+  m_LocalPosition: {x: -3.12, y: 1.135, z: -8.83}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4164360836123643709}
@@ -299,6 +300,7 @@ MonoBehaviour:
   agentAcceleration: 30
   agentMaxSpeed: 2
   health: 100
+  maxHealth: 0
   _destination: {fileID: 3920485304459115962, guid: eac16fc197c66c94ca7bb734caa6e438,
     type: 3}
   DestructionEffect: {fileID: 3781917230237610952, guid: 402e9bf510fbc17478d818d0c9be2b32,
@@ -399,6 +401,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &4247825191038951310
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625691461517303479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 1535b6dc009526a4e8bf4bd618c3fba2, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 1535b6dc009526a4e8bf4bd618c3fba2, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &6684506625777623828
 GameObject:
   m_ObjectHideFlags: 0
